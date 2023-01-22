@@ -1,0 +1,113 @@
+.guide-card {
+  display: flex;
+  position: relative;
+  background-color: #fafafa;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-theme);
+  height: 45vh;
+  transition: .15s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  --thm-gradient: linear-gradient(to right, rgb(18,10,121, .35), rgb(119,52,102, .35));
+}
+
+.card--content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3em;
+  padding-bottom: 2em;
+  /*margin: -1px;*/
+  align-self: end;
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: var(--border-radius);
+  background: var(--thm-gradient);
+  transition: .3s;
+  height: 45%;
+}
+
+  .card--content * {
+      width: 100%;
+      color: var(--thm-neutral);
+  }
+
+
+  .card--content:hover {
+      transition: ease-in-out .5s;
+      font-size: 20px;
+      height: 100%;
+      color: var(--thm-neutral) !important;
+  }
+
+      .card--content:hover * {
+          transition: color ease-in-out .5s;
+          color: var(--thm-neutral) !important;
+      }
+
+      .card--content:hover path#arrow {
+          opacity: 1;
+          fill: none;
+          stroke: white;
+          stroke-width: 5;
+          stroke-dasharray: 1353;
+          animation: draw 1s ease-in-out;
+          animation-fill-mode: forwards;
+      }
+
+      .card--content:hover svg {
+          transform: rotate(0deg);
+          transition: transform ease-in-out .5s;
+      }
+
+.card--title {
+  font-size: 1.75em;
+}
+
+div p.text-muted {
+  color: #c4c4c4 !important;
+}
+
+.arrow-container {
+  width: 7.5em;
+  height: 7.5em;
+  align-self: end;
+}
+
+svg {
+  transform: rotate(-90deg);
+  transition: transform ease-in-out .3s;
+}
+
+path#arrow {
+  opacity: 0;
+  fill: rgba(255, 255, 255, 1);
+  transition: opacity ease-in-out .15s;
+}
+
+@keyframes draw {
+  from {
+      stroke-dashoffset: 1353;
+      fill: rgba(255, 255, 255, 0);
+  }
+
+  to {
+      stroke-dashoffset: 0;
+      fill: rgba(255, 255, 255, 1);
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .guide-card {
+      font-size: 12px;
+  }
+
+  .card--content:hover {
+      transition: ease-in-out .5s;
+      font-size: 16px;
+      height: 100%;
+      color: var(--thm-neutral) !important;
+  }
+}

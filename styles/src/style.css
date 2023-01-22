@@ -190,3 +190,9 @@ main div .hljs {
       margin: 1em;
   }
 }
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
