@@ -1,0 +1,16 @@
+[
+  {
+    "InputPath": "./resources/markdown/",
+    "OutputPath": "./articles/",
+    "TemplatePath": "./resources/GUIDE_TEMPLATE.html",
+    "HasContent": true
+  },
+  {
+    "InputPath": "./resources/markdown/",
+    "OutputPath": "./pages/",
+    "TemplatePath": "./resources/BLOG_TEMPLATE.html",
+    "ImagesDirectoryPath": "../resources/images/",
+    "WidgetPath": "./resources/GUIDE_CARD_WIDGET.html",
+    "HasContent": false
+  }
+]
