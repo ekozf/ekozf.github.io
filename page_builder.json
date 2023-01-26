@@ -11,6 +11,7 @@
     "TemplatePath": "./resources/BLOG_TEMPLATE.html",
     "ImagesDirectoryPath": "../resources/images/",
     "WidgetPath": "./resources/GUIDE_CARD_WIDGET.html",
+    "PagingWidgetPath": "./resources/PAGING_WIDGET.html",
     "HasContent": false
   }
 ]
