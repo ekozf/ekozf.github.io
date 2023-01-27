@@ -11,6 +11,7 @@
   transition: .5s;
   margin-top: 1em;
   margin-bottom: 2em;
+  text-decoration: none;
 }
 
   .read-more:hover {
@@ -37,7 +38,7 @@
       transition: transform 0.5s;
   }
 
-a::before, a::after {
+.continue-reading a::before, .continue-reading a::after {
   box-sizing: inherit;
   content: "";
   position: absolute;
