@@ -7,6 +7,13 @@
   <script src="../resources/libs/jquery-3.6.3.min.js" async defer></script>
   <script src="../resources/libs/bootstrap/js/bootstrap.min.js"></script>
   <script src="../scripts/js/NavbarMarker.js" defer></script>
+  <script type="module">
+    import mermaid from '../resources/libs/mermaid/mermaid.esm.min.mjs';
+    mermaid.initialize({
+      startOnLoad: true,
+      //theme: 'neutral'
+    });
+  </script>
   <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../resources/libs/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="../resources/libs/highlight/styles/atom-one-light.min.css">
