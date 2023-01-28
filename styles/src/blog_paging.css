@@ -1,5 +1,6 @@
 ﻿.paging-button {
     background: var(--thm-gradient);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--clr-theme);
@@ -9,6 +10,7 @@
 
     .paging-button:hover {
         background: linear-gradient(to left, var(--clr-theme), var(--clr-action));
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         transition: .5s;
@@ -59,6 +61,7 @@ ul li:first-child, ul li:last-child {
 
 .page-link {
     background: var(--thm-gradient);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--clr-theme);
@@ -94,6 +97,7 @@ ul li:first-child, ul li:last-child {
     color: #6c757d;
     pointer-events: none;
     background: var(--thm-neutral);
+    background-clip: unset;
     -webkit-background-clip: unset;
     -webkit-text-fill-color: rgba(0, 0, 0, .5);
 }

@@ -4,6 +4,7 @@
 
 .read-more {
   background: var(--thm-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   color: var(--clr-theme);
@@ -16,6 +17,7 @@
 
   .read-more:hover {
       background: linear-gradient(to left, var(--clr-theme), var(--clr-action));
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       transition: .5s;
