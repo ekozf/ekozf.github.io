@@ -4,14 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./resources/libs/jquery-3.6.3.min.js" async defer></script>
-    <script src="./resources/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="./scripts/js/NavbarMarker.js" defer></script>
-    <link rel="shortcut icon" href="./resources/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="./resources/libs/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./styles/src/guide_card.css" />
-    <link rel="stylesheet" href="./styles/src/index.css" />
-    <link rel="stylesheet" href="./styles/src/style.css" />
+    <script src="../resources/libs/jquery-3.6.3.min.js" async defer></script>
+    <script src="../resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../resources/libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../styles/src/guide_card.css" />
+    <link rel="stylesheet" href="../styles/src/style.css" />
+    <link rel="stylesheet" href="../styles/src/blog_paging.css">
     <title>DEV - TEST</title>
   </head>
   <body>
@@ -20,7 +19,7 @@
         <div class="container-fluid for-mobile">
           <div class="svg-container">
             <a class="navbar-brand text-light me-5 ps-2 pe-2 user-select-none" href="/">
-              <img src="./resources/EKO_Logo.svg" alt="Logo of the website" />
+              <img src="../resources/EKO_Logo.svg" alt="Logo of the website" />
             </a>
           </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
@@ -28,10 +27,10 @@
           </button>
           <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end">
             <ul class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end">
-              <li class="nav-item nav-active">
+              <li class="nav-item">
                 <a class="nav-link" href="/">Home</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav-active">
                 <a class="nav-link" href="/pages/1.html">Blog</a>
               </li>
               <li class="nav-item">
@@ -46,22 +45,15 @@
     <div class="container-fluid w-100 p-0">
       <main role="main" class="w-100 d-flex flex-column">
         <div class="align-self-center header-container text-dark text-center">
-          <h1 class="display-3 fw-bolder page-header">Recent Notes & Guides</h1>
+          <h1 class="display-3 fw-bolder page-header">Articles</h1>
         </div>
 
         <div class="d-flex justify-content-center mt-5">
-          <div class="d-flex flex-column ps-5 pe-5 for-mobile">
-            <!-- CARDS BEGIN HERE -->
-
-            @#WIDGETS#@
-
-            <!-- CARDS END HERE -->
-          </div>
+          <div class="d-flex flex-column ps-5 pe-5 for-mobile">@#WIDGETS#@</div>
         </div>
 
-        <div class="d-flex justify-content-center continue-reading">
-          <a href="/pages/1.html" class="fw-bolder fs-4 read-more">Read More</a>
-        </div>
+        <!-- HAS TO BE REPLACED WITH PAGING -->
+        @#PAGING#@
       </main>
     </div>
 
