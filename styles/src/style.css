@@ -55,7 +55,8 @@ html {
 
 body {
   margin-bottom: 1.5rem;
-  background-color: var(--thm-neutral);
+  background-color: var(--thm-neutral-dark);
+  transition: .5s;
 }
 
 /**************************/
@@ -252,3 +253,23 @@ a.navbar-brand {
   height: 100%;
   transition: .5s;
 }
+
+body.light-mode {
+  background-color: var(--thm-neutral);
+  transition: .5s;
+}
+
+main div .hljs {
+  background-color: #f8f8f8;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+/* @media (prefers-color-scheme: light) {
+  body {
+      background-color: var(--thm-neutral);
+      transition: .5s;
+  }
+} */

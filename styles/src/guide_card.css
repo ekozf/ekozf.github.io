@@ -75,7 +75,7 @@ div p.text-muted {
   align-self: end;
 }
 
-svg {
+main svg {
   transform: rotate(-90deg);
   transition: transform ease-in-out .3s;
 }
