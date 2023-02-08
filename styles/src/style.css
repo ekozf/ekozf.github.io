@@ -149,7 +149,7 @@ pre {
 }
 
 main div .hljs {
-  background-color: #f8f8f8;
+  background-color: #282828;
 }
 
 .for-mobile {
@@ -259,7 +259,7 @@ body.light-mode {
   transition: .5s;
 }
 
-main div .hljs {
+body.light-mode main div .hljs {
   background-color: #f8f8f8;
 }
 
