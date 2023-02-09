@@ -29,7 +29,9 @@ function toggleDarkMode(isToggled) {
     const toggle = document.querySelector("#dark-toggle");
     toggle.onchange = () => {
         toggleDarkMode(toggle.checked);
-        window.renderMermaid();
+        if (window.renderMermaid) {
+            window.renderMermaid();
+        }
     };
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
     toggleDarkMode(!(localStorage.getItem('dark-mode') === "false" || (!('theme' in localStorage) && !prefersDarkMode)));

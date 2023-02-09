@@ -1,6 +1,10 @@
 import { CustomWindow } from './CustomWindow.js';
 declare let window: CustomWindow;
 
+/**
+ * Toggles dark mode
+ * @param isToggled Whether dark mode is toggled or not
+ */
 function toggleDarkMode(isToggled: boolean) {
   const moon = document.querySelector("#moon") as HTMLElement;
   const sun = document.querySelector("#sun") as HTMLElement;
@@ -28,19 +32,27 @@ function toggleDarkMode(isToggled: boolean) {
     }
   }
 
+  // Save dark mode state to local storage
   localStorage.setItem("dark-mode", isToggled ? "true" : "false");
 }
 
 (function () {
+  // Get the dark mode toggle
   const toggle = document.querySelector("#dark-toggle") as HTMLInputElement;
 
+  // Add event listener to toggle dark mode and render mermaid diagram
   toggle.onchange = () => {
     toggleDarkMode(toggle.checked);
-    window.renderMermaid();
+
+    if (window.renderMermaid) {
+      window.renderMermaid();
+    }
   };
 
+  // Check if dark mode is enabled
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
 
+  // Set the toggle to the correct state
   toggleDarkMode(!(localStorage.getItem('dark-mode') === "false" || (!('theme' in localStorage) && !prefersDarkMode)));
 
 })();
