@@ -11,6 +11,8 @@
   --clr-action: #773466;*/
   --clr-theme: hsl(244.3, 84.7%, 25.7%);
   --clr-action: hsl(315.2, 39.2%, 33.5%);
+  --clr-theme-dark: hsl(244.3, 84.7%, 35.7%);
+  --clr-action-dark: hsl(315.2, 39.2%, 43.5%);
   --clr-complimentary: #030027;
   --clr-theme-light: #1d10c0;
   /* Theme */
@@ -260,6 +262,11 @@ a.navbar-brand {
   transition: 0.5s;
 }
 
+
+/***************************/
+/*  Styling for Dark Mode  */
+/***************************/
+
 body.light-mode {
   background-color: var(--thm-neutral);
   transition: 0.5s;
@@ -303,4 +310,20 @@ body:not(.light-mode) ul {
 
 body:not(.light-mode) .navbar-brand img {
   filter: brightness(1.3);
+}
+
+/* Track */
+html:has(body:not(.light-mode))::-webkit-scrollbar-track {
+  background: var(--thm-neutral-dark);
+}
+
+/* Handle */
+html:has(body:not(.light-mode))::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--clr-theme-dark), var(--clr-action-dark));
+  border-radius: var(--border-radius);
+}
+
+/* Handle on hover */
+html:has(body:not(.light-mode))::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, hsl(244.3, 84.7%, 45.7%), hsl(315.2, 39.2%, 55.5%));
 }
