@@ -1,2 +1,2 @@
-declare function toggleDarkMode(isToggled: boolean): void;
+export {};
 //# sourceMappingURL=DarkMode.d.ts.map

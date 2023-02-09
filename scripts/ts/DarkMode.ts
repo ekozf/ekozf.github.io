@@ -1,3 +1,6 @@
+import { CustomWindow } from './CustomWindow.js';
+declare let window: CustomWindow;
+
 function toggleDarkMode(isToggled: boolean) {
   const moon = document.querySelector("#moon") as HTMLElement;
   const sun = document.querySelector("#sun") as HTMLElement;
@@ -33,6 +36,7 @@ function toggleDarkMode(isToggled: boolean) {
 
   toggle.onchange = () => {
     toggleDarkMode(toggle.checked);
+    window.renderMermaid();
   };
 
   const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;

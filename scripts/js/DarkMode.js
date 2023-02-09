@@ -1,4 +1,3 @@
-"use strict";
 function toggleDarkMode(isToggled) {
     const moon = document.querySelector("#moon");
     const sun = document.querySelector("#sun");
@@ -30,8 +29,10 @@ function toggleDarkMode(isToggled) {
     const toggle = document.querySelector("#dark-toggle");
     toggle.onchange = () => {
         toggleDarkMode(toggle.checked);
+        window.renderMermaid();
     };
     const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
     toggleDarkMode(!(localStorage.getItem('dark-mode') === "false" || (!('theme' in localStorage) && !prefersDarkMode)));
 })();
+export {};
 //# sourceMappingURL=DarkMode.js.map
