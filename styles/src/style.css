@@ -292,9 +292,12 @@ body.light-mode nav .nav-item:not(.nav-active) > a.nav-link:hover {
   transition: 0.3s;
 }
 
-body:not(.light-mode) .read-more,
-body:not(.light-mode) ul,
 body:not(.light-mode) .special-link {
+  filter: brightness(2.5);
+}
+
+body:not(.light-mode) .read-more,
+body:not(.light-mode) ul {
   filter: brightness(1.75);
 }
 
