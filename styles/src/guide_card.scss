@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  --thm-gradient: linear-gradient(to right, rgb(18,10,121, .35), rgb(119,52,102, .35));
+  --thm-gradient: linear-gradient(to right, rgb(18, 10, 121, .35), rgb(119, 52, 102, .35));
 }
 
 .card--content {
@@ -26,40 +26,39 @@
   background: var(--thm-gradient);
   transition: .3s;
   height: 45%;
-}
 
-  .card--content * {
-      width: 100%;
-      color: var(--thm-neutral);
+  * {
+    width: 100%;
+    color: var(--thm-neutral);
   }
 
+  &:hover {
+    transition: ease-in-out .5s;
+    font-size: 20px;
+    height: 100%;
+    color: var(--thm-neutral) !important;
 
-  .card--content:hover {
-      transition: ease-in-out .5s;
-      font-size: 20px;
-      height: 100%;
+    * {
+      transition: color ease-in-out .5s;
       color: var(--thm-neutral) !important;
+    }
+
+    path#arrow {
+      opacity: 1;
+      fill: none;
+      stroke: white;
+      stroke-width: 5;
+      stroke-dasharray: 1353;
+      animation: draw 1s ease-in-out;
+      animation-fill-mode: forwards;
+    }
+
+    svg {
+      transform: rotate(0deg);
+      transition: transform ease-in-out .5s;
+    }
   }
-
-      .card--content:hover * {
-          transition: color ease-in-out .5s;
-          color: var(--thm-neutral) !important;
-      }
-
-      .card--content:hover path#arrow {
-          opacity: 1;
-          fill: none;
-          stroke: white;
-          stroke-width: 5;
-          stroke-dasharray: 1353;
-          animation: draw 1s ease-in-out;
-          animation-fill-mode: forwards;
-      }
-
-      .card--content:hover svg {
-          transform: rotate(0deg);
-          transition: transform ease-in-out .5s;
-      }
+}
 
 .card--title {
   font-size: 1.75em;
