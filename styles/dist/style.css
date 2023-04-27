@@ -158,6 +158,7 @@ main div .hljs {
 
 .md-img {
   max-width: 75%;
+  border-radius: var(--border-radius);
 }
 
 .md-container {
@@ -269,6 +270,13 @@ body.light-mode nav .nav-item:not(.nav-active) > a.nav-link:hover {
   color: rgba(0, 0, 0, 0.7);
   transition: 0.3s;
 }
+body.light-mode code {
+  backdrop-filter: brightness(0.9);
+  border-radius: var(--border-radius);
+  padding: 0 0.5rem;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+}
 body:not(.light-mode) .special-link {
   filter: brightness(2.5);
 }
@@ -279,6 +287,13 @@ body:not(.light-mode) ul {
 body:not(.light-mode) .navbar-brand img {
   filter: brightness(1.3);
 }
+body:not(.light-mode) code {
+  backdrop-filter: brightness(1.5);
+  border-radius: var(--border-radius);
+  padding: 0 0.5rem;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+}
 
 input[type=checkbox] {
   display: none;
@@ -287,5 +302,9 @@ input[type=checkbox] {
 #dark-toggle + label {
   padding: 0.333rem;
 }
+
+/**************************/
+/* Styling for Blog Pages */
+/**************************/
 
 /*# sourceMappingURL=style.css.map */
