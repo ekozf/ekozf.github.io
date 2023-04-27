@@ -54,8 +54,8 @@ Now SignalR has been added to the web app, but our hub is not registered yet. We
 // Add this to the top of the file
 using ChatApp.Hubs;
 
-// Add the ChatHub to the app using the "/chathub" path
-app.MapHub<ChatHub>("/chathub");
+// Add the ChatHub to the app using the "/chat" path
+app.MapHub<ChatHub>("/chat");
 ```
 
 <br>
