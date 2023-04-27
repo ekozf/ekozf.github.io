@@ -1,5 +1,13 @@
 {
   "devDependencies": {
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@types/jquery": "^3.5.16",
+    "mermaid": "^9.3.0"
+  },
+  "scripts": {
+    "ts": "tsc -w",
+    "sass": "sass --watch styles/src/:styles/dist"
   }
 }

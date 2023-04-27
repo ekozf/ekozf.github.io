@@ -1,0 +1,310 @@
+/**************************/
+/*       Properties       */
+/**************************/
+:root {
+  /* Overwrite default font with Fira Sans */
+  --bs-font-sans-serif: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Colors */
+  /*--clr-theme: #120A79;
+  --clr-action: #773466;*/
+  --clr-theme: hsl(244.3, 84.7%, 25.7%);
+  --clr-action: hsl(315.2, 39.2%, 33.5%);
+  --clr-theme-dark: hsl(244.3, 84.7%, 35.7%);
+  --clr-action-dark: hsl(315.2, 39.2%, 43.5%);
+  --clr-complimentary: #030027;
+  --clr-theme-light: #1d10c0;
+  /* Theme */
+  --thm-neutral: #fdfdfd;
+  --thm-neutral-dark: #1d1d1d;
+  --thm-gradient: linear-gradient(to right, var(--clr-theme), var(--clr-action));
+  /* Other Properties */
+  --glow-white: 0px 0px 1.4px rgba(255, 255, 255, 0.05), 0px 0px 3.8px rgba(255, 255, 255, 0.1),
+    0px 0px 9px rgba(255, 255, 255, 0.2), 0px 0px 30px rgba(255, 255, 255, 0.3);
+  --shadow-action: 0 0 0 0.25rem rgb(193, 110, 112, 0.25);
+  --shadow-theme: 0px 0px 1.4px rgba(21, 30, 63, 0.05), 0px 0px 3.8px rgba(21, 30, 63, 0.1), 0px 0px 9px rgba(21, 30, 63, 0.2),
+    0px 0px 30px rgba(21, 30, 63, 0.3);
+  --border-radius: 1rem;
+}
+
+::selection {
+  background-color: var(--clr-action);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+}
+html::-webkit-scrollbar-track {
+  background: var(--thm-neutral);
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--clr-theme), var(--clr-action));
+  border-radius: var(--border-radius);
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, hsl(244.3deg, 84.7%, 45.7%), hsl(315.2deg, 39.2%, 55.5%));
+}
+
+html:has(body:not(.light-mode))::-webkit-scrollbar-track {
+  background: var(--thm-neutral-dark);
+}
+html:has(body:not(.light-mode))::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--clr-theme-dark), var(--clr-action-dark));
+  border-radius: var(--border-radius);
+}
+html:has(body:not(.light-mode))::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, hsl(244.3deg, 84.7%, 45.7%), hsl(315.2deg, 39.2%, 55.5%));
+}
+
+body {
+  margin-bottom: 1.5rem;
+  background-color: var(--thm-neutral-dark);
+  transition: 0.5s;
+}
+
+/**************************/
+/* Styling for whole Site */
+/**************************/
+/* Backgrounds */
+.bg-theme {
+  background-color: var(--clr-theme);
+}
+
+.bg-complimentary {
+  background-color: var(--clr-complimentary);
+}
+
+.bg-action {
+  background-color: var(--clr-action);
+}
+
+.text-theme {
+  color: var(--clr-theme);
+}
+
+.text-action {
+  color: var(--clr-action);
+}
+
+.btn-action {
+  background: var(--thm-gradient);
+  color: var(--thm-neutral);
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 1.5em;
+  transition: 0.25s;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.btn-action:hover, .btn-action:focus, .btn-action:focus-visible {
+  box-shadow: var(--shadow-theme);
+  color: #c4c4c4;
+  transition: 0.25s;
+}
+
+/* Navbar */
+nav {
+  font-size: 18px;
+}
+nav .nav-item.nav-active > a.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: bold;
+}
+nav .nav-item:not(.nav-active) > a.nav-link {
+  color: rgba(255, 255, 255, 0.55);
+  transition: 0.3s;
+}
+nav .nav-item:not(.nav-active) > a.nav-link:hover {
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.3s;
+}
+
+.nav-item {
+  border-bottom: 2px solid transparent;
+  padding-left: 1em;
+  padding-right: 1em;
+  user-select: none;
+}
+
+.nav-active {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-image: var(--thm-gradient) 1;
+}
+
+/* Other Styles */
+div.container-fluid.for-mobile h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+pre {
+  border-radius: var(--border-radius);
+}
+
+main div .hljs {
+  background-color: #282828;
+}
+
+.for-mobile {
+  width: 66%;
+}
+
+.md-img {
+  max-width: 75%;
+  border-radius: var(--border-radius);
+}
+
+.md-container {
+  justify-content: center;
+  display: flex;
+  margin: 1.5em;
+}
+
+.header-container {
+  padding: 3rem;
+}
+
+.page-header {
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .for-mobile {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .md-img {
+    max-width: 85%;
+  }
+  .md-container {
+    justify-content: center;
+    display: flex;
+    margin: 1em;
+  }
+}
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+.svg-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* For underline effect on <a> hover */
+.special-link {
+  background: var(--thm-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--clr-theme);
+  position: relative;
+  transition: 0.5s;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-decoration: none;
+}
+.special-link:hover {
+  background: linear-gradient(to left, var(--clr-theme), var(--clr-action));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s;
+}
+.special-link:hover::before {
+  transform: scale3d(1, 1, 1);
+  transition: transform 0.5s;
+}
+.special-link::before {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: center;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-image: var(--thm-gradient) 1;
+  transform: scale3d(0, 1, 1);
+}
+
+.special-link-wrapper a::before, .special-link-wrapper a::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+/***************************/
+/*  Styling for Dark Mode  */
+/***************************/
+body.light-mode {
+  background-color: var(--thm-neutral);
+  transition: 0.5s;
+}
+body.light-mode main div .hljs {
+  background-color: #f8f8f8;
+}
+body.light-mode nav .nav-item.nav-active > a.nav-link {
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: bold;
+}
+body.light-mode nav .nav-item:not(.nav-active) > a.nav-link {
+  color: rgba(0, 0, 0, 0.55);
+  transition: 0.3s;
+}
+body.light-mode nav .nav-item:not(.nav-active) > a.nav-link:hover {
+  color: rgba(0, 0, 0, 0.7);
+  transition: 0.3s;
+}
+body.light-mode code {
+  backdrop-filter: brightness(0.9);
+  border-radius: var(--border-radius);
+  padding: 0 0.5rem;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+}
+body:not(.light-mode) .special-link {
+  filter: brightness(2.5);
+}
+body:not(.light-mode) .read-more,
+body:not(.light-mode) ul {
+  filter: brightness(1.75);
+}
+body:not(.light-mode) .navbar-brand img {
+  filter: brightness(1.3);
+}
+body:not(.light-mode) code {
+  backdrop-filter: brightness(1.5);
+  border-radius: var(--border-radius);
+  padding: 0 0.5rem;
+  transition: 0.3s;
+  margin-bottom: 1rem;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+#dark-toggle + label {
+  padding: 0.333rem;
+}
+
+/**************************/
+/* Styling for Blog Pages */
+/**************************/
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,22 @@
+{
+  "Article": {
+    "InputPath": "./resources/markdown/",
+    "OutputPath": "./articles/",
+    "TemplatePath": "./templates/GUIDE_TEMPLATE.html"
+  },
+  "Paging":{
+    "InputPath": "./resources/markdown/",
+    "OutputPath": "./pages/",
+    "TemplatePath": "./templates/BLOG_TEMPLATE.html",
+    "ImagesDirectoryPath": "../resources/images/",
+    "WidgetPath": "./templates/GUIDE_CARD_WIDGET.html",
+    "PagingWidgetPath": "./templates/PAGING_WIDGET.html"
+  },
+  "Home": {
+    "InputPath": "./resources/markdown/",
+    "OutputPath": "./",
+    "TemplatePath": "./templates/INDEX_TEMPLATE.html",
+    "ImagesDirectoryPath": "../resources/images/",
+    "WidgetPath": "./templates/GUIDE_CARD_WIDGET.html"
+  }
+}
