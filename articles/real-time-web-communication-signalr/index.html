@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="../resources/libs/jquery-3.6.3.min.js" async defer></script>
-    <script src="../resources/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="../scripts/js/MermaidThemeSwitcher.js" type="module" id="light-mermaid" defer></script>
-    <link rel="shortcut icon" href="../resources/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../resources/libs/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../resources/libs/highlight/styles/atom-one-light.min.css" id="light-code" disabled />
-    <link rel="stylesheet" href="../resources/libs/highlight/styles/atom-one-dark.min.css" id="dark-code" />
-    <link rel="stylesheet" href="../styles/dist/style.css" />
+    <script src="../../resources/libs/jquery-3.6.3.min.js" async defer></script>
+    <script src="../../resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../scripts/js/MermaidThemeSwitcher.js" type="module" id="light-mermaid" defer></script>
+    <link rel="shortcut icon" href="../../resources/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../resources/libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../resources/libs/highlight/styles/atom-one-light.min.css" id="light-code" disabled />
+    <link rel="stylesheet" href="../../resources/libs/highlight/styles/atom-one-dark.min.css" id="dark-code" />
+    <link rel="stylesheet" href="../../styles/dist/style.css" />
     <title>DEV - TEST</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
         <div class="container-fluid for-mobile">
           <div class="svg-container">
             <a class="navbar-brand text-light me-5 pe-2 user-select-none" href="/">
-              <img src="../resources/EKO_Logo.svg" alt="Logo of the website" />
+              <img src="../../resources/EKO_Logo.svg" alt="Logo of the website" />
             </a>
           </div>
           <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
@@ -32,7 +32,7 @@
                 <a class="nav-link" href="/">Home</a>
               </li>
               <li class="nav-item nav-active">
-                <a class="nav-link" href="/pages/1.html">Blog</a>
+                <a class="nav-link" href="/pages/1/">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">About</a>
@@ -116,7 +116,7 @@ app.MapHub&lt;ChatHub&gt;(&quot;/chat&quot;);
 <h3 id="client-side">Client Side</h3>
 <p>Now we can create a client to connect to this hub. To allow clients to connect, we will need to add the SignalR JavaScript library to our web app. We can do this by adding a new <code>Client Side Library</code> in Visual Studio. Right click on the <code>wwwroot</code> folder and click <code>Add</code> &gt; <code>Client-Side Library...</code>. Then search for <code>signalr</code> and install the <code>@microsoft/signalr</code> package. This will add the SignalR JavaScript library to our web app.</p>
 <div class="md-container">
-    <img class="md-img" src="../resources/images/add-signalr-client-js-library.png">
+    <img class="md-img" src="../../resources/images/add-signalr-client-js-library.png">
 </div>
 <p>Next we have to add the script to our <code>_Layout.cshtml</code> file, you can also choose to only add this on the pages that actually need to connect with SignalR.</p>
 <pre><code class="language-html">&lt;!-- Add SignalR --&gt;
@@ -193,14 +193,14 @@ document.getElementById(&quot;sendButton&quot;).addEventListener(&quot;click&quo
 <h3 id="testing">Testing</h3>
 <p>That was it! Now we can run our web app and test it out. You can open the web app in multiple tabs to test it out. You should see something like this:</p>
 <div class="md-container">
-    <img class="md-img" src="../resources/images/signalr-messaging-example-result.png">
+    <img class="md-img" src="../../resources/images/signalr-messaging-example-result.png">
 </div>
 <br>
 <h2 id="conclusion">Conclusion</h2>
 <p>After following this tutorial you should have a basic understanding of how SignalR works and how you can use it in your own projects. For more info about SignalR, check out the <a href="https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-7.0">official documentation</a> by Microsoft.</p>
 </div>
 
-        <script src="../resources/libs/highlight/highlight.min.js"></script>
+        <script src="../../resources/libs/highlight/highlight.min.js"></script>
         <script>
           hljs.highlightAll();
         </script>
@@ -210,12 +210,12 @@ document.getElementById(&quot;sendButton&quot;).addEventListener(&quot;click&quo
     <footer class="container-fluid w-100 p-0">
       <div class="w-100 d-flex flex-column">
         <div class="align-self-center p-3 text-dark text-center special-link-wrapper">
-          <a class="p-2 special-link" href="../resources/markdown/real-time-web-communication-signalr.md" download=""
-            >Download this page as Markdown</a
-          >
+          <a class="p-2 special-link" href="../../resources/markdown/real-time-web-communication-signalr.md" download="">
+            Download this page as Markdown
+          </a>
         </div>
       </div>
     </footer>
-    <script src="../scripts/js/DarkMode.js" type="module"></script>
+    <script src="../../scripts/js/DarkMode.js" type="module"></script>
   </body>
 </html>
