@@ -65,7 +65,7 @@ app.MapHub<ChatHub>("/chat");
 Now we can create a client to connect to this hub. To allow clients to connect, we will need to add the SignalR JavaScript library to our web app. We can do this by adding a new `Client Side Library` in Visual Studio. Right click on the `wwwroot` folder and click `Add` > `Client-Side Library...`. Then search for `signalr` and install the `@microsoft/signalr` package. This will add the SignalR JavaScript library to our web app.
 
 <div class="md-container">
-    <img class="md-img" src="../resources/images/add-signalr-client-js-library.png">
+    <img class="md-img" src="../../resources/images/add-signalr-client-js-library.png">
 </div>
 
 Next we have to add the script to our `_Layout.cshtml` file, you can also choose to only add this on the pages that actually need to connect with SignalR.
@@ -158,7 +158,7 @@ Now we can add the HTML to our `Index.cshtml` file to display the messages and s
 That was it! Now we can run our web app and test it out. You can open the web app in multiple tabs to test it out. You should see something like this:
 
 <div class="md-container">
-    <img class="md-img" src="../resources/images/signalr-messaging-example-result.png">
+    <img class="md-img" src="../../resources/images/signalr-messaging-example-result.png">
 </div>
 
 <br>
