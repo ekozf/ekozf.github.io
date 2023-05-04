@@ -1,0 +1,43 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInScaleAndTranslateFirst {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScaleAndTranslateSecond {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowlyRemoveBlur {
+  0% {
+    backdrop-filter: blur(50px);
+  }
+
+  100% {
+    backdrop-filter: blur(0px);
+  }
+}

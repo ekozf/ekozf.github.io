@@ -1,4 +1,5 @@
 https://blog.emirkaan.be/
-https://blog.emirkaan.be/articles/real-time-web-communication-signalr/
-https://blog.emirkaan.be/articles/windows-essentials-vms/
-https://blog.emirkaan.be/pages/1/
+https://blog.emirkaan.be/blog/
+https://blog.emirkaan.be/blog/articles/real-time-web-communication-signalr/
+https://blog.emirkaan.be/blog/articles/windows-essentials-vms/
+https://blog.emirkaan.be/blog/pages/1/

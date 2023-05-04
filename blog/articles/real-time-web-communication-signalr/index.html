@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Real Time Web Apps in .NET" />
+    <meta property="og:site_name" content="Emir Kaan Blog" />
+    <meta property="og:description" content="Using SignalR to create real time web apps in .NET" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://blog.emirkaan.be/resources/images/signalr-cover.png" />
+    <script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/scripts/dist/blog/MermaidThemeSwitcher.js" type="module" id="light-mermaid" defer></script>
+    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/resources/libs/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/resources/libs/highlight/styles/atom-one-light.min.css" id="light-code" disabled />
+    <link rel="stylesheet" href="/resources/libs/highlight/styles/atom-one-dark.min.css" id="dark-code" />
+    <link rel="stylesheet" href="/blog/styles/dist/style.css" />
+    <title>Real Time Web Apps in .NET</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid for-mobile">
+          <div class="svg-container">
+            <a class="navbar-brand text-light me-5 pe-2 user-select-none" href="/">
+              <img src="/resources/EKO_Logo.svg" alt="Logo of the website" />
+            </a>
+          </div>
+          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+            <span class="navbar-toggler-icon text-light"></span>
+          </button>
+          <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end">
+            <ul class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end">
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/">Home</a>
+              </li>
+              <li class="nav-item nav-active">
+                <a class="nav-link" href="/blog/pages/1/">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/">About</a>
+              </li>
+              <li class="nav-item">
+                <div class="nav-link form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="dark-toggle" />
+                  <label class="form-check-label" for="dark-toggle">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      id="moon">
+                      <path
+                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                    </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      viewBox="0 0 16 16"
+                      id="sun">
+                      <path
+                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                    </svg>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-fluid w-100 p-0">
+      <main role="main" class="w-100 d-flex flex-column">
+        <div class="align-self-center p-3 text-dark text-center">
+          <h1 class="display-4 fw-bolder p-3">Real Time Web Apps in .NET</h1>
+        </div>
+
+        <div class="mt-5 mb-5 container-fluid for-mobile"><p>There are a few ways to make a web app real time. You could make a button that refreshes the page, or you could use AJAX to update the page. But what if you want to update the page without the user having to do anything? Well, you could automatically make a request to the server every few seconds using something like <code>setInterval</code> in JavaScript, but that's not very efficient and it's not very '<em>real time</em>'.</p>
+<p>That's why a lot of people use WebSockets. WebSockets are a new technology that allows you to open a connection between the client and the server and keep it open. This allows the server to send data to the client without the client having to make a request.</p>
+<p>To do this we can use a library called SignalR. SignalR is a library for .NET developers that makes it incredibly simple to add real-time web functionality to your applications. It's the ability to have your server-side code push content to the connected clients as it happens, in real-time. If WebSockets are available, SignalR will use them, otherwise it will fall back to other techniques like long polling or server-sent events.</p>
+<br>
+<h2 id="building-a-real-time-web-app-with-signalr">Building a real time web app with SignalR</h2>
+<p>Let's use an example to demonstrate how SignalR works. We'll create a simple chat application that allows users to send messages to each other in real time.</p>
+<p>Start by creating a new <strong>ASP.NET Core Web App (MVC)</strong>, this includes the SignalR library by default. We'll call the project <code>ChatApp</code>. You can skip the other options for now.</p>
+<br>
+<h3 id="server-side">Server Side</h3>
+<p>Firstly, you should create a new folder called <code>Hubs</code> and create a new class called <code>ChatHub</code> inside of it. This class will be used to send messages to the clients. This <code>ChatHub</code> class should inherit from <code>Hub</code>, which is imported with <code>using Microsoft.AspNetCore.SignalR</code> and have a method called <code>SendMessage</code> that takes two parameters, a <code>string</code> for the username and a <code>string</code> for the message.</p>
+<pre><code class="language-csharp">using Microsoft.AspNetCore.SignalR;
+
+namespace ChatApp.Hubs
+{
+    // Inherit from Hub class in SignalR
+    public class ChatHub : Hub
+    {
+        public async Task SendMessage(string user, string message)
+        {
+            // Sends an event called &quot;ReceiveMessage&quot; to all clients with the user and message as parameters
+            await Clients.All.SendAsync(&quot;ReceiveMessage&quot;, user, message);
+        }
+    }
+}
+</code></pre>
+<p>We now have created a <code>Hub</code> that can be connected to by clients. We can now create a client to connect to this <code>Hub</code>. Before we can actually start using the hub we need to add something to tell the web app to use SignalR. We do this in the <code>Program.cs</code> file:</p>
+<pre><code class="language-csharp">// Add SignalR to the web app
+builder.Services.AddSignalR();
+</code></pre>
+<p>Now SignalR has been added to the web app, but our hub is not registered yet. We will register our <code>ChatHub</code> on the url <code>/chathub</code>. So we do that next in our <code>Program.cs</code>:</p>
+<pre><code class="language-csharp">// Add this to the top of the file
+using ChatApp.Hubs;
+
+// Add the ChatHub to the app using the &quot;/chat&quot; path
+app.MapHub&lt;ChatHub&gt;(&quot;/chat&quot;);
+</code></pre>
+<br>
+<h3 id="client-side">Client Side</h3>
+<p>Now we can create a client to connect to this hub. To allow clients to connect, we will need to add the SignalR JavaScript library to our web app. We can do this by adding a new <code>Client Side Library</code> in Visual Studio. Right click on the <code>wwwroot</code> folder and click <code>Add</code> &gt; <code>Client-Side Library...</code>. Then search for <code>signalr</code> and install the <code>@microsoft/signalr</code> package. This will add the SignalR JavaScript library to our web app.</p>
+<div class="md-container">
+    <img class="md-img" src="../../../resources/images/add-signalr-client-js-library.png">
+</div>
+<p>Next we have to add the script to our <code>_Layout.cshtml</code> file, you can also choose to only add this on the pages that actually need to connect with SignalR.</p>
+<pre><code class="language-html">&lt;!-- Add SignalR --&gt;
+&lt;script src=&quot;~/microsoft-signalr/signalr.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Now we can create a new JavaScript file called <code>chat.js</code> in the <code>wwwroot/js</code> folder. This file will contain the code to connect to the hub and send messages to it. We will also add a function to receive messages from the hub.</p>
+<pre><code class="language-js">&quot;use strict&quot;; // Use strict mode so we get errors if we make dumb mistakes
+
+// Create a connection to the hub, using the &quot;/chat&quot; path that we registered in the Program.cs file
+const connection = new signalR.HubConnectionBuilder().withUrl(&quot;/chat&quot;).build();
+
+// Start the connection
+connection.start().catch(function (err) {
+    // If there is an error, log it to the console
+    return console.error(err.toString());
+});
+
+// Add a function to run when we receive a message from the hub
+connection.on(&quot;ReceiveMessage&quot;, function (user, message) {
+    // Create a message with the user and message
+    var msg = user + &quot; says: &quot; + message;
+
+    // Create a new list item with the message and add it to the list of messages
+    var li = document.createElement(&quot;li&quot;);
+    li.textContent = msg;
+    document.getElementById(&quot;messagesList&quot;).appendChild(li);
+});
+
+// Add a function to send messages to the hub when the send button is clicked
+document.getElementById(&quot;sendButton&quot;).addEventListener(&quot;click&quot;, function (event) {
+
+    // Get the user and message from the input fields
+    var user = document.getElementById(&quot;userInput&quot;).value;
+    var message = document.getElementById(&quot;messageInput&quot;).value;
+
+    // Send the message to the hub
+    connection.invoke(&quot;SendMessage&quot;, user, message).catch(function (err) {
+        return console.error(err.toString());
+    });
+
+    event.preventDefault();
+});
+</code></pre>
+<p>This code will connect to the hub and send messages to it. It will also add a function to receive messages from the hub and add them to the list of messages. Now add this script to the <code>_Layout.cshtml</code> file:</p>
+<pre><code class="language-html">&lt;script src=&quot;~/js/chat.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Now we can add the HTML to our <code>Index.cshtml</code> file to display the messages and send messages to the hub. Don't forget to add the <code>id</code> attributes to the elements so we can select them in our JavaScript file. You can also add some CSS to make it look nice, in this example we will use the included Bootstrap CSS.</p>
+<pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-12&quot;&gt;
+        &lt;div class=&quot;card&quot;&gt;
+            &lt;div class=&quot;card-header&quot;&gt;
+                &lt;h3&gt;Chat&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-body&quot;&gt;
+                &lt;!-- Our messages will be shown here --&gt;
+                &lt;ul id=&quot;messagesList&quot;&gt;&lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;card-footer&quot;&gt;
+                &lt;div class=&quot;input-group&quot;&gt;
+                    &lt;!-- We will get our username and message from these fields --&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;userInput&quot; class=&quot;form-control&quot; placeholder=&quot;Username&quot; /&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;messageInput&quot; class=&quot;form-control&quot; placeholder=&quot;Message&quot; /&gt;
+                    &lt;div class=&quot;input-group-append&quot;&gt;
+                        &lt;!-- When this button is clicked, we will send a message to the server --&gt;
+                        &lt;button id=&quot;sendButton&quot; class=&quot;btn btn-primary&quot;&gt;Send&lt;/button&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<br>
+<h3 id="testing">Testing</h3>
+<p>That was it! Now we can run our web app and test it out. You can open the web app in multiple tabs to test it out. You should see something like this:</p>
+<div class="md-container">
+    <img class="md-img" src="../../../resources/images/signalr-messaging-example-result.png">
+</div>
+<br>
+<h2 id="conclusion">Conclusion</h2>
+<p>After following this tutorial you should have a basic understanding of how SignalR works and how you can use it in your own projects. For more info about SignalR, check out the <a href="https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-7.0">official documentation</a> by Microsoft.</p>
+</div>
+
+        <script src="/resources/libs/highlight/highlight.min.js"></script>
+        <script>
+          hljs.highlightAll();
+        </script>
+      </main>
+    </div>
+
+    <footer class="container-fluid w-100 p-0">
+      <div class="w-100 d-flex flex-column">
+        <div class="align-self-center p-3 text-dark text-center special-link-wrapper">
+          <a class="p-2 special-link" href="/blog/markdown/real-time-web-communication-signalr.md" download="">
+            Download this page as Markdown
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script src="/scripts/dist/blog/DarkMode.js" type="module"></script>
+  </body>
+</html>
