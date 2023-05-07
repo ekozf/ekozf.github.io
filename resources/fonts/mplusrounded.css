@@ -1,0 +1,51 @@
+/* See OFL.txt in the same directory for the license */
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-thin-webfont.woff2") format("woff2"), url("mplusrounded1c-thin-webfont.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-light-webfont.woff2") format("woff2"), url("mplusrounded1c-light-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-regular-webfont.woff2") format("woff2"), url("mplusrounded1c-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-medium-webfont.woff2") format("woff2"), url("mplusrounded1c-medium-webfont.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-bold-webfont.woff2") format("woff2"), url("mplusrounded1c-bold-webfont.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-extrabold-webfont.woff2") format("woff2"),
+    url("mplusrounded1c-extrabold-webfont.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "M PLUS Rounded 1c";
+  src: url("mplusrounded1c-black-webfont.woff2") format("woff2"), url("mplusrounded1c-black-webfont.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
