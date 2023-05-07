@@ -10,28 +10,29 @@
     <script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="/resources/libs/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/resources/fonts/mplusrounded.css">
+    <link rel="stylesheet" href="/resources/fonts/mplusrounded.css" />
     <link rel="stylesheet" href="/styles/dist/index.css" />
     <title>Emir Kaan Özver - Portfolio</title>
   </head>
   <body data-bs-theme="dark">
-    <div class="logo-container">
-      <a class="text-light user-select-none text-center p-2" href="/">
-        <img src="/resources/TitleEK.svg" alt="Logo of the website" class="site-logo" />
-      </a>
-    </div>
-    <nav class="navbar align-content-center">
-      <ul class="navbar-nav flex-row justify-content-center w-100 me-5 gap-5">
-        <li class="nav-item active">
-          <a href="/" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="/blog" class="nav-link">Blog</a>
-        </li>
-      </ul>
-    </nav>
+    <div class="landing">
+      <div class="logo-container">
+        <a class="text-light user-select-none text-center p-2" href="/">
+          <img src="/resources/TitleEK.svg" alt="Logo of the website" class="site-logo" />
+        </a>
+      </div>
+      <nav class="navbar align-content-center">
+        <ul class="navbar-nav flex-row justify-content-center w-100 me-5 gap-5">
+          <li class="nav-item active">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/blog" class="nav-link">Blog</a>
+          </li>
+        </ul>
+      </nav>
 
-    <!-- <div class="nav-link form-check">
+      <!-- <div class="nav-link form-check">
       <input class="form-check-input" type="checkbox" value="" id="dark-toggle" />
       <label class="form-check-label" for="dark-toggle">
         <svg
@@ -56,11 +57,53 @@
         </svg>
       </label>
     </div> -->
-    <main>
-      <h1>Emir</h1>
-      <h1>Kaan</h1>
-    </main>
+      <div class="splash">
+        <h1 class="big-title">Emir</h1>
+        <h1 class="big-title">Kaan</h1>
+      </div>
+
+      <div class="scroll-indicator">
+        <a href="#main-content">
+          <img src="/resources/icons/chevron-down.svg" alt="Indicator to scroll downwards" />
+        </a>
+      </div>
+
+      <div class="icon-container">
+        <a href="https://github.com/ekozf/" class="clickable-icon">
+          <img src="/resources/icons/github-mark-white.svg" alt="GitHub Icon" />
+        </a>
+      </div>
+    </div>
+
+    <article id="main-content">
+      <h2 class="text-center big-title">About Me</h2>
+      <section class="card-container">
+        <div class="about-card">
+          <p>
+            I am a 18 year old student at <a href="https://www.pxl.be/">PXL University of Applied Sciences and Arts</a> in
+            Hasselt, Belgium. I am currently studying Computer Science and I am in my first year.
+          </p>
+          <a href="https://www.pxl.be/" class="card-img-wrapper">
+            <img src="/resources/static/pxl_logo.png" alt="School Logo of PXL University of Applied Sciences and Arts" />
+          </a>
+        </div>
+        <div class="about-card">
+          <p>
+            I am also a self-taught programmer and I have been learning programming for years. I am interested in web
+            development, backend development, mobile development, and even some UI/UX.
+          </p>
+        </div>
+        <div class="about-card">
+          <p>
+            My most used and favorite programming languages are C# and TypeScript + JavaScript. I also have experience in
+            working with frontend languages like HTML and (S)CSS.
+          </p>
+        </div>
+      </section>
+    </article>
+
     <!-- <span>Photo by <a href="https://unsplash.com/@dejanzakic?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Dejan Zakic</a> on <a href="https://unsplash.com/photos/eHim1RmbsZk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span> -->
+    <!-- <span>Photo by <a href="https://unsplash.com/@sinabahar76?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sina Bahar</a> on <a href="https://unsplash.com/photos/d_rqLFL4kNQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></span> -->
     <!-- <script src="../scripts/js/DarkMode.js" type="module"></script> -->
   </body>
 </html>
