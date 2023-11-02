@@ -1,86 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Real Time Web Apps in .NET" />
-    <meta property="og:site_name" content="Emir Kaan Blog" />
-    <meta property="og:description" content="Using SignalR to create real time web apps in .NET" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://blog.emirkaan.be/resources/images/signalr-cover.png" />
-    <script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/scripts/dist/blog/MermaidThemeSwitcher.js" type="module" id="light-mermaid" defer></script>
-    <link rel="shortcut icon" href="/resources/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="/resources/libs/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/resources/libs/highlight/styles/atom-one-light.min.css" id="light-code" disabled />
-    <link rel="stylesheet" href="/resources/libs/highlight/styles/atom-one-dark.min.css" id="dark-code" />
-    <link rel="stylesheet" href="/blog/styles/dist/style.css" />
-    <title>Real Time Web Apps in .NET</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid for-mobile">
-          <div class="svg-container">
-            <a class="navbar-brand text-light me-5 pe-2 user-select-none" href="/">
-              <img src="/resources/EKO_Logo.svg" alt="Logo of the website" />
-            </a>
-          </div>
-          <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-            <span class="navbar-toggler-icon text-light"></span>
-          </button>
-          <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end">
-            <ul class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end">
-              <li class="nav-item">
-                <a class="nav-link" href="/blog/">Home</a>
-              </li>
-              <li class="nav-item nav-active">
-                <a class="nav-link" href="/blog/pages/1/">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/">About</a>
-              </li>
-              <li class="nav-item">
-                <div class="nav-link form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="dark-toggle" />
-                  <label class="form-check-label" for="dark-toggle">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      viewBox="0 0 16 16"
-                      id="moon">
-                      <path
-                        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      viewBox="0 0 16 16"
-                      id="sun">
-                      <path
-                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
-                    </svg>
-                  </label>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta property="og:title" content="Real Time Web Apps in .NET" />
+		<meta property="og:site_name" content="Emir Kaan Blog" />
+		<meta property="og:description" content="Using SignalR to create real time web apps in .NET" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:image"
+			content="https://blog.emirkaan.be/resources/images/signalr-cover.png"
+		/>
+		<script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script
+			src="/scripts/dist/blog/MermaidThemeSwitcher.js"
+			type="module"
+			id="light-mermaid"
+			defer
+		></script>
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-light.min.css"
+			id="light-code"
+			disabled
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-dark.min.css"
+			id="dark-code"
+		/>
+		<link rel="stylesheet" href="/blog/styles/dist/style.css" />
+		<title>Real Time Web Apps in .NET</title>
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid for-mobile">
+					<div class="svg-container">
+						<a
+							class="navbar-brand text-light me-5 pe-2 user-select-none"
+							href="/"
+						>
+							<img src="/resources/EKO_Logo.svg" alt="Logo of the website" />
+						</a>
+					</div>
+					<button
+						class="navbar-toggler border-0"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target=".navbar-collapse"
+					>
+						<span class="navbar-toggler-icon text-light"></span>
+					</button>
+					<div
+						class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end"
+					>
+						<ul
+							class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end"
+						>
+							<li class="nav-item">
+								<a class="nav-link" href="/blog/">Home</a>
+							</li>
+							<li class="nav-item nav-active">
+								<a class="nav-link" href="/blog/pages/1/">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/">About</a>
+							</li>
+							<li class="nav-item">
+								<div class="nav-link form-check">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										value=""
+										id="dark-toggle"
+									/>
+									<label class="form-check-label" for="dark-toggle">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="moon"
+										>
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+											/>
+										</svg>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="sun"
+										>
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+											/>
+										</svg>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
 
-    <div class="container-fluid w-100 p-0">
-      <main role="main" class="w-100 d-flex flex-column">
-        <div class="align-self-center p-3 text-dark text-center">
-          <h1 class="display-4 fw-bolder p-3">Real Time Web Apps in .NET</h1>
-        </div>
+		<div class="container-fluid w-100 p-0">
+			<main role="main" class="w-100 d-flex flex-column">
+				<div class="align-self-center p-3 text-center">
+					<h1 class="display-4 fw-bolder p-3">Real Time Web Apps in .NET</h1>
+				</div>
 
-        <div class="mt-5 mb-5 container-fluid for-mobile"><p>There are a few ways to make a web app real time. You could make a button that refreshes the page, or you could use AJAX to update the page. But what if you want to update the page without the user having to do anything? Well, you could automatically make a request to the server every few seconds using something like <code>setInterval</code> in JavaScript, but that's not very efficient and it's not very '<em>real time</em>'.</p>
+				<div class="mt-5 mb-5 container-fluid for-mobile"><p>There are a few ways to make a web app real time. You could make a button that refreshes the page, or you could use AJAX to update the page. But what if you want to update the page without the user having to do anything? Well, you could automatically make a request to the server every few seconds using something like <code>setInterval</code> in JavaScript, but that's not very efficient and it's not very '<em>real time</em>'.</p>
 <p>That's why a lot of people use WebSockets. WebSockets are a new technology that allows you to open a connection between the client and the server and keep it open. This allows the server to send data to the client without the client having to make a request.</p>
 <p>To do this we can use a library called SignalR. SignalR is a library for .NET developers that makes it incredibly simple to add real-time web functionality to your applications. It's the ability to have your server-side code push content to the connected clients as it happens, in real-time. If WebSockets are available, SignalR will use them, otherwise it will fall back to other techniques like long polling or server-sent events.</p>
 <br>
@@ -204,22 +249,28 @@ document.getElementById(&quot;sendButton&quot;).addEventListener(&quot;click&quo
 <p>After following this tutorial you should have a basic understanding of how SignalR works and how you can use it in your own projects. For more info about SignalR, check out the <a href="https://learn.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-7.0">official documentation</a> by Microsoft.</p>
 </div>
 
-        <script src="/resources/libs/highlight/highlight.min.js"></script>
-        <script>
-          hljs.highlightAll();
-        </script>
-      </main>
-    </div>
+				<script src="/resources/libs/highlight/highlight.min.js"></script>
+				<script>
+					hljs.highlightAll();
+				</script>
+			</main>
+		</div>
 
-    <footer class="container-fluid w-100 p-0">
-      <div class="w-100 d-flex flex-column">
-        <div class="align-self-center p-3 text-dark text-center special-link-wrapper">
-          <a class="p-2 special-link" href="/blog/markdown/real-time-web-communication-signalr.md" download="">
-            Download this page as Markdown
-          </a>
-        </div>
-      </div>
-    </footer>
-    <script src="/scripts/dist/blog/DarkMode.js" type="module"></script>
-  </body>
+		<footer class="container-fluid w-100 p-0">
+			<div class="w-100 d-flex flex-column">
+				<div
+					class="align-self-center p-3 text-dark text-center special-link-wrapper"
+				>
+					<a
+						class="p-2 special-link"
+						href="/blog/markdown/real-time-web-communication-signalr.md"
+						download=""
+					>
+						Download this page as Markdown
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script src="/scripts/dist/blog/DarkMode.js" type="module"></script>
+	</body>
 </html>
