@@ -1,0 +1,63 @@
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.input-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.input-form input {
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.input-form section {
+  margin: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-form .form-buttons {
+  text-align: center;
+  margin-top: 5%;
+}
+
+.input-form .form-header {
+  font-size: 2rem;
+}
+
+span {
+  margin-top: 2rem;
+  color: rgba(0, 0, 0, 0.33);
+}
+
+span a {
+  color: rgba(0, 100, 255, 0.33);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+span a:hover {
+  color: rgba(0, 100, 255, 0.66);
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 800px) {
+  .input-form {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .input-form {
+    width: 100%;
+    margin-top: 120px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

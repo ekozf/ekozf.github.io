@@ -1,0 +1,88 @@
+body {
+    background: url("../assets/connect4Phone.png");
+}
+
+header {
+    height: 60px;
+}
+
+main {
+    padding-top: 0;
+    padding-bottom: 3rem;
+}
+
+.group-image {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 5rem;
+}
+
+.members {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.person {
+    transition: 0.5s;
+    height: 320px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    color: black;
+    padding: 1.5rem 0;
+}
+
+.person.card {
+    border: 1px solid lightgray;
+}
+
+.person p {
+    display: none;
+    color: black;
+    margin-top: 80px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+main article img {
+    width: 60%;
+}
+
+main article h1 {
+    font-size: 26px;
+}
+
+.person:hover {
+    transition: 0.5s;
+    background-color: lightgray;
+}
+
+.person:hover h1 {
+    transition: 0.5s;
+    display: none;
+}
+
+.person:hover img {
+    transition: 0.5s;
+    display: none;
+}
+
+.person:hover p {
+    transition: 0.5s;
+    display: block;
+    opacity: 100%;
+}
+
+@media screen and (max-width: 800px) {
+    .input-form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .input-form {
+        width: 100%;
+        margin-top: 120px;
+    }
+}

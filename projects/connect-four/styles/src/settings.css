@@ -1,0 +1,96 @@
+.main-content {
+    width: 75%;
+}
+
+p {
+    display: block;
+}
+
+main article h1 {
+    font-size: 26px;
+}
+
+.color-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 20px;
+}
+
+#playerColorSelect,
+#opponentColorSelect {
+    padding: 8px;
+}
+
+#playerColorSelect[data-chosen="#ff0000"],
+#opponentColorSelect[data-chosen="#ff0000"],
+#playerColorSelect option[value="#ff0000"],
+#opponentColorSelect option[value="#ff0000"] {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+#playerColorSelect[data-chosen="#00ff00"],
+#opponentColorSelect[data-chosen="#00ff00"],
+#playerColorSelect option[value="#00ff00"],
+#opponentColorSelect option[value="#00ff00"] {
+    background-color: #00ff00;
+    color: #000;
+}
+
+#playerColorSelect[data-chosen="#0000ff"],
+#opponentColorSelect[data-chosen="#0000ff"],
+#playerColorSelect option[value="#0000ff"],
+#opponentColorSelect option[value="#0000ff"] {
+    background-color: #0000ff;
+    color: #fff;
+}
+
+#playerColorSelect[data-chosen="#ffff00"],
+#opponentColorSelect[data-chosen="#ffff00"],
+#playerColorSelect option[value="#ffff00"],
+#opponentColorSelect option[value="#ffff00"] {
+    background-color: #ffff00;
+    color: #000;
+}
+
+#playerColorSelect[data-chosen="#ff00ff"],
+#opponentColorSelect[data-chosen="#ff00ff"],
+#playerColorSelect option[value="#ff00ff"],
+#opponentColorSelect option[value="#ff00ff"] {
+    background-color: #ff00ff;
+    color: #000;
+}
+
+#playerColorSelect[data-chosen="#00ffff"],
+#opponentColorSelect[data-chosen="#00ffff"],
+#playerColorSelect option[value="#00ffff"],
+#opponentColorSelect option[value="#00ffff"] {
+    background-color: #00ffff;
+    color: #000;
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 14fr;
+    }
+
+    main {
+        grid-column: 1;
+        grid-row: 2;
+        margin: 1rem;
+    }
+    
+    .input-form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .input-form {
+        width: 100%;
+        margin-top: 120px;
+    }
+}
