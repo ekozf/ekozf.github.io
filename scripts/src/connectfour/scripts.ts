@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
-	checkIfUserIsLoggedIn();
-	checkIfUserIsInGame();
+	CheckIfUserIsLoggedIn();
+	CheckIfUserIsInGame();
 });
 
-function checkIfUserIsLoggedIn() {
+function CheckIfUserIsLoggedIn() {
 	const isLoggedIn = localStorage.getItem("user");
 
 	const loginMobile = document.getElementById(
@@ -22,8 +22,8 @@ function checkIfUserIsLoggedIn() {
 		loginDesktop.textContent = "Logout";
 		loginMobile.textContent = "Logout";
 
-		loginDesktop.addEventListener("click", logout);
-		loginMobile.addEventListener("click", logout);
+		loginDesktop.addEventListener("click", DoUserLogout);
+		loginMobile.addEventListener("click", DoUserLogout);
 
 		loginDesktop.href = "#";
 		loginMobile.href = "#";
@@ -43,7 +43,7 @@ function checkIfUserIsLoggedIn() {
 	}
 }
 
-function checkIfUserIsInGame() {
+function CheckIfUserIsInGame() {
 	const gameId = localStorage.getItem("gameId");
 	const game = document.getElementById("game-link") as HTMLLIElement;
 
@@ -54,7 +54,7 @@ function checkIfUserIsInGame() {
 	}
 }
 
-function logout() {
+function DoUserLogout() {
 	localStorage.removeItem("user");
 	localStorage.removeItem("gameId");
 

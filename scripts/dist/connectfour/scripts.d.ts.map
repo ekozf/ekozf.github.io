@@ -1,1 +1,1 @@
-{"version":3,"file":"scripts.d.ts","sourceRoot":"","sources":["../../src/connectfour/scripts.ts"],"names":[],"mappings":"AAKA,iBAAS,qBAAqB,SAsC7B;AAED,iBAAS,mBAAmB,SAS3B;AAED,iBAAS,MAAM,SAKd"}
+{"version":3,"file":"scripts.d.ts","sourceRoot":"","sources":["../../src/connectfour/scripts.ts"],"names":[],"mappings":"AAKA,iBAAS,qBAAqB,SAsC7B;AAED,iBAAS,mBAAmB,SAS3B;AAED,iBAAS,YAAY,SAKpB"}

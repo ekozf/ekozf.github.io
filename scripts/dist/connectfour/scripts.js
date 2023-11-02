@@ -1,9 +1,9 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
-    checkIfUserIsLoggedIn();
-    checkIfUserIsInGame();
+    CheckIfUserIsLoggedIn();
+    CheckIfUserIsInGame();
 });
-function checkIfUserIsLoggedIn() {
+function CheckIfUserIsLoggedIn() {
     const isLoggedIn = localStorage.getItem("user");
     const loginMobile = document.getElementById("login-mobile");
     const loginDesktop = document.getElementById("login-large");
@@ -13,8 +13,8 @@ function checkIfUserIsLoggedIn() {
     if (isLoggedIn) {
         loginDesktop.textContent = "Logout";
         loginMobile.textContent = "Logout";
-        loginDesktop.addEventListener("click", logout);
-        loginMobile.addEventListener("click", logout);
+        loginDesktop.addEventListener("click", DoUserLogout);
+        loginMobile.addEventListener("click", DoUserLogout);
         loginDesktop.href = "#";
         loginMobile.href = "#";
         const homeButton = document.getElementById("home-link");
@@ -28,7 +28,7 @@ function checkIfUserIsLoggedIn() {
         loginMobile.style.display = "block";
     }
 }
-function checkIfUserIsInGame() {
+function CheckIfUserIsInGame() {
     const gameId = localStorage.getItem("gameId");
     const game = document.getElementById("game-link");
     if (gameId === null) {
@@ -38,7 +38,7 @@ function checkIfUserIsInGame() {
         game.style.display = "block";
     }
 }
-function logout() {
+function DoUserLogout() {
     localStorage.removeItem("user");
     localStorage.removeItem("gameId");
     window.location.href = "/projects/connect-four/pages/";

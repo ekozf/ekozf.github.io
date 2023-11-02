@@ -1,4 +1,4 @@
-declare function checkIfUserIsLoggedIn(): void;
-declare function checkIfUserIsInGame(): void;
-declare function logout(): void;
+declare function CheckIfUserIsLoggedIn(): void;
+declare function CheckIfUserIsInGame(): void;
+declare function DoUserLogout(): void;
 //# sourceMappingURL=scripts.d.ts.map

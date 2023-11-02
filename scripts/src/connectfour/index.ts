@@ -1,5 +1,3 @@
-"use strict";
-
 import { BACKEND_URL } from "./config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -30,12 +28,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	// Add an event listener to the email input
-	checkEmail.addEventListener("keyup", validateEmail);
-	checkPassword.addEventListener("keyup", validatePassword);
+	checkEmail.addEventListener("keyup", ValidateEmail);
+	checkPassword.addEventListener("keyup", ValidatePassword);
 
 	// Add an event listeners to all inputs
-	checkEmail.addEventListener("focusout", checkAllValidation);
-	checkPassword.addEventListener("focusout", checkAllValidation);
+	checkEmail.addEventListener("focusout", CheckAllValidation);
+	checkPassword.addEventListener("focusout", CheckAllValidation);
 
 	// Get the submit button and disable it
 	const submit = document.querySelector("#sendRequest") as HTMLButtonElement;
@@ -47,14 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	submit.disabled = true;
 
-	submit.addEventListener("click", doUserLogin);
+	submit.addEventListener("click", DoUserLogin);
 });
 
 /**
  * Checks if the email is valid
  * @returns {boolean}
  */
-function validateEmail() {
+function ValidateEmail() {
 	const target = document.getElementById("email") as HTMLInputElement;
 
 	if (target.value === "" || !target.value.match(/.+@.+\..+/g)) {
@@ -72,7 +70,7 @@ function validateEmail() {
  * Checks if the first password is valid
  * @returns {boolean}
  */
-function validatePassword() {
+function ValidatePassword() {
 	const submitButton = document.getElementById(
 		"sendRequest"
 	) as HTMLButtonElement;
@@ -99,14 +97,14 @@ function validatePassword() {
 
 	target.setCustomValidity("");
 
-	checkAllValidation();
+	CheckAllValidation();
 }
 
 /**
  * Checks if all inputs are valid
  * @returns {boolean}
  */
-function checkAllValidation() {
+function CheckAllValidation() {
 	const submitButton = document.getElementById(
 		"sendRequest"
 	) as HTMLButtonElement;
@@ -118,7 +116,7 @@ function checkAllValidation() {
 
 	submitButton.disabled = true;
 
-	if (!validateEmail()) {
+	if (!ValidateEmail()) {
 		return false;
 	}
 
@@ -127,9 +125,9 @@ function checkAllValidation() {
 	return true;
 }
 
-async function doUserLogin() {
+async function DoUserLogin() {
 	// Verify all inputs
-	if (!checkAllValidation()) {
+	if (!CheckAllValidation()) {
 		return;
 	}
 
@@ -157,7 +155,7 @@ async function doUserLogin() {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		},
-	}).catch((error) => showError(error));
+	}).catch((error) => ShowError(error));
 
 	// Check if the response is valid
 	if (!response) return;
@@ -168,7 +166,7 @@ async function doUserLogin() {
 		localStorage.setItem("user", JSON.stringify(user));
 		window.location.href = "/projects/connect-four/pages/waitingroom";
 	} else {
-		showError("Invalid email or password");
+		ShowError("Invalid email or password");
 	}
 }
 
@@ -176,7 +174,7 @@ async function doUserLogin() {
  * Show an error message to the user
  * @param {string} message
  */
-function showError(message: string) {
+function ShowError(message: string) {
 	const error = document.getElementById("errorMessage");
 
 	if (error === null) {

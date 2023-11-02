@@ -1,116 +1,96 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     const colorButton = document.getElementById("setupColor");
-    colorButton.addEventListener("click", saveSettings);
-
-    loadFromStorage();
+    colorButton.addEventListener("click", SaveSettings);
+    LoadFromStorage();
 });
-
-async function showHelp() {
+async function ShowHelp() {
     const help = document.getElementById("help");
     if (help.style.visibility === "hidden") {
         help.style.visibility = "visible";
-    } else {
+    }
+    else {
         help.style.visibility = "hidden";
     }
 }
-
-
-function saveAnimationDuration() {
-    const animationDuration =
-        document.getElementById("animationDuration").value;
-
-    if (!animationDuration) {
-        showError("Animation duration can't be empty.");
-        localStorage.setItem("animation-duration", 500);
+function SaveAnimationDuration() {
+    const animationDuration = document.getElementById("animationDuration").value;
+    if (animationDuration === "") {
+        ShowError("Animation duration can't be empty.");
+        localStorage.setItem("animation-duration", String(500));
         return false;
     }
-
-    if (animationDuration < 0) {
-        showError("Animation duration can't be negative.");
-        localStorage.setItem("animation-duration", 0);
+    const duration = Number(animationDuration);
+    if (!duration) {
+        ShowError("Animation duration can't be empty.");
+        localStorage.setItem("animation-duration", String(500));
         return false;
     }
-
-    if (animationDuration > 1000) {
-        showError("Animation duration can't be greater than 1000.");
-        localStorage.setItem("animation-duration", 1000);
+    if (duration < 0) {
+        ShowError("Animation duration can't be negative.");
+        localStorage.setItem("animation-duration", String(0));
         return false;
     }
-
+    if (duration > 1000) {
+        ShowError("Animation duration can't be greater than 1000.");
+        localStorage.setItem("animation-duration", String(1000));
+        return false;
+    }
     localStorage.setItem("animation-duration", animationDuration);
-
     return true;
 }
-
-function saveColors() {
+function SaveColors() {
     const playerColor = document.getElementById("playerColorSelect").value;
     const opponentColor = document.getElementById("opponentColorSelect").value;
-
     if (playerColor == opponentColor) {
-        showError("Player and opponent color can't be the same.");
+        ShowError("Player and opponent color can't be the same.");
         return false;
     }
-
     localStorage.setItem("player1-color", playerColor);
     localStorage.setItem("player2-color", opponentColor);
-
     return true;
 }
-
-function saveUrls(){
-    const backendUrl = document.getElementById("backendUrl").value;
-
+function SaveUrls() {
+    const backendUrl = document.getElementById("backendUrl")
+        .value;
     localStorage.setItem("backendUrl", backendUrl);
-
     return true;
 }
-
-function loadFromStorage() {
+function LoadFromStorage() {
     const playerColor = localStorage.getItem("player1-color");
     const opponentColor = localStorage.getItem("player2-color");
-
-    document.getElementById("playerColorSelect").value = playerColor;
-    document.getElementById("opponentColorSelect").value = opponentColor;
-
-    document.getElementById("playerColorSelect").onchange();
-    document.getElementById("opponentColorSelect").onchange();
-
+    document.getElementById("playerColorSelect").value =
+        playerColor;
+    document.getElementById("opponentColorSelect").value =
+        opponentColor;
     const animationDuration = localStorage.getItem("animation-duration");
-
     if (animationDuration) {
         document.getElementById("animationDuration").value =
-            Number(animationDuration);
+            animationDuration;
     }
-
-    const backendUrl = localStorage.getItem("backendUrl")
-    document.getElementById("backendUrl").value = backendUrl;
-
-    }
-
-function showError(msg) {
+    const backendUrl = localStorage.getItem("backendUrl");
+    document.getElementById("backendUrl").value =
+        backendUrl;
+}
+function ShowError(msg) {
     const errorMessageBox = document.getElementById("errorMessage");
     const successMessageBox = document.getElementById("successMessage");
-
     successMessageBox.classList.add("d-none");
     errorMessageBox.classList.remove("d-none");
     errorMessageBox.innerText = msg;
 }
-
-function hideError() {
+function HideError() {
     const errorMessageBox = document.getElementById("errorMessage");
     errorMessageBox.classList.add("d-none");
-
     const successMessageBox = document.getElementById("successMessage");
     successMessageBox.classList.remove("d-none");
 }
-
-
-function saveSettings() {
-    const savedColors = saveColors();
-    const savedDuration = saveAnimationDuration();
-    const saveBackendUrl = saveUrls();
-
+function SaveSettings() {
+    const savedColors = SaveColors();
+    const savedDuration = SaveAnimationDuration();
+    SaveUrls();
     if (savedColors && savedDuration) {
-        hideError();
+        HideError();
     }
 }
+//# sourceMappingURL=settings.js.map

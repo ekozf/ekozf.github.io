@@ -1,4 +1,3 @@
-"use strict";
 import { BACKEND_URL } from "./config.js";
 document.addEventListener("DOMContentLoaded", () => {
     const checkEmail = document.getElementById("email");
@@ -19,19 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Password input not found");
         return;
     }
-    checkEmail.addEventListener("keyup", validateEmail);
-    checkPassword.addEventListener("keyup", validatePassword);
-    checkEmail.addEventListener("focusout", checkAllValidation);
-    checkPassword.addEventListener("focusout", checkAllValidation);
+    checkEmail.addEventListener("keyup", ValidateEmail);
+    checkPassword.addEventListener("keyup", ValidatePassword);
+    checkEmail.addEventListener("focusout", CheckAllValidation);
+    checkPassword.addEventListener("focusout", CheckAllValidation);
     const submit = document.querySelector("#sendRequest");
     if (submit === null) {
         console.error("Submit button not found");
         return;
     }
     submit.disabled = true;
-    submit.addEventListener("click", doUserLogin);
+    submit.addEventListener("click", DoUserLogin);
 });
-function validateEmail() {
+function ValidateEmail() {
     const target = document.getElementById("email");
     if (target.value === "" || !target.value.match(/.+@.+\..+/g)) {
         target.setCustomValidity("Email is invalid!");
@@ -41,7 +40,7 @@ function validateEmail() {
     target.setCustomValidity("");
     return true;
 }
-function validatePassword() {
+function ValidatePassword() {
     const submitButton = document.getElementById("sendRequest");
     if (submitButton === null) {
         console.error("Submit button not found");
@@ -59,23 +58,23 @@ function validatePassword() {
         return false;
     }
     target.setCustomValidity("");
-    checkAllValidation();
+    CheckAllValidation();
 }
-function checkAllValidation() {
+function CheckAllValidation() {
     const submitButton = document.getElementById("sendRequest");
     if (submitButton === null) {
         console.error("Submit button not found");
         return false;
     }
     submitButton.disabled = true;
-    if (!validateEmail()) {
+    if (!ValidateEmail()) {
         return false;
     }
     submitButton.disabled = false;
     return true;
 }
-async function doUserLogin() {
-    if (!checkAllValidation()) {
+async function DoUserLogin() {
+    if (!CheckAllValidation()) {
         return;
     }
     const url = BACKEND_URL + "Authentication/token";
@@ -97,7 +96,7 @@ async function doUserLogin() {
             Accept: "application/json",
             "Content-Type": "application/json",
         },
-    }).catch((error) => showError(error));
+    }).catch((error) => ShowError(error));
     if (!response)
         return;
     if (response.ok) {
@@ -106,10 +105,10 @@ async function doUserLogin() {
         window.location.href = "/projects/connect-four/pages/waitingroom";
     }
     else {
-        showError("Invalid email or password");
+        ShowError("Invalid email or password");
     }
 }
-function showError(message) {
+function ShowError(message) {
     const error = document.getElementById("errorMessage");
     if (error === null) {
         console.error("Error message not found");

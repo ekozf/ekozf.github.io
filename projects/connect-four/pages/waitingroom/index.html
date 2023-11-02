@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="h-100">
 	<head lang="en">
-		<title>Connect 4 - DOCTYPE html> | EKO</title>
+		<title>Connect 4 - 1>Change your Game settings</h1> | EKO</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -129,217 +129,125 @@
 				</div>
 			</div>
 		</nav>
-		<main class="d-flex h-75 w-100 justify-content-center align-items-center">
+		<main
+			class="d-flex h-100w-100 justify-content-center align-items-center pb-5"
+		>
 			
-<html
-    lang="en"
-    xmlns="http://www.w3.org/1999/html"
-    xmlns="http://www.w3.org/1999/html"
->
-    <head>
-        <title>Waitingroom</title>
-        <meta charset="utf-8" />
-        <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon" />
-        <link rel="icon" href="assets/Logo.png" type="image/x-icon" />
-        <link rel="stylesheet" href="style/style.css" />
-        <link rel="stylesheet" href="style/waitingroom.css" />
-        <link rel="stylesheet" href="style/chat.css" />
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"
-            integrity="sha512-k8WL9L2jG8KyG3pCJA4mHMdg2YSoWrdB5QNqLIhROv69udwp87WvbqzbsiAL65wy7T9jHU7rAoePr1ToPBc0Lw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script type="module" src="./js/help.js" defer></script>
-        <script type="module" src="./js/waitingroom.js" defer></script>
-        <script type="module" src="./js/scripts.js" defer></script>
-        <script
-            src="https://kit.fontawesome.com/c2e4631732.js"
-            crossorigin="anonymous"
-        ></script>
-    </head>
-    <body>
-        <button class="" id="headerButton">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <header id="header">
-            <a href="index.html" id="logoLink">
-                <img
-                    id="rotate-on-join"
-                    class="rotate-element-hover"
-                    src="assets/Logo.png"
-                    alt="logo"
-                />
-            </a>
-            <nav id="responsive-nav">
-                <a class="d-none" id="login" href="index.html">Login</a>
-                <a class="d-none" id="logout" href="index.html">Logout</a>
-                <a href="register.html">Register</a>
-                <a href="waitingroom.html">Waitingroom</a>
-                <a href="team.html">Team</a>
-                <a class="d-none" id="game" href="game.html">Game</a>
-                <a href="leaderboard.html">Leaderboard</a>
-                <a href="settings.html">Settings</a>
-            </nav>
-        </header>
-        <main class="d-flex flex-column">
-            <div class="w12 card text-center">
-                <h1>Change your Game settings</h1>
-            </div>
-            <div class="w12 card text-center">
-                <h1>Field Size:</h1>
-                <section class="w12 form-buttons">
-                    <div
-                        class="d-flex justify-content-center align-content-center text-center pb-3"
-                    >
-                        <input
-                            class="w2 btn border-1"
-                            id="gameRowCount"
-                            type="number"
-                            min="4"
-                            max="8"
-                            value="6"
-                        />
-                        <div class="d-flex align-content-center w1">
-                            <span
-                                class="d-flex justify-content-center align-items-center bold big-font"
-                            >
-                                X
-                            </span>
-                        </div>
-                        <input
-                            class="w2 btn border-1"
-                            id="gameColumnCount"
-                            type="number"
-                            min="4"
-                            max="8"
-                            value="7"
-                        />
-                    </div>
-                </section>
-            </div>
-            <div class="w12 card text-center">
-                <h1>Winning Connection Size</h1>
-                <section class="w12 form-buttons">
-                    <div
-                        class="d-flex justify-content-center align-content-center text-center pb-3"
-                    >
-                        <select
-                            class="w2 btn border-1"
-                            id="gameConnectionSize"
-                            autocomplete="off"
-                        >
-                            <option value="3">3</option>
-                            <option value="4" selected>4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                </section>
-            </div>
-            <div class="w12 card text-center" id="joinQueue">
-                <h1>Join Waiting Pool</h1>
-                <section class="w12 form-buttons">
-                    <div
-                        class="d-flex justify-content-center align-items-center flex-column"
-                    >
-                        <span class="d-none error-message" id="errorMessage">
-                            Something went wrong :(
-                        </span>
-                        <button class="btn btn-primary w4" id="joinRoom">
-                            Join Match Queue
-                        </button>
-                    </div>
-                </section>
-            </div>
-            <div class="w12 card text-center d-none" id="matchmaking">
-                <h1>Matchmaking</h1>
-                <section class="w12 pb-3">
-                    <span id="waiting-status">Searching for opponent...</span>
-                </section>
-                <section class="w12 form-buttons mt-4">
-                    <div
-                        class="d-flex justify-content-center align-items-center flex-column"
-                    >
-                        <button class="btn btn-danger w4" id="cancelMatch">
-                            Cancel Matchmaking
-                        </button>
-                        <audio
-                            id="audioPlayer"
-                            class="d-none"
-                            src="assets/waitingmusic.mp3"
-                        ></audio>
-                    </div>
-                </section>
-            </div>
+<div class="w12 card text-center">
+	<h1>Field Size:</h1>
+	<section class="w12 form-buttons">
+		<div
+			class="d-flex justify-content-center align-content-center text-center pb-3"
+		>
+			<input
+				class="w2 btn border-1"
+				id="gameRowCount"
+				type="number"
+				min="4"
+				max="8"
+				value="6"
+			/>
+			<div class="d-flex align-content-center w1">
+				<span
+					class="d-flex justify-content-center align-items-center bold big-font"
+				>
+					X
+				</span>
+			</div>
+			<input
+				class="w2 btn border-1"
+				id="gameColumnCount"
+				type="number"
+				min="4"
+				max="8"
+				value="7"
+			/>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center">
+	<h1>Winning Connection Size</h1>
+	<section class="w12 form-buttons">
+		<div
+			class="d-flex justify-content-center align-content-center text-center pb-3"
+		>
+			<select
+				class="w2 btn border-1"
+				id="gameConnectionSize"
+				autocomplete="off"
+			>
+				<option value="3">3</option>
+				<option value="4" selected>4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center" id="joinQueue">
+	<h1>Join Waiting Pool</h1>
+	<section class="w12 form-buttons">
+		<div class="d-flex justify-content-center align-items-center flex-column">
+			<span class="d-none error-message" id="errorMessage">
+				Something went wrong :(
+			</span>
+			<button class="btn btn-primary w4" id="joinRoom">Join Match Queue</button>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center d-none" id="matchmaking">
+	<h1>Matchmaking</h1>
+	<section class="w12 pb-3">
+		<span id="waiting-status">Searching for opponent...</span>
+	</section>
+	<section class="w12 form-buttons mt-4">
+		<div class="d-flex justify-content-center align-items-center flex-column">
+			<button class="btn btn-danger w4" id="cancelMatch">
+				Cancel Matchmaking
+			</button>
+			<audio
+				id="audioPlayer"
+				class="d-none"
+				src="assets/waitingmusic.mp3"
+			></audio>
+		</div>
+	</section>
+</div>
 
-            <!-- <aside class="rules" id="help">
-                <h1>How to play</h1>
-                <p>
-                    - The goal is to get <b>the chosen amount</b> of discs of
-                    your color in a row and prevent your opponent from doing so
-                </p>
-                <p>
-                    - A winning row can be <b>vertical</b>, <b>horizontal</b> or
-                    <b>diagonal</b>
-                </p>
-                <p>
-                    - By <b>hovering</b> over a vertical column it will
-                    highlight, if you press <b>left click</b> a disc of your
-                    color will be placed at the lowest possible spot in that
-                    column
-                </p>
-                <p>
-                    - The players will place discs <b>in turns</b>
-                </p>
-                <p>
-                    - You can only place a disc when it is your turn (this is
-                    indicated on the left)
-                </p>
-            </aside>
-            <button id="helpButton">
-                <img alt="help" src="assets/helpButton.png" />
-            </button> -->
-        </main>
+<aside class="connected-users">
+	<div class="card">
+		<div class="selectors">
+			<button class="btn btn-primary" id="view-users">
+				<i class="fa-solid fa-list"></i>
+			</button>
+			<button class="btn btn-primary active" id="view-chat">
+				<i class="fa-regular fa-comments"></i>
+			</button>
+		</div>
+		<hr />
+		<div id="chat-screen">
+			<h1>Waiting Room Chat</h1>
+			<div class="chat-container">
+				<ul id="chat"></ul>
+			</div>
+			<div class="chat-controls">
+				<input
+					id="chat-input"
+					type="text"
+					class="chat-input"
+					placeholder="Send a message."
+				/>
+				<button class="btn btn-success" id="send-chat">&rarr;</button>
+			</div>
+		</div>
 
-        <aside class="connected-users">
-            <div class="card">
-                <div class="selectors">
-                    <button class="btn btn-primary" id="view-users">
-                        <i class="fa-solid fa-list"></i>
-                    </button>
-                    <button class="btn btn-primary active" id="view-chat">
-                        <i class="fa-regular fa-comments"></i>
-                    </button>
-                </div>
-                <hr />
-                <div id="chat-screen">
-                    <h1>Waiting Room Chat</h1>
-                    <div class="chat-container">
-                        <ul id="chat"></ul>
-                    </div>
-                    <div class="chat-controls">
-                        <input
-                            id="chat-input"
-                            type="text"
-                            class="chat-input"
-                            placeholder="Send a message."
-                        />
-                        <button class="btn btn-success" id="send-chat">
-                            &rarr;
-                        </button>
-                    </div>
-                </div>
-
-                <div id="user-screen" class="d-none">
-                    <h1>Connected Users</h1>
-                    <div class="user-container">
-                        <ul id="users"></ul>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </body>
-</html>
+		<div id="user-screen" class="d-none">
+			<h1>Connected Users</h1>
+			<div class="user-container">
+				<ul id="users"></ul>
+			</div>
+		</div>
+	</div>
+</aside>
 
 		</main>
 	</body>

@@ -1,89 +1,60 @@
-body {
-  background: url("../assets/connect4Phone.png");
+.members-container {
+  display: grid;
+  /** 4x1 grid on desktop **/
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 2rem;
 }
 
-header {
-  height: 60px;
+/* 2x2 grid on smaller screen */
+@media screen and (max-width: 1400px) {
+  .members-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
 }
-
-main {
-  padding-top: 0;
-  padding-bottom: 3rem;
+/* 1x4 grid on mobile */
+@media screen and (max-width: 768px) {
+  .members-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
 }
-
-.group-image {
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 5rem;
-}
-
-.members {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2rem;
-}
-
 .person {
-  transition: 0.5s;
-  height: 320px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  color: black;
-  padding: 1.5rem 0;
+  background-size: contain;
+  aspect-ratio: 899/1200;
 }
 
-.person.card {
-  border: 1px solid lightgray;
+.dries-image {
+  background-image: url("/projects/connect-four/assets/Dries-min.jpg");
 }
 
-.person p {
-  display: none;
-  color: black;
-  margin-top: 80px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.luwis-image {
+  background-image: url("/projects/connect-four/assets/Luwis-min.jpg");
 }
 
-main article img {
-  width: 60%;
+.emir-image {
+  background-image: url("/projects/connect-four/assets/Emir-min.jpg");
 }
 
-main article h1 {
-  font-size: 26px;
+.rob-image {
+  background-image: url("/projects/connect-four/assets/Rob-min.jpg");
 }
 
-.person:hover {
-  transition: 0.5s;
-  background-color: lightgray;
+.info-container {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.person:hover h1 {
-  transition: 0.5s;
-  display: none;
-}
-
-.person:hover img {
-  transition: 0.5s;
-  display: none;
-}
-
-.person:hover p {
-  transition: 0.5s;
-  display: block;
-  opacity: 100%;
-}
-
-@media screen and (max-width: 800px) {
-  .input-form {
-    width: 80%;
-  }
-}
-@media screen and (max-width: 650px) {
-  .input-form {
-    width: 100%;
-    margin-top: 120px;
-  }
+.person:hover .info-container {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=teamstyle.css.map */

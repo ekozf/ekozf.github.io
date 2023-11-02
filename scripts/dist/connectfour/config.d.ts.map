@@ -1,1 +1,1 @@
-{"version":3,"file":"config.d.ts","sourceRoot":"","sources":["../../src/connectfour/config.ts"],"names":[],"mappings":"AACA,eAAO,MAAM,UAAU,yCAAyC,CAAC;AAIjE,eAAO,MAAM,WAAW,6CAA6C,CAAC"}
+{"version":3,"file":"config.d.ts","sourceRoot":"","sources":["../../src/connectfour/config.ts"],"names":[],"mappings":"AACA,eAAO,MAAM,UAAU,yCAAyC,CAAC;AAMjE,QAAA,IAAI,UAAU,QAAc,CAAC;AAgB7B,OAAO,EAAE,UAAU,IAAI,WAAW,EAAE,CAAC"}
