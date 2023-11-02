@@ -19,11 +19,110 @@
 		/>
 		<link rel="stylesheet" href="/resources/fonts/mplusrounded.css" />
 		<link rel="stylesheet" href="/styles/dist/index.css" />
+		<script src="/scripts/dist/portfolio/ageCalculator.js" defer></script>
 		<title>Emir Kaan Özver - Portfolio</title>
 	</head>
-	<body data-bs-theme="dark">
-		<header>test</header>
-		<main>test</main>
-		<footer>test</footer>
+	<body data-bs-theme="dark" class="vh-100">
+		<!-- Background effect container -->
+		<div class="background">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- Main Content -->
+		<main class="h-100 ms-5 pt-5">
+			<header class="mb-4">
+				<h1 class="headline">
+					<span class="text-muted">Hello, I'm</span>
+					<br />
+					<span class="my-name"> Emir Kaan Özver </span>
+				</h1>
+			</header>
+			<p class="ms-5 mt-3 text-muted tall-lines">
+				Hello, I'm Emir Kaan Özver. I'm a Computer Science student at
+				<a href="https://www.pxl.be/" class="special-link">PXL</a>. I'm
+				currently <span id="age-container"></span> years old, and I'm interested
+				in web development, backend development, gaming, and music. I'm
+				currently working on a few projects, which you can find on the cards on
+				this page. I'm also working on a blog, which you can find
+				<a href="/blog/" class="special-link">here</a>. You can view some of my
+				projects via the GitHub link below, or connect with me via LinkedIn
+				using the link below!
+			</p>
+
+			<nav class="d-flex flex-column align-items-center mb-3">
+				<span class="fs-5">Quick Navigation:</span>
+				<ul class="quick-navigation links mt-3">
+					<li>
+						<a href="/blog/" class="special-link">My Blog</a>
+					</li>
+					<li class="ms-2">
+						<a href="#projects" class="special-link">Projects</a>
+					</li>
+					<li>
+						<a href="#contact" class="special-link">Contact</a>
+					</li>
+				</ul>
+			</nav>
+
+			<footer
+				class="d-flex flex-row align-content-start justify-content-around w-75 ms-5"
+			>
+				<a href="https://github.com/ekozf" class="offsite-link me-5">
+					<img
+						src="/resources/icons/github-mark-white.svg"
+						alt="github profile ekozf"
+						class="offsite-icon me-2"
+					/>
+					<span class="align-middle">GitHub</span>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/emir-kaan-ozver-a3ba09230/"
+					class="offsite-link"
+				>
+					<img
+						src="/resources/icons/linkedin-white.svg"
+						alt="github profile ekozf"
+						class="offsite-icon me-2"
+					/>
+					<span class="align-middle">LinkedIn</span>
+				</a>
+			</footer>
+		</main>
+		<aside class="p-5">
+			<article>
+				<section
+					class="rounded-4 shadow p-5 d-flex justify-content-center align-items-end"
+				>
+					<h3 class="mb-5">Let's Explore!</h3>
+				</section>
+				<section class="rounded-4 shadow p-5">1</section>
+				<section class="rounded-4 shadow p-5">2</section>
+				<section class="rounded-4 shadow p-5">3</section>
+			</article>
+			<article>
+				<section class="rounded-4 shadow p-5">4</section>
+				<section class="rounded-4 shadow p-5">5</section>
+				<section class="rounded-4 shadow p-5">6</section>
+				<section class="rounded-4 shadow p-5">7</section>
+			</article>
+		</aside>
 	</body>
 </html>
