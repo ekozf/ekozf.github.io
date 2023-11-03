@@ -1,0 +1,21 @@
+@import "_background.scss";
+@import "_utility.scss";
+
+article {
+	width: 60ch;
+	background-color: rgb(43, 48, 53, 0.333);
+	border: 3px solid rgb(50, 55, 60, 0.75);
+	transition: 0.5s;
+
+	&:hover {
+		opacity: 0.75;
+		filter: brightness(1.5);
+		transition: 0.5s;
+	}
+}
+
+@media only screen and (min-width: 1744px) {
+	.h-100 {
+		height: fit-content !important;
+	}
+}
