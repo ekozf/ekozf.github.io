@@ -28,7 +28,7 @@
 			type="module"
 			defer
 		></script>
-		@#SCRIPTS#@
+		@#IMPORTS#@
 	</head>
 	<body data-bs-theme="dark" class="h-100">
 		<!-- Navbar -->
@@ -71,7 +71,7 @@
 						<li class="nav-item">
 							<a
 								id="home-link"
-								class="nav-link active"
+								class="nav-link @#ACTIVE-LOGIN#@"
 								aria-current="page"
 								href="/projects/connect-four/pages/"
 							>
@@ -80,34 +80,46 @@
 						</li>
 						<li class="nav-item">
 							<a
-								class="nav-link"
+								class="nav-link @#ACTIVE-MATCHMAKING#@"
 								href="/projects/connect-four/pages/waitingroom/"
 							>
 								Waitingroom
 							</a>
 						</li>
 						<li class="nav-item" id="game-link">
-							<a class="nav-link" href="/projects/connect-four/pages/game/">
+							<a
+								class="nav-link @#ACTIVE-GAME#@"
+								href="/projects/connect-four/pages/game/"
+							>
 								Game
 							</a>
 						</li>
 						<li class="nav-item">
 							<a
-								class="nav-link"
+								class="nav-link @#ACTIVE-LEADERBOARD#@"
 								href="/projects/connect-four/pages/leaderboard/"
 							>
 								Leaderboard
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/projects/connect-four/pages/team/">
+							<a
+								class="nav-link @#ACTIVE-TEAM#@"
+								href="/projects/connect-four/pages/team/"
+							>
 								Team
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="/projects/connect-four/pages/settings/">
+							<a
+								class="nav-link @#ACTIVE-SETTINGS#@"
+								href="/projects/connect-four/pages/settings/"
+							>
 								Settings
 							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/"> Main Site </a>
 						</li>
 						<li class="nav-item d-lg-none">
 							<a
