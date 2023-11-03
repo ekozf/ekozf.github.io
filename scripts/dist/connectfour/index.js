@@ -1,4 +1,5 @@
 import { BACKEND_URL } from "./config.js";
+import CreateToastMsg from "./toastHandler.js";
 document.addEventListener("DOMContentLoaded", () => {
     const checkEmail = document.getElementById("email");
     if (checkEmail === null) {
@@ -96,7 +97,7 @@ async function DoUserLogin() {
             Accept: "application/json",
             "Content-Type": "application/json",
         },
-    }).catch((error) => ShowError(error));
+    }).catch((error) => CreateToastMsg(error));
     if (!response)
         return;
     if (response.ok) {
@@ -105,17 +106,7 @@ async function DoUserLogin() {
         window.location.href = "/projects/connect-four/pages/waitingroom";
     }
     else {
-        ShowError("Invalid email or password");
+        CreateToastMsg("Invalid email or password");
     }
-}
-function ShowError(message) {
-    const error = document.getElementById("errorMessage");
-    if (error === null) {
-        console.error("Error message not found");
-        return;
-    }
-    error.classList.remove("d-none");
-    error.innerHTML = message;
-    console.error(message);
 }
 //# sourceMappingURL=index.js.map

@@ -1,0 +1,122 @@
+.error-message {
+	color: red;
+	margin: 0.75rem 1.5rem;
+}
+
+.succes-message {
+	color: green;
+	margin: 1.5rem;
+}
+
+.rules {
+	visibility: hidden;
+	position: absolute;
+	right: 1rem;
+	top: 4rem;
+	padding: 2rem;
+	background-color: #ffffff99;
+	border-radius: 4px;
+	width: 300px;
+}
+
+#helpButton {
+	position: absolute;
+	right: 1rem;
+	top: 4rem;
+	padding: 0;
+}
+
+#injected-gameHelpBtn {
+	position: fixed;
+	bottom: 2.5rem;
+	right: 2.5rem;
+	width: 4rem;
+	height: 4rem;
+	padding: 1rem;
+	font-size: 1.25rem;
+	border-radius: 50%;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: slowlyScaleUpAndDown 2s infinite;
+}
+
+#injected-gameHelpDialog {
+	border: none;
+	border-radius: 1rem;
+	padding: 2.5rem;
+}
+
+#injected-gameHelpDialog li {
+	margin: 2rem 0rem;
+}
+
+#injected-gameHelpDialog button {
+	margin: auto;
+}
+
+@keyframes slowlyScaleUpAndDown {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+.chat-icons {
+	width: 2rem;
+}
+
+.matchmaking-container {
+	flex-direction: row;
+	justify-content: space-around;
+
+	aside {
+		width: 30vw;
+
+		div {
+			justify-content: center;
+			gap: 2.5rem;
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+
+	#waitingRoom {
+		width: 50%;
+	}
+}
+
+.question-icon {
+	width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+	.matchmaking-container {
+		flex-direction: column;
+		justify-content: center;
+		padding: 0 2rem;
+
+		aside {
+			width: 100%;
+			padding: 1rem;
+		}
+
+		#waitingRoom {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.hide-on-small-screen {
+		display: none;
+	}
+}

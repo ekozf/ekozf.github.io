@@ -1,13 +1,9 @@
-.selectors {
-  display: flex;
-  padding: 0.5rem;
-  justify-content: space-around;
-}
-
 .chat-container {
-  border: 3px solid black;
-  border-radius: 1rem;
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
   height: 425px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 #user-screen ul,
@@ -21,22 +17,20 @@
   margin: 0;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  max-width: 40ch;
 }
 
 .chat-container ul li {
   margin: 0.75rem 0;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
 }
 
 #user-screen button,
 .chat-container ul li button {
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
-  color: #256ab4;
+  color: hsl(211, 66%, 65%);
   transition: 0.5s;
   background-color: transparent;
   border: none;
@@ -51,8 +45,7 @@
 
 .chat-container ul li span {
   font-weight: 400;
-  padding-left: 0.33rem;
-  border-left: 2px solid rgba(0, 0, 0, 0.5);
+  padding: 1rem;
 }
 
 .chat-input {
@@ -66,15 +59,21 @@
   margin: 1rem 0;
   display: flex;
   gap: 1rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.user-container button {
+  padding: 1rem;
 }
 
 .chat-controls .btn {
-  height: 100%;
-  font-size: 1.33rem;
+  font-size: 1.5rem;
+  vertical-align: middle;
 }
 
-.selectors a {
-  font-size: 1.25rem;
+.user-container li {
+  margin-top: 1rem;
 }
 
 #view-users.active,
@@ -84,7 +83,7 @@
 
 #user-screen button.current-user,
 #chat-screen button.current-user {
-  color: #dc3545;
+  color: hsl(354, 75%, 60%);
   font-weight: 700;
   cursor: not-allowed;
 }

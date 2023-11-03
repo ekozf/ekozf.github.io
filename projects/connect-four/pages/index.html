@@ -15,6 +15,10 @@
 			rel="stylesheet"
 			href="/resources/libs/bootstrap/css/bootstrap.min.css"
 		/>
+		<link
+			rel="stylesheet"
+			href="/projects/connect-four/styles/dist/style.css"
+		/>
 		<script
 			type="module"
 			src="/resources/libs/bootstrap/js/bootstrap.min.js"
@@ -27,6 +31,7 @@
 		
 <script type="module" src="/scripts/dist/connectfour/index.js" defer></script>
 <script type="module" src="/scripts/dist/connectfour/scripts.js" defer></script>
+<script type="module" src="/scripts/dist/connectfour/errorHandler.js"></script>
 
 	</head>
 	<body data-bs-theme="dark" class="h-100">
@@ -120,7 +125,7 @@
 					</ul>
 					<!-- Navbar Buttons -->
 
-					<div class="me-lg-5 d-lg-inline-block d-md-none">
+					<div class="me-lg-5 d-lg-inline-block hide-on-small-screen">
 						<a
 							class="nav-link me-lg-5"
 							href="/projects/connect-four/pages/"
@@ -132,9 +137,7 @@
 				</div>
 			</div>
 		</nav>
-		<main
-			class="d-flex h-100w-100 justify-content-center align-items-center pb-5"
-		>
+		<main class="d-flex w-100 justify-content-center align-items-center pb-5">
 			
 
 <article class="bg-body-secondary rounded-4 p-5 shadow-lg mt-5">
@@ -163,7 +166,6 @@
 	</section>
 
 	<section class="mt-5 d-flex flex-column mx-5 px-5">
-		<span class="d-none error-message" id="errorMessage"></span>
 		<button class="btn btn-primary shadow" id="sendRequest" disabled="">
 			Login
 		</button>

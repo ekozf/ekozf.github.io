@@ -1,0 +1,1 @@
+{"version":3,"file":"game.animations.d.ts","sourceRoot":"","sources":["../../../src/connectfour/game/game.animations.ts"],"names":[],"mappings":"AASA,iBAAS,oBAAoB,CAAC,IAAI,EAAE,SAAS,EAAE,QAAQ,EAAE,SAAS,YAkBjE;AASD,iBAAS,aAAa,CACrB,OAAO,EAAE,MAAM,EAAE,EACjB,IAAI,EAAE,SAAS,EACf,aAAa,EAAE,SAAS,EAAE,QAmD1B;AAED,OAAO,EAAE,aAAa,EAAE,oBAAoB,EAAE,CAAC"}

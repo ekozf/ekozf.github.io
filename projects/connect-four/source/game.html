@@ -1,144 +1,86 @@
-<!DOCTYPE html>
-<html>
-    <head lang="en">
-        <title>Connect 4 | Game</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon" />
-        <link rel="icon" href="assets/Logo.png" type="image/x-icon" />
-        <link rel="stylesheet" href="style/style.css" />
-        <link rel="stylesheet" href="style/game.css" />
-        <link rel="stylesheet" href="style/chat.css" />
-        <script type="module" src="./js/help.js" defer></script>
-        <script
-            src="https://kit.fontawesome.com/c2e4631732.js"
-            crossorigin="anonymous"
-        ></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"
-            integrity="sha512-k8WL9L2jG8KyG3pCJA4mHMdg2YSoWrdB5QNqLIhROv69udwp87WvbqzbsiAL65wy7T9jHU7rAoePr1ToPBc0Lw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        ></script>
-        <script type="module" src="./js/game.js" defer></script>
-        <script type="module" src="./js/scripts.js" defer></script>
-    </head>
-    <body>
-        <button class="" id="headerButton">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <header id="header">
-            <a href="index.html">
-                <img
-                    class="rotate-element-hover"
-                    src="assets/Logo.png"
-                    alt="logo"
-                />
-            </a>
-            <nav id="responsive-nav">
-                <a class="d-none" id="login" href="index.html">Login</a>
-                <a class="d-none" id="logout" href="index.html">Logout</a>
-                <a href="register.html">Register</a>
-                <a href="waitingroom.html">Waitingroom</a>
-                <a class="d-none" id="game" href="game.html">Game</a>
-                <a href="team.html">Team</a>
-                <a href="leaderboard.html">Leaderboard</a>
-                <a href="settings.html">Settings</a>
-            </nav>
-        </header>
-        <div id="discAnimation"></div>
-        <main>
-            <dialog class="game-win-modal" id="gameDialog">
-                <form
-                    method="dialog"
-                    onsubmit="window.location.href='waitingroom.html'"
-                >
-                    <h1 id="gameResult" class="result"></h1>
-                    <button type="submit" class="btn btn-primary">
-                        Back to Waiting Room
-                    </button>
-                </form>
-            </dialog>
-            <h2 id="gameHeader" class="result d-none"></h2>
-            <article class="input-form card board">
-                <output id="grid_output"></output>
-            </article>
-            <span
-                class="error-message text-center card w2 d-none"
-                id="errorMessage"
-            >
-                Something went wrong :(
-            </span>
-        </main>
-        <aside class="game-info">
-            <div class="card">
-                <h1>Information</h1>
-                <dl>
-                    <dt id="player-1">Welcome</dt>
-                    <dt>Your Color</dt>
-                    <dd>
-                        <span id="player-color" class="badge"></span>
-                    </dd>
-                    <dt>Player Turn</dt>
-                    <dd>
-                        <span
-                            id="player-turn"
-                            class="badge player1-color"
-                        ></span>
-                    </dd>
-                </dl>
-            </div>
-        </aside>
-        <!-- <aside class="rules" id="help">
-            <h1>How to play</h1>
-            <p>
-                - The goal is to get <b>the chosen amount</b> of discs of
-                your color in a row and prevent your opponent from doing so
-            </p>
-            <p>
-                - A winning row can be <b>vertical</b>, <b>horizontal</b> or
-                <b>diagonal</b>
-            </p>
-            <p>
-                - By <b>hovering</b> over a vertical column it will
-                highlight, if you press <b>left click</b> a disc of your
-                color will be placed at the lowest possible spot in that
-                column
-            </p>
-            <p>
-                - The players will place discs <b>in turns</b>
-            </p>
-            <p>
-                - You can only place a disc when it is your turn (this is
-                indicated on the left)
-            </p>
-        </aside> -->
+# Game
 
-        <aside class="connected-users">
-            <div class="card chat-card">
-                <div id="chat-screen">
-                    <h1>Game Chat</h1>
-                    <div class="chat-container">
-                        <ul id="chat"></ul>
-                    </div>
-                    <div class="chat-controls">
-                        <input
-                            id="chat-input"
-                            type="text"
-                            class="chat-input"
-                            placeholder="Send a message."
-                        />
-                        <button class="btn btn-success" id="send-chat">
-                            &rarr;
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </aside>
+<div id="discAnimation"></div>
 
-        <!-- <button id="helpButton">
-            <img alt="help" src="assets/helpButton.png" />
-        </button> -->
-    </body>
-</html>
+<div
+	class="d-flex flex-row gap-5 align-content-center mt-5 pt-5 w-100 justify-content-center align-items-center"
+>
+	<aside class="bg-body-tertiary rounded-4 p-4 shadow h-100">
+		<h2>Information</h2>
+		<dl class="d-flex flex-column">
+			<dt id="player-1">Welcome</dt>
+			<dt>Your Color</dt>
+			<dd class="mt-2">
+				<span id="player-color" class="badge w-100"></span>
+			</dd>
+			<dt>Player Turn</dt>
+			<dd class="mt-2">
+				<span id="player-turn" class="badge w-100 player1-color"></span>
+			</dd>
+		</dl>
+	</aside>
+
+	<main>
+		<dialog class="game-win-modal" id="gameDialog">
+			<form
+				method="dialog"
+				onsubmit="window.location.href='/projects/connect-four/pages/waitingroom'"
+			>
+				<h1 id="gameResult" class="result mb-5"></h1>
+				<button type="submit" class="btn btn-primary">
+					Back to Waiting Room
+				</button>
+			</form>
+		</dialog>
+		<h2
+			id="gameHeader"
+			class="bg-body-tertiary rounded-4 text-center result mb-3 d-none"
+		></h2>
+		<article class="input-form card board">
+			<output id="grid_output"></output>
+		</article>
+	</main>
+
+	<aside class="bg-body-tertiary rounded-4 px-5 pt-4 mt-5 shadow">
+		<div id="chat-screen">
+			<h3 class="text-center">Game Chat</h3>
+			<div class="chat-container mt-3 mb-4">
+				<ul id="chat"></ul>
+			</div>
+			<div class="chat-controls mb-4">
+				<input
+					id="chat-input"
+					type="text"
+					class="form-control"
+					placeholder="Enter a message."
+				/>
+				<button class="btn btn-success" id="send-chat">&rarr;</button>
+			</div>
+		</div>
+
+		<div id="user-screen" class="d-none">
+			<h1>Connected Users</h1>
+			<div class="user-container">
+				<ul id="users"></ul>
+			</div>
+		</div>
+	</aside>
+</div>
+
+# Imports
+<link rel="stylesheet" href="/projects/connect-four/styles/dist/style.css" />
+<link rel="stylesheet" href="/projects/connect-four/styles/dist/game.css" />
+<link rel="stylesheet" href="/projects/connect-four/styles/dist/chat.css" />
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0-rc.2.23480.2/signalr.min.js"
+	integrity="sha512-+oIjk2mDU2pEsqOABtke3yOuCpNAMQyBV1VRP+34mx4KSQKL+sMxHQK63Vw59GDaJDxHj2ZtKG4TMKkYovyHqg=="
+	crossorigin="anonymous"
+	referrerpolicy="no-referrer"
+></script>
+<script type="module" src="/scripts/dist/connectfour/scripts.js" defer></script>
+<script type="module" src="/scripts/dist/connectfour/help.js" defer></script>
+<script
+	type="module"
+	src="/scripts/dist/connectfour/game/game.js"
+	defer
+></script>

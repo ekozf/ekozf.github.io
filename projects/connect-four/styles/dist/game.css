@@ -21,9 +21,11 @@ table {
 }
 
 .board {
-  background: rgba(0, 0, 255, 75%);
+  background: rgba(0, 0, 255, 0.5);
   width: fit-content;
+  padding: 1rem;
   border: 4px solid black;
+  border-radius: 1rem;
 }
 
 aside.game-info {
@@ -76,15 +78,15 @@ td.player2-color,
 }
 
 .result.victory {
-  color: green;
+  color: hsl(120, 50%, 35%);
 }
 
 .result.defeat {
-  color: red;
+  color: hsl(354, 75%, 60%);
 }
 
 .result.draw {
-  color: blue;
+  color: hsl(211, 66%, 65%);
 }
 
 #discAnimation {
