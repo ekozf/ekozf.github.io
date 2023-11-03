@@ -1,0 +1,100 @@
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 3fr 3fr 1fr 1fr;
+	place-items: center;
+}
+
+footer {
+	grid-row: 4;
+}
+
+header {
+	place-self: end;
+}
+
+p {
+	place-self: start;
+}
+
+.headline {
+	font-size: 6rem;
+	margin: none;
+
+	> span:first-of-type {
+		font-size: 4rem;
+		margin: none;
+	}
+}
+
+.offsite-icon {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+.offsite-link {
+	text-decoration: none;
+	color: inherit;
+}
+
+nav .quick-navigation {
+	list-style-type: ">>  ";
+
+	li {
+		color: rgba(255, 255, 255, 0.66);
+	}
+}
+
+aside {
+	overflow-y: scroll;
+	margin-top: -15vh;
+
+	article {
+		width: 20vw;
+		float: right;
+
+		section {
+			width: 20vw;
+			height: 25vw;
+			margin: 2rem 0rem;
+
+			background-color: rgb(43, 48, 53, 0.333);
+			border: 3px solid rgb(50, 55, 60, 0.75);
+			transition: 0.5s;
+
+			&:hover {
+				opacity: 0.75;
+				filter: brightness(1.5);
+				transition: 0.5s;
+			}
+		}
+	}
+
+	article:nth-child(2) {
+		width: 20vw;
+		float: right;
+		margin-top: 12.5vh;
+		margin-right: 2rem;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	#cards-desktop {
+		display: block;
+	}
+
+	#main-desktop {
+		display: grid;
+	}
+
+	#cards-mobile,
+	#main-mobile {
+		display: none;
+	}
+}

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html class="h-100">
+	<head lang="en">
+		<title>Connect 4 - DOCTYPE html> | EKO</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="icon" href="/resources/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<script
+			type="module"
+			src="/resources/libs/bootstrap/js/bootstrap.min.js"
+		></script>
+		<script
+			src="/scripts/dist/connectfour/config.js"
+			type="module"
+			defer
+		></script>
+		
+	</head>
+	<body data-bs-theme="dark" class="h-100">
+		<!-- Navbar -->
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<!-- Logo -->
+				<a
+					class="navbar-brand d-flex align-content-center"
+					href="/projects/connect-four/pages/"
+				>
+					<img
+						src="/projects/connect-four/assets/Logo.png"
+						alt="Logo"
+						width="64"
+						height="64"
+						class="d-inline-block align-text-top bg-light-subtle rounded-circle p-1"
+					/>
+					<span class="ms-4 align-self-center fs-3"> Connect Four </span>
+				</a>
+				<!-- Navbar Toggler -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Navbar Links -->
+				<div
+					class="collapse navbar-collapse justify-content-center align-content-center"
+					id="navbarNav"
+				>
+					<ul
+						class="navbar-nav gap-lg-5 text-center gap-4 w-100 justify-content-center"
+					>
+						<li class="nav-item">
+							<a
+								id="home-link"
+								class="nav-link active"
+								aria-current="page"
+								href="/projects/connect-four/pages/"
+							>
+								Home
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								href="/projects/connect-four/pages/waitingroom/"
+							>
+								Waitingroom
+							</a>
+						</li>
+						<li class="nav-item" id="game-link">
+							<a class="nav-link" href="/projects/connect-four/pages/game/">
+								Game
+							</a>
+						</li>
+						<li class="nav-item">
+							<a
+								class="nav-link"
+								href="/projects/connect-four/pages/leaderboard/"
+							>
+								Leaderboard
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/projects/connect-four/pages/team/">
+								Team
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/projects/connect-four/pages/settings/">
+								Settings
+							</a>
+						</li>
+						<li class="nav-item d-lg-none">
+							<a
+								class="nav-link"
+								href="/projects/connect-four/pages/"
+								id="login-mobile"
+							>
+								Login
+							</a>
+						</li>
+					</ul>
+					<!-- Navbar Buttons -->
+
+					<div class="me-lg-5 d-lg-inline-block d-md-none">
+						<a
+							class="nav-link me-lg-5"
+							href="/projects/connect-four/pages/"
+							id="login-large"
+						>
+							Login
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<main
+			class="d-flex h-100w-100 justify-content-center align-items-center pb-5"
+		>
+			
+<html>
+    <head lang="en">
+        <title>Connect 4 | Game</title>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon" />
+        <link rel="icon" href="assets/Logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="style/style.css" />
+        <link rel="stylesheet" href="style/game.css" />
+        <link rel="stylesheet" href="style/chat.css" />
+        <script type="module" src="./js/help.js" defer></script>
+        <script
+            src="https://kit.fontawesome.com/c2e4631732.js"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"
+            integrity="sha512-k8WL9L2jG8KyG3pCJA4mHMdg2YSoWrdB5QNqLIhROv69udwp87WvbqzbsiAL65wy7T9jHU7rAoePr1ToPBc0Lw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script type="module" src="./js/game.js" defer></script>
+        <script type="module" src="./js/scripts.js" defer></script>
+    </head>
+    <body>
+        <button class="" id="headerButton">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <header id="header">
+            <a href="index.html">
+                <img
+                    class="rotate-element-hover"
+                    src="assets/Logo.png"
+                    alt="logo"
+                />
+            </a>
+            <nav id="responsive-nav">
+                <a class="d-none" id="login" href="index.html">Login</a>
+                <a class="d-none" id="logout" href="index.html">Logout</a>
+                <a href="register.html">Register</a>
+                <a href="waitingroom.html">Waitingroom</a>
+                <a class="d-none" id="game" href="game.html">Game</a>
+                <a href="team.html">Team</a>
+                <a href="leaderboard.html">Leaderboard</a>
+                <a href="settings.html">Settings</a>
+            </nav>
+        </header>
+        <div id="discAnimation"></div>
+        <main>
+            <dialog class="game-win-modal" id="gameDialog">
+                <form
+                    method="dialog"
+                    onsubmit="window.location.href='waitingroom.html'"
+                >
+                    <h1 id="gameResult" class="result"></h1>
+                    <button type="submit" class="btn btn-primary">
+                        Back to Waiting Room
+                    </button>
+                </form>
+            </dialog>
+            <h2 id="gameHeader" class="result d-none"></h2>
+            <article class="input-form card board">
+                <output id="grid_output"></output>
+            </article>
+            <span
+                class="error-message text-center card w2 d-none"
+                id="errorMessage"
+            >
+                Something went wrong :(
+            </span>
+        </main>
+        <aside class="game-info">
+            <div class="card">
+                <h1>Information</h1>
+                <dl>
+                    <dt id="player-1">Welcome</dt>
+                    <dt>Your Color</dt>
+                    <dd>
+                        <span id="player-color" class="badge"></span>
+                    </dd>
+                    <dt>Player Turn</dt>
+                    <dd>
+                        <span
+                            id="player-turn"
+                            class="badge player1-color"
+                        ></span>
+                    </dd>
+                </dl>
+            </div>
+        </aside>
+        <!-- <aside class="rules" id="help">
+            <h1>How to play</h1>
+            <p>
+                - The goal is to get <b>the chosen amount</b> of discs of
+                your color in a row and prevent your opponent from doing so
+            </p>
+            <p>
+                - A winning row can be <b>vertical</b>, <b>horizontal</b> or
+                <b>diagonal</b>
+            </p>
+            <p>
+                - By <b>hovering</b> over a vertical column it will
+                highlight, if you press <b>left click</b> a disc of your
+                color will be placed at the lowest possible spot in that
+                column
+            </p>
+            <p>
+                - The players will place discs <b>in turns</b>
+            </p>
+            <p>
+                - You can only place a disc when it is your turn (this is
+                indicated on the left)
+            </p>
+        </aside> -->
+
+        <aside class="connected-users">
+            <div class="card chat-card">
+                <div id="chat-screen">
+                    <h1>Game Chat</h1>
+                    <div class="chat-container">
+                        <ul id="chat"></ul>
+                    </div>
+                    <div class="chat-controls">
+                        <input
+                            id="chat-input"
+                            type="text"
+                            class="chat-input"
+                            placeholder="Send a message."
+                        />
+                        <button class="btn btn-success" id="send-chat">
+                            &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- <button id="helpButton">
+            <img alt="help" src="assets/helpButton.png" />
+        </button> -->
+    </body>
+</html>
+
+		</main>
+	</body>
+</html>

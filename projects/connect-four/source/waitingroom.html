@@ -1,0 +1,116 @@
+<h1>Change your Game settings</h1>
+<div class="w12 card text-center">
+	<h1>Field Size:</h1>
+	<section class="w12 form-buttons">
+		<div
+			class="d-flex justify-content-center align-content-center text-center pb-3"
+		>
+			<input
+				class="w2 btn border-1"
+				id="gameRowCount"
+				type="number"
+				min="4"
+				max="8"
+				value="6"
+			/>
+			<div class="d-flex align-content-center w1">
+				<span
+					class="d-flex justify-content-center align-items-center bold big-font"
+				>
+					X
+				</span>
+			</div>
+			<input
+				class="w2 btn border-1"
+				id="gameColumnCount"
+				type="number"
+				min="4"
+				max="8"
+				value="7"
+			/>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center">
+	<h1>Winning Connection Size</h1>
+	<section class="w12 form-buttons">
+		<div
+			class="d-flex justify-content-center align-content-center text-center pb-3"
+		>
+			<select
+				class="w2 btn border-1"
+				id="gameConnectionSize"
+				autocomplete="off"
+			>
+				<option value="3">3</option>
+				<option value="4" selected>4</option>
+				<option value="5">5</option>
+			</select>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center" id="joinQueue">
+	<h1>Join Waiting Pool</h1>
+	<section class="w12 form-buttons">
+		<div class="d-flex justify-content-center align-items-center flex-column">
+			<span class="d-none error-message" id="errorMessage">
+				Something went wrong :(
+			</span>
+			<button class="btn btn-primary w4" id="joinRoom">Join Match Queue</button>
+		</div>
+	</section>
+</div>
+<div class="w12 card text-center d-none" id="matchmaking">
+	<h1>Matchmaking</h1>
+	<section class="w12 pb-3">
+		<span id="waiting-status">Searching for opponent...</span>
+	</section>
+	<section class="w12 form-buttons mt-4">
+		<div class="d-flex justify-content-center align-items-center flex-column">
+			<button class="btn btn-danger w4" id="cancelMatch">
+				Cancel Matchmaking
+			</button>
+			<audio
+				id="audioPlayer"
+				class="d-none"
+				src="assets/waitingmusic.mp3"
+			></audio>
+		</div>
+	</section>
+</div>
+
+<aside class="connected-users">
+	<div class="card">
+		<div class="selectors">
+			<button class="btn btn-primary" id="view-users">
+				<i class="fa-solid fa-list"></i>
+			</button>
+			<button class="btn btn-primary active" id="view-chat">
+				<i class="fa-regular fa-comments"></i>
+			</button>
+		</div>
+		<hr />
+		<div id="chat-screen">
+			<h1>Waiting Room Chat</h1>
+			<div class="chat-container">
+				<ul id="chat"></ul>
+			</div>
+			<div class="chat-controls">
+				<input
+					id="chat-input"
+					type="text"
+					class="chat-input"
+					placeholder="Send a message."
+				/>
+				<button class="btn btn-success" id="send-chat">&rarr;</button>
+			</div>
+		</div>
+
+		<div id="user-screen" class="d-none">
+			<h1>Connected Users</h1>
+			<div class="user-container">
+				<ul id="users"></ul>
+			</div>
+		</div>
+	</div>
+</aside>

@@ -3,3 +3,17 @@ https://emirkaan.be/blog/
 https://emirkaan.be/blog/articles/real-time-web-communication-signalr/
 https://emirkaan.be/blog/articles/windows-essentials-vms/
 https://emirkaan.be/blog/pages/1/
+https://emirkaan.be/projects/connect-four/pages/
+https://emirkaan.be/projects/connect-four/source/game.html
+https://emirkaan.be/projects/connect-four/source/
+https://emirkaan.be/projects/connect-four/source/leaderboard.html
+https://emirkaan.be/projects/connect-four/source/register.html
+https://emirkaan.be/projects/connect-four/source/settings.html
+https://emirkaan.be/projects/connect-four/source/team.html
+https://emirkaan.be/projects/connect-four/source/waitingroom.html
+https://emirkaan.be/projects/connect-four/pages/game/
+https://emirkaan.be/projects/connect-four/pages/leaderboard/
+https://emirkaan.be/projects/connect-four/pages/register/
+https://emirkaan.be/projects/connect-four/pages/settings/
+https://emirkaan.be/projects/connect-four/pages/team/
+https://emirkaan.be/projects/connect-four/pages/waitingroom/

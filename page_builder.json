@@ -1,22 +1,28 @@
 {
-  "Article": {
-    "InputPath": "./blog/markdown",
-    "OutputPath": "./blog/articles/",
-    "TemplatePath": "./blog/templates/GUIDE_TEMPLATE.html"
-  },
-  "Paging":{
-    "InputPath": "./blog/markdown/",
-    "OutputPath": "./blog/pages/",
-    "TemplatePath": "./blog/templates/BLOG_TEMPLATE.html",
-    "ImagesDirectoryPath": "../../resources/images/",
-    "WidgetPath": "./blog/widgets/GUIDE_CARD_WIDGET.html",
-    "PagingWidgetPath": "./blog/widgets/PAGING_WIDGET.html"
-  },
-  "Home": {
-    "InputPath": "./blog/markdown/",
-    "OutputPath": "./blog/",
-    "TemplatePath": "./blog/templates/INDEX_TEMPLATE.html",
-    "ImagesDirectoryPath": "../../resources/images/",
-    "WidgetPath": "./blog/widgets/GUIDE_CARD_WIDGET.html"
-  }
+	"Article": {
+		"InputPath": "./blog/markdown",
+		"OutputPath": "./blog/articles/",
+		"TemplatePath": "./blog/templates/GUIDE_TEMPLATE.html"
+	},
+	"Paging": {
+		"InputPath": "./blog/markdown/",
+		"OutputPath": "./blog/pages/",
+		"TemplatePath": "./blog/templates/BLOG_TEMPLATE.html",
+		"ImagesDirectoryPath": "../../resources/images/",
+		"WidgetPath": "./blog/widgets/GUIDE_CARD_WIDGET.html",
+		"PagingWidgetPath": "./blog/widgets/PAGING_WIDGET.html"
+	},
+	"Home": {
+		"InputPath": "./blog/markdown/",
+		"OutputPath": "./blog/",
+		"TemplatePath": "./blog/templates/INDEX_TEMPLATE.html",
+		"ImagesDirectoryPath": "../../resources/images/",
+		"WidgetPath": "./blog/widgets/GUIDE_CARD_WIDGET.html"
+	},
+	"ConnectFour": {
+		"InputPath": "./projects/connect-four/source/",
+		"OutputPath": "./projects/connect-four/pages/",
+		"TemplatePath": "./projects/connect-four/templates/MAIN_TEMPLATE.html",
+		"ImagesDirectoryPath": "../../resources/images/"
+	}
 }

@@ -1,3 +1,6 @@
-@import './animations';
-@import './landing';
-@import './_portfolio.scss'
+/** Import all styles **/
+@import "_background.scss";
+@import "_utility.scss";
+@import "_animations.scss";
+@import "_desktop.scss";
+@import "_mobile.scss";
