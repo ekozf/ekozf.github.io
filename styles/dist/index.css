@@ -242,6 +242,10 @@
   color: #f6f9ff;
 }
 
+.justify-self-center {
+  justify-self: center;
+}
+
 @keyframes move {
   100% {
     transform: translate3d(0, 0, 1px) rotate(360deg);
@@ -279,7 +283,7 @@ p {
 
 .headline {
   font-size: 6rem;
-  margin: none;
+  margin: 0;
 }
 .headline > span:first-of-type {
   font-size: 4rem;
@@ -369,7 +373,7 @@ aside article:nth-child(2) {
   }
   .headline {
     font-size: 3rem;
-    margin: none;
+    margin: 0;
     padding: 0;
   }
   .headline > span:first-of-type {
