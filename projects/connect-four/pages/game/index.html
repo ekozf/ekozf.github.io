@@ -156,9 +156,10 @@
 <div id="discAnimation"></div>
 
 <div
-	class="d-flex flex-row gap-5 align-content-center mt-5 pt-5 w-100 justify-content-center align-items-center"
+	id="game-div"
+	class="d-flex board-container gap-5 align-content-center mt-5 pt-5 w-100 justify-content-center align-items-center"
 >
-	<aside class="bg-body-tertiary rounded-4 p-4 shadow h-100">
+	<aside class="bg-body-tertiary rounded-4 p-4 shadow h-100" id="game-info">
 		<h2>Information</h2>
 		<dl class="d-flex flex-column">
 			<dt id="player-1">Welcome</dt>
@@ -173,7 +174,7 @@
 		</dl>
 	</aside>
 
-	<main>
+	<main class="game-container">
 		<dialog class="game-win-modal" id="gameDialog">
 			<form
 				method="dialog"
@@ -189,7 +190,7 @@
 			id="gameHeader"
 			class="bg-body-tertiary rounded-4 text-center result mb-3 d-none"
 		></h2>
-		<article class="input-form card board">
+		<article class="input-form board">
 			<output id="grid_output"></output>
 		</article>
 	</main>
