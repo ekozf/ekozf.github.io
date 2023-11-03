@@ -1,0 +1,1 @@
+{"version":3,"file":"GameSettings.d.ts","sourceRoot":"","sources":["../../../../src/connectfour/types/GameModels/GameSettings.ts"],"names":[],"mappings":"AAAA,KAAK,YAAY,GAAG;IACnB,QAAQ,EAAE,MAAM,CAAC;IACjB,WAAW,EAAE,MAAM,CAAC;IACpB,cAAc,EAAE,MAAM,CAAC;CACvB,CAAC"}

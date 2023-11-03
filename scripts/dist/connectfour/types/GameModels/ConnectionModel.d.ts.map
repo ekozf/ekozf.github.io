@@ -1,0 +1,1 @@
+{"version":3,"file":"ConnectionModel.d.ts","sourceRoot":"","sources":["../../../../src/connectfour/types/GameModels/ConnectionModel.ts"],"names":[],"mappings":"AAAA,KAAK,eAAe,GAAG;IACtB,IAAI,EAAE,mBAAmB,CAAC;IAC1B,EAAE,EAAE,mBAAmB,CAAC;IACxB,IAAI,EAAE,MAAM,CAAC;IACb,KAAK,EAAE,SAAS,CAAC;CACjB,CAAC"}

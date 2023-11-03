@@ -1,5 +1,5 @@
-"use strict";
 import { BACKEND_URL } from "./config.js";
+import CreateToastMsg from "./toastHandler.js";
 document.addEventListener("DOMContentLoaded", () => {
     const checkPass = document.getElementById("check-pass");
     const checkPassword = document.getElementById("password");
@@ -86,7 +86,11 @@ async function DoRegisterUser() {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password")
         .value;
-    const person = { NickName: name, Email: email, Password: password };
+    const person = {
+        NickName: name,
+        Email: email,
+        Password: password,
+    };
     const response = await fetch(url, {
         method: "POST",
         body: JSON.stringify(person),
@@ -94,7 +98,7 @@ async function DoRegisterUser() {
             Accept: "application/json",
             "Content-Type": "application/json",
         },
-    }).catch((error) => ShowError(error));
+    }).catch((error) => CreateToastMsg(error));
     if (!response)
         return;
     if (response.ok) {
@@ -102,13 +106,7 @@ async function DoRegisterUser() {
         window.location.href = "/projects/connect-four/pages/";
     }
     else {
-        ShowError((await response.json()).message);
+        CreateToastMsg((await response.json()).message);
     }
-}
-function ShowError(message) {
-    const error = document.getElementById("errorMessage");
-    error.classList.remove("d-none");
-    error.innerHTML = message;
-    console.error(message);
 }
 //# sourceMappingURL=register.js.map

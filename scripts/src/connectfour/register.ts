@@ -1,5 +1,5 @@
-"use strict";
 import { BACKEND_URL } from "./config.js";
+import CreateToastMsg from "./toastHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// Get the input for the check password
@@ -142,7 +142,11 @@ async function DoRegisterUser() {
 		.value;
 
 	// Check the UserModel in the backend for the required fields
-	const person = { NickName: name, Email: email, Password: password };
+	const person: RegisterModel = {
+		NickName: name,
+		Email: email,
+		Password: password,
+	};
 
 	// Send the request
 	const response = await fetch(url, {
@@ -152,7 +156,7 @@ async function DoRegisterUser() {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		},
-	}).catch((error) => ShowError(error)); // Catch any fetch errors and show them
+	}).catch((error) => CreateToastMsg(error)); // Catch any fetch errors and show them
 
 	// Check if the response is valid
 	if (!response) return;
@@ -164,17 +168,6 @@ async function DoRegisterUser() {
 		window.location.href = "/projects/connect-four/pages/";
 	} else {
 		// Response from server was not ok
-		ShowError((await response.json()).message);
+		CreateToastMsg((await response.json()).message);
 	}
-}
-
-/**
- * Show an error message to the user
- * @param {string} message
- */
-function ShowError(message: string) {
-	const error = document.getElementById("errorMessage");
-	error.classList.remove("d-none");
-	error.innerHTML = message;
-	console.error(message);
 }

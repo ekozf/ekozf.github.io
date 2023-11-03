@@ -1,4 +1,5 @@
 import { BACKEND_URL } from "./config.js";
+import CreateToastMsg from "./toastHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// Get the input for the check password
@@ -146,7 +147,7 @@ async function DoUserLogin() {
 	}
 
 	// LoginModel is defined in the backend
-	const login = { Email: email.value, Password: password.value };
+	const login: LoginModel = { Email: email.value, Password: password.value };
 
 	const response = await fetch(url, {
 		method: "POST",
@@ -155,35 +156,17 @@ async function DoUserLogin() {
 			Accept: "application/json",
 			"Content-Type": "application/json",
 		},
-	}).catch((error) => ShowError(error));
+	}).catch((error) => CreateToastMsg(error));
 
 	// Check if the response is valid
 	if (!response) return;
 
 	// Check if the response is ok
 	if (response.ok) {
-		const user = await response.json();
+		const user: UserModel = await response.json();
 		localStorage.setItem("user", JSON.stringify(user));
 		window.location.href = "/projects/connect-four/pages/waitingroom";
 	} else {
-		ShowError("Invalid email or password");
+		CreateToastMsg("Invalid email or password");
 	}
-}
-
-/**
- * Show an error message to the user
- * @param {string} message
- */
-function ShowError(message: string) {
-	const error = document.getElementById("errorMessage");
-
-	if (error === null) {
-		console.error("Error message not found");
-		return;
-	}
-
-	error.classList.remove("d-none");
-	error.innerHTML = message;
-
-	console.error(message);
 }

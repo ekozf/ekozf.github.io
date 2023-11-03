@@ -3,7 +3,7 @@ main div.card {
   width: 100%;
   text-align: center;
   align-items: center;
-  background-color: rgb(49, 49, 173, 0.66);
+  background-color: rgba(49, 49, 173, 0.66);
 }
 
 h1.title {
@@ -21,6 +21,7 @@ main ol {
 }
 
 main ol li {
+  justify-content: space-around;
   align-items: center;
   margin: 1rem;
 }
@@ -68,7 +69,6 @@ main ol li:nth-child(3) .rank::after {
 }
 
 .win-wrapper {
-  width: 100%;
   display: flex;
   flex-direction: column;
 }

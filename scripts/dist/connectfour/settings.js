@@ -1,38 +1,29 @@
-"use strict";
+import CreateToastMsg from "./toastHandler.js";
 document.addEventListener("DOMContentLoaded", () => {
-    const colorButton = document.getElementById("setupColor");
+    const colorButton = document.getElementById("btnSubmitSettings");
     colorButton.addEventListener("click", SaveSettings);
     LoadFromStorage();
 });
-async function ShowHelp() {
-    const help = document.getElementById("help");
-    if (help.style.visibility === "hidden") {
-        help.style.visibility = "visible";
-    }
-    else {
-        help.style.visibility = "hidden";
-    }
-}
 function SaveAnimationDuration() {
     const animationDuration = document.getElementById("animationDuration").value;
     if (animationDuration === "") {
-        ShowError("Animation duration can't be empty.");
+        CreateToastMsg("Animation duration can't be empty.");
         localStorage.setItem("animation-duration", String(500));
         return false;
     }
     const duration = Number(animationDuration);
     if (!duration) {
-        ShowError("Animation duration can't be empty.");
+        CreateToastMsg("Animation duration can't be empty.");
         localStorage.setItem("animation-duration", String(500));
         return false;
     }
     if (duration < 0) {
-        ShowError("Animation duration can't be negative.");
+        CreateToastMsg("Animation duration can't be negative.");
         localStorage.setItem("animation-duration", String(0));
         return false;
     }
     if (duration > 1000) {
-        ShowError("Animation duration can't be greater than 1000.");
+        CreateToastMsg("Animation duration can't be greater than 1000.");
         localStorage.setItem("animation-duration", String(1000));
         return false;
     }
@@ -43,7 +34,7 @@ function SaveColors() {
     const playerColor = document.getElementById("playerColorSelect").value;
     const opponentColor = document.getElementById("opponentColorSelect").value;
     if (playerColor == opponentColor) {
-        ShowError("Player and opponent color can't be the same.");
+        CreateToastMsg("Player and opponent color can't be the same.");
         return false;
     }
     localStorage.setItem("player1-color", playerColor);
@@ -72,25 +63,13 @@ function LoadFromStorage() {
     document.getElementById("backendUrl").value =
         backendUrl;
 }
-function ShowError(msg) {
-    const errorMessageBox = document.getElementById("errorMessage");
-    const successMessageBox = document.getElementById("successMessage");
-    successMessageBox.classList.add("d-none");
-    errorMessageBox.classList.remove("d-none");
-    errorMessageBox.innerText = msg;
-}
-function HideError() {
-    const errorMessageBox = document.getElementById("errorMessage");
-    errorMessageBox.classList.add("d-none");
-    const successMessageBox = document.getElementById("successMessage");
-    successMessageBox.classList.remove("d-none");
-}
 function SaveSettings() {
-    const savedColors = SaveColors();
-    const savedDuration = SaveAnimationDuration();
-    SaveUrls();
-    if (savedColors && savedDuration) {
-        HideError();
+    const colorsSaved = SaveColors();
+    const animationSaved = SaveAnimationDuration();
+    const urlSaved = SaveUrls();
+    if (!colorsSaved || !animationSaved || !urlSaved) {
+        return;
     }
+    CreateToastMsg("Settings saved", false);
 }
 //# sourceMappingURL=settings.js.map
