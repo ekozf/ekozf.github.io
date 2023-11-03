@@ -47,7 +47,7 @@
 			<span></span>
 		</div>
 		<!-- Main Content -->
-		<main class="h-100 ms-5 pt-5">
+		<main class="h-100 ms-5 pt-5" id="main-desktop">
 			<header class="mb-4">
 				<h1 class="headline">
 					<span class="text-muted">Hello, I'm</span>
@@ -74,7 +74,7 @@
 						<a href="/blog/" class="special-link">My Blog</a>
 					</li>
 					<li class="ms-2">
-						<a href="#projects" class="special-link">Projects</a>
+						<a href="/projects/" class="special-link">Projects</a>
 					</li>
 					<li>
 						<a href="#contact" class="special-link">Contact</a>
@@ -106,7 +106,7 @@
 				</a>
 			</footer>
 		</main>
-		<aside class="p-5">
+		<aside class="p-5" id="cards-desktop">
 			<article>
 				<section
 					class="rounded-4 shadow p-5 d-flex justify-content-center align-items-end"
@@ -117,10 +117,9 @@
 					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
 				>
 					<img src="/resources/icons/pingping.png" class="w-50" />
-					<span class="text-justify mt-4">
-						Small web scraping based mobile app for using the payment platform
-						PingPing for our school. It is written entirly using .NET Maui 8.
-						Currently only available for Android.
+					<span class="text-justify mt-4 fs-7">
+						Web scraping mobile app for using the payment platform PingPing.
+						Only for Android. Made with .NET Maui
 					</span>
 					<a
 						href="https://github.com/ekozf/EKO.PingPing"
@@ -133,7 +132,7 @@
 					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
 				>
 					<img src="/resources/icons/gears-icon-file.svg" class="w-25" />
-					<span class="text-justify mt-4">
+					<span class="text-justify mt-4 fs-7">
 						Custom site builder, made with .NET. This is what I use to build
 						everything from this site, to the blog and projects!
 					</span>
@@ -146,10 +145,9 @@
 					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
 				>
 					<img src="/projects/connect-four/assets/Logo.png" class="w-50" />
-					<span class="text-justify mt-4">
-						This is a project that I participated in at school, it's a simple
-						game of connect four. I have hosted the API on a Raspberry Pi using
-						Docker.
+					<span class="text-justify mt-4 fs-7">
+						Simple game of connect four for a school project. API is hosted on a
+						Docker container on a Raspberry Pi.
 					</span>
 					<a
 						href="/projects/connect-four/pages/"
@@ -165,7 +163,7 @@
 						src="/resources/EKO_Logo.svg"
 						class="w-75 bg-light-subtle rounded-4 p-3"
 					/>
-					<span class="text-justify mt-4">
+					<span class="text-justify mt-4 fs-7">
 						My personal blog where I just put whatever handy developer related
 						content that I want.
 					</span>
@@ -175,5 +173,135 @@
 				<section class="rounded-4 shadow p-5">7</section>
 			</article>
 		</aside>
+
+		<!----------------------------------------------------------->
+		<!----------------------------------------------------------->
+		<!----------------------------------------------------------->
+		<!--------------         Mobile Version         ------------->
+		<!----------------------------------------------------------->
+		<!----------------------------------------------------------->
+		<!----------------------------------------------------------->
+
+		<main class="h-100 px-5 pb-5" id="main-mobile">
+			<header class="mb-5 text-center w-100">
+				<h1 class="headline text-center">
+					<span class="text-muted">Hello, I'm</span>
+					<br />
+					<span class="my-name"> Emir Kaan Özver </span>
+				</h1>
+			</header>
+			<p class="mt-3 text-muted tall-lines text-justify">
+				Hello, I'm Emir Kaan Özver. I'm a Computer Science student at
+				<a href="https://www.pxl.be/" class="special-link">PXL</a>. I'm
+				currently <span id="age-container"></span> years old, and I'm interested
+				in web development, backend development, gaming, and music. I'm
+				currently working on a few projects, which you can find on the cards on
+				this page. I'm also working on a blog, which you can find
+				<a href="/blog/" class="special-link">here</a>. You can view some of my
+				projects via the GitHub link below, or connect with me via LinkedIn
+				using the link below!
+			</p>
+
+			<nav class="d-flex flex-column align-items-center mb-3">
+				<span class="fs-5">Quick Navigation:</span>
+				<ul class="quick-navigation links mt-3">
+					<li>
+						<a href="/blog/" class="special-link">My Blog</a>
+					</li>
+					<li class="ms-2">
+						<a href="/projects/" class="special-link">Projects</a>
+					</li>
+					<li>
+						<a href="#contact" class="special-link">Contact</a>
+					</li>
+				</ul>
+			</nav>
+
+			<footer
+				class="d-flex flex-row align-content-start justify-content-around w-75 ms-5"
+			>
+				<a href="https://github.com/ekozf" class="offsite-link me-5">
+					<img
+						src="/resources/icons/github-mark-white.svg"
+						alt="github profile ekozf"
+						class="offsite-icon me-2"
+					/>
+					<span class="align-middle">GitHub</span>
+				</a>
+				<a
+					href="https://www.linkedin.com/in/emir-kaan-ozver-a3ba09230/"
+					class="offsite-link"
+				>
+					<img
+						src="/resources/icons/linkedin-white.svg"
+						alt="github profile ekozf"
+						class="offsite-icon me-2"
+					/>
+					<span class="align-middle">LinkedIn</span>
+				</a>
+			</footer>
+		</main>
+		<div class="p-5" id="cards-mobile">
+			<article>
+				<section
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
+				>
+					<img src="/resources/icons/pingping.png" class="w-50" />
+					<span class="text-justify mt-4 fs-7">
+						Web scraping mobile app for using the payment platform PingPing.
+						Only for Android. Made with .NET Maui
+					</span>
+					<a
+						href="https://github.com/ekozf/EKO.PingPing"
+						class="special-link mt-5 fs-5"
+					>
+						Take a look!
+					</a>
+				</section>
+				<section
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
+				>
+					<img src="/resources/icons/gears-icon-file.svg" class="w-25" />
+					<span class="text-justify mt-4 fs-7">
+						Custom site builder, made with .NET. This is what I use to build
+						everything from this site, to the blog and projects!
+					</span>
+					<a href="#" class="special-link mt-5 fs-5"> Curious? </a>
+				</section>
+				<section class="rounded-4 shadow p-5">3</section>
+			</article>
+			<article>
+				<section
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
+				>
+					<img src="/projects/connect-four/assets/Logo.png" class="w-50" />
+					<span class="text-justify mt-4 fs-7">
+						Simple game of connect four for a school project. API is hosted on a
+						Docker container on a Raspberry Pi.
+					</span>
+					<a
+						href="/projects/connect-four/pages/"
+						class="special-link mt-5 fs-5"
+					>
+						Let's Play!
+					</a>
+				</section>
+				<section
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center"
+				>
+					<img
+						src="/resources/EKO_Logo.svg"
+						class="w-75 bg-light-subtle rounded-4 p-3"
+					/>
+					<span class="text-justify mt-4 fs-7">
+						My personal blog where I just put whatever handy developer related
+						content that I want.
+					</span>
+					<a href="/blog/" class="special-link mt-5 fs-5"> Check it out! </a>
+				</section>
+				<section class="rounded-4 shadow p-5">6</section>
+				<section class="rounded-4 shadow p-5">7</section>
+			</article>
+		</div>
 	</body>
 </html>
