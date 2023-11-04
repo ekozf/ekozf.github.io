@@ -181,63 +181,74 @@ const connection = new signalR.HubConnectionBuilder().withUrl(&quot;/chat&quot;)
 
 // Start the connection
 connection.start().catch(function (err) {
-    // If there is an error, log it to the console
-    return console.error(err.toString());
+	// If there is an error, log it to the console
+	return console.error(err.toString());
 });
 
 // Add a function to run when we receive a message from the hub
 connection.on(&quot;ReceiveMessage&quot;, function (user, message) {
-    // Create a message with the user and message
-    var msg = user + &quot; says: &quot; + message;
+	// Create a message with the user and message
+	var msg = user + &quot; says: &quot; + message;
 
-    // Create a new list item with the message and add it to the list of messages
-    var li = document.createElement(&quot;li&quot;);
-    li.textContent = msg;
-    document.getElementById(&quot;messagesList&quot;).appendChild(li);
+	// Create a new list item with the message and add it to the list of messages
+	var li = document.createElement(&quot;li&quot;);
+	li.textContent = msg;
+	document.getElementById(&quot;messagesList&quot;).appendChild(li);
 });
 
 // Add a function to send messages to the hub when the send button is clicked
-document.getElementById(&quot;sendButton&quot;).addEventListener(&quot;click&quot;, function (event) {
+document
+	.getElementById(&quot;sendButton&quot;)
+	.addEventListener(&quot;click&quot;, function (event) {
+		// Get the user and message from the input fields
+		var user = document.getElementById(&quot;userInput&quot;).value;
+		var message = document.getElementById(&quot;messageInput&quot;).value;
 
-    // Get the user and message from the input fields
-    var user = document.getElementById(&quot;userInput&quot;).value;
-    var message = document.getElementById(&quot;messageInput&quot;).value;
+		// Send the message to the hub
+		connection.invoke(&quot;SendMessage&quot;, user, message).catch(function (err) {
+			return console.error(err.toString());
+		});
 
-    // Send the message to the hub
-    connection.invoke(&quot;SendMessage&quot;, user, message).catch(function (err) {
-        return console.error(err.toString());
-    });
-
-    event.preventDefault();
-});
+		event.preventDefault();
+	});
 </code></pre>
 <p>This code will connect to the hub and send messages to it. It will also add a function to receive messages from the hub and add them to the list of messages. Now add this script to the <code>_Layout.cshtml</code> file:</p>
 <pre><code class="language-html">&lt;script src=&quot;~/js/chat.js&quot;&gt;&lt;/script&gt;
 </code></pre>
 <p>Now we can add the HTML to our <code>Index.cshtml</code> file to display the messages and send messages to the hub. Don't forget to add the <code>id</code> attributes to the elements so we can select them in our JavaScript file. You can also add some CSS to make it look nice, in this example we will use the included Bootstrap CSS.</p>
 <pre><code class="language-html">&lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-md-12&quot;&gt;
-        &lt;div class=&quot;card&quot;&gt;
-            &lt;div class=&quot;card-header&quot;&gt;
-                &lt;h3&gt;Chat&lt;/h3&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;card-body&quot;&gt;
-                &lt;!-- Our messages will be shown here --&gt;
-                &lt;ul id=&quot;messagesList&quot;&gt;&lt;/ul&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;card-footer&quot;&gt;
-                &lt;div class=&quot;input-group&quot;&gt;
-                    &lt;!-- We will get our username and message from these fields --&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;userInput&quot; class=&quot;form-control&quot; placeholder=&quot;Username&quot; /&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;messageInput&quot; class=&quot;form-control&quot; placeholder=&quot;Message&quot; /&gt;
-                    &lt;div class=&quot;input-group-append&quot;&gt;
-                        &lt;!-- When this button is clicked, we will send a message to the server --&gt;
-                        &lt;button id=&quot;sendButton&quot; class=&quot;btn btn-primary&quot;&gt;Send&lt;/button&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+	&lt;div class=&quot;col-md-12&quot;&gt;
+		&lt;div class=&quot;card&quot;&gt;
+			&lt;div class=&quot;card-header&quot;&gt;
+				&lt;h3&gt;Chat&lt;/h3&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;card-body&quot;&gt;
+				&lt;!-- Our messages will be shown here --&gt;
+				&lt;ul id=&quot;messagesList&quot;&gt;&lt;/ul&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;card-footer&quot;&gt;
+				&lt;div class=&quot;input-group&quot;&gt;
+					&lt;!-- We will get our username and message from these fields --&gt;
+					&lt;input
+						type=&quot;text&quot;
+						id=&quot;userInput&quot;
+						class=&quot;form-control&quot;
+						placeholder=&quot;Username&quot;
+					/&gt;
+					&lt;input
+						type=&quot;text&quot;
+						id=&quot;messageInput&quot;
+						class=&quot;form-control&quot;
+						placeholder=&quot;Message&quot;
+					/&gt;
+					&lt;div class=&quot;input-group-append&quot;&gt;
+						&lt;!-- When this button is clicked, we will send a message to the server --&gt;
+						&lt;button id=&quot;sendButton&quot; class=&quot;btn btn-primary&quot;&gt;Send&lt;/button&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <br>

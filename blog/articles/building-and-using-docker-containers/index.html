@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Emir Kaan Ozver - Building, deploying and using Docker containers</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="A quick introduction to Docker and how to use it" />
+		<meta name="og:description" content="A quick introduction to Docker and how to use it" />
+		<meta property="og:title" content="Building, deploying and using Docker containers" />
+		<meta property="og:site_name" content="Emir Kaan Blog" />
+		<meta property="og:description" content="A quick introduction to Docker and how to use it" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:image"
+			content="https://blog.emirkaan.be/resources/images/docker-blue.png"
+		/>
+		<script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script
+			src="/scripts/dist/blog/MermaidThemeSwitcher.js"
+			type="module"
+			id="light-mermaid"
+			defer
+		></script>
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-light.min.css"
+			id="light-code"
+			disabled
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-dark.min.css"
+			id="dark-code"
+		/>
+		<link rel="stylesheet" href="/blog/styles/dist/style.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid for-mobile">
+					<div class="svg-container">
+						<a
+							class="navbar-brand text-light me-5 pe-2 user-select-none"
+							href="/"
+						>
+							<img src="/resources/EKO_Logo.svg" alt="Logo of the website" />
+						</a>
+					</div>
+					<button
+						class="navbar-toggler border-0"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target=".navbar-collapse"
+					>
+						<span class="navbar-toggler-icon text-light"></span>
+					</button>
+					<div
+						class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end"
+					>
+						<ul
+							class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end"
+						>
+							<li class="nav-item">
+								<a class="nav-link" href="/blog/">Home</a>
+							</li>
+							<li class="nav-item nav-active">
+								<a class="nav-link" href="/blog/pages/1/">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/">About</a>
+							</li>
+							<li class="nav-item">
+								<div class="nav-link form-check">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										value=""
+										id="dark-toggle"
+									/>
+									<label class="form-check-label" for="dark-toggle">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="moon"
+										>
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+											/>
+										</svg>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="sun"
+										>
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+											/>
+										</svg>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container-fluid w-100 p-0">
+			<main role="main" class="w-100 d-flex flex-column">
+				<div class="align-self-center p-3 text-center">
+					<h1 class="display-4 fw-bolder p-3">Building, deploying and using Docker containers</h1>
+				</div>
+
+				<div class="mt-5 mb-5 container-fluid for-mobile"><p>Have you ever wanted to deploy something you have made, but the destination server did not have the correct configuration and dependancies to run the app? If so, then you might want to look into running your app inside of something called a Docker Container. In this tutorial we will go over what Docker is, how to create a Docker container and how to deploy it to a server.</p>
+<br>
+<h2 id="what-is-docker">What is Docker?</h2>
+<p>Docker is a very handy tool that allows you to recreate your environment on any machine. It does this by using Images and Containers. An Image is a file that contains everything needed to run your app, including the OS, libraries and your app. A Container is an instance of an Image. You can run multiple Containers from the same Image. This allows you to run multiple instances of your app on the same machine. You can also run multiple Images on the same machine, allowing you to run multiple different apps on the same machine.</p>
+<p>Now, Docker does not magically work on any machine. You will firstly need to <a href="https://docs.docker.com/engine/install/">install Docker</a> on the machine you want to run your app on. After that you can start creating your Images and Containers.</p>
+<br>
+<h3 id="docker-images">Docker Images</h3>
+<p>Now that you have Docker installed, you can start creating your Images. You can create an Image by creating a <code>Dockerfile</code> in the root of your project. This file will contain the instructions to build your Image. Let's take a look at an example <code>Dockerfile</code>:</p>
+<pre><code class="language-ini"># Use the official .NET ASP Image as a base
+FROM mcr.microsoft.com/dotnet/aspnet:8.0-preview AS base
+USER app
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the files from the publish folder to the working directory
+EXPOSE 8080
+EXPOSE 8081
+
+# Set the entry point to the app
+ENV DOTNET_URLS=http://+:5001
+
+# Get the .NET SDK Docker Image
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0-preview AS build
+ARG BUILD_CONFIGURATION=Release
+
+# Set the working directory to /src
+WORKDIR /src
+
+# Copy the csproj file and restore any dependancies
+COPY . .
+RUN dotnet restore &quot;./EKO.ConnectFour/EKO.ConnectFour.Api.csproj&quot;
+COPY . .
+WORKDIR &quot;/src/EKO.ConnectFour&quot;
+RUN dotnet build &quot;./EKO.ConnectFour.Api.csproj&quot; -c $BUILD_CONFIGURATION -o /app/build
+
+# Publish the app
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish &quot;./EKO.ConnectFour.Api.csproj&quot; -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Create the final Image
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+
+# Define the entry point for the container
+ENTRYPOINT [&quot;dotnet&quot;, &quot;EKO.ConnectFour.Api.dll&quot;]
+</code></pre>
+<p>This Dockerfile is what I use to build my <a href="https://emirkaan.be/projects/connect-four/pages/">Connect Four</a> API. Let's go over it step by step:</p>
+<ol>
+<li>First we load the official .NET ASP Image as a base. This will be the base of our Image.</li>
+<li>Then we set the working directory to <code>/app</code>. This is where our app will be stored on the Docker Container.</li>
+<li>Next we copy the files from the publish folder to the working directory.</li>
+<li>Then we expose the ports that our app will be using.</li>
+<li>After that we set the entry point to the app.</li>
+</ol>
+<p>Next we will go over how to use this Dockerfile to build and deploy an Image.</p>
+<br>
+<h3 id="build-deploy-the-image">Build &amp; Deploy the Image</h3>
+<p>First, open a command line window to the root of your project. Then run the following command:</p>
+<pre><code class="language-bash">docker buildx build --platform linux/arm64 -t eko-raspberry-api . -f .\EKO.RaspberryPi.Api\Dockerfile
+</code></pre>
+<p>This will build the Image and tag it as <code>eko-raspberry-api</code>, which is basically the name of the image. The <code>-f</code> flag specifies the path to the Dockerfile. The <code>--platform</code> flag specifies the platform that the Image will be built for. In this case we are building it for a Raspberry Pi (Linux ARM64). You can find a list of all the flags <a href="https://docs.docker.com/engine/reference/commandline/buildx_build/">here</a>.</p>
+<p>Next we will tag the Image to the Image on Docker Hub. This will allow us to push the Image to Docker Hub. To do this, run the following command:</p>
+<pre><code class="language-bash">docker tag eko-raspberry-api ekozf/eko-raspberry-api
+</code></pre>
+<p>After the image has been tagged, we can push it to Docker Hub. To do this, run the following command:</p>
+<pre><code class="language-bash">docker push ekozf/eko-raspberry-api
+</code></pre>
+<br>
+<h3 id="loading-running-the-image">Loading &amp; Running the Image</h3>
+<p>Now our Image is on Docker Hub, we can load it on any machine that has Docker installed. To do this you should first install docker on the host machine, then run the following command:</p>
+<pre><code class="language-bash">docker pull ekozf/eko-raspberry-api:latest
+</code></pre>
+<p>You might have to run this using sudo if you didn't add your user to the docker group. You might also get an error saying that the Image is not found. This is because the Image is not public. To make it public, go to the Docker Hub page of the Image and click on the <code>Change visibility</code> button. Then select <code>Public</code> and click on <code>Change visibility</code>. But you can also login to docker on the host machine using <code>docker login</code> Now you should be able to pull the Image.</p>
+<p>You can run the image using the following command:</p>
+<pre><code class="language-bash">docker run -dit --rm -p 192.168.0.142:80:5000 ekozf/eko-raspberry-api:latest
+</code></pre>
+<p>This is what every flag does:</p>
+<ol>
+<li><code>-d</code> runs the container in the background</li>
+<li><code>-i</code> keeps STDIN open even if not attached</li>
+<li><code>-t</code> allocates a pseudo-TTY, which means that you can interact with the container</li>
+<li><code>--rm</code> removes the container when it exits</li>
+<li><code>-p</code> publishes a container's port(s) to the host, in this case we expose port 5000 on the container to port 80 on the host</li>
+<li><code>eko-raspberry-api:latest</code> is the name of the Image we want to run, in this case we are running the latest version of the Image</li>
+</ol>
+<p>When you do <code>run</code> on an image, a new container is created from that image. This container can be stopped, restarted, and deleted all without affecting the image. You can also run multiple containers from the same image. This allows you to run multiple instances of your app on the same machine.</p>
+<p>The <code>:latest</code> tag at the end of the image name means that we will use the most recent available version for that image. You can also specify a specific version of the image by using <code>:version</code> e.g. <code>:8.0.2</code> for version 8.0.2 at the end of the image name. You can find a list of all the flags <a href="https://docs.docker.com/engine/reference/commandline/run/">here</a>.</p>
+<br>
+<h3 id="playing-around-with-the-container">Playing around with the Container</h3>
+<p>Now that we have our container running, we can interact with it. To do this, we first need to get the container ID. To do this, run the following command:</p>
+<pre><code class="language-bash">docker ps
+</code></pre>
+<p>This will show us a list of all the running containers. You should see something like this:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker-ps-output.png" />
+</div>
+<p>As you can see, I have 3 containers running. But that is not important right now, we will start by going over the columns.</p>
+<p>The first column is the container ID. We will need this to interact with the container. We will look at how to do this in a bit.</p>
+<p>The second column is the image name. This is the name of the image that the container was created from.</p>
+<p>The third column is the command that was used to start the container. In this case it is <code>dotnet EKO.ConnectFour.Api.dll</code>. This is the command that is run when the container is started.</p>
+<p>After this we have the creation date of the container and its current status.</p>
+<p>Next we have the exposed ports and at the end we can see the names of the containers themselves.</p>
+<p>What we want to do next is run a few commands from within the container, to do this we will start a bash session inside of the container. To do this, run the following command:</p>
+<pre><code class="language-bash">docker exec -it 3309 bash
+</code></pre>
+<p>This command wil start an interactive bash session inside of the container.</p>
+<p>As you can see, I didn't provide the full id of the container, I only provided the first 4 characters. This is because the container ID is unique, so there is no need to provide the full ID. You can also use the name of the container instead of the ID.</p>
+<p>Next we will stop the container and finish this tutorial. To do this, run the following command:</p>
+<pre><code class="language-bash">docker container stop 3309
+</code></pre>
+<p>This will stop the container and remove it. This was because, as mentioned previously, we used the <code>--rm</code> flag when we ran the container.</p>
+<br>
+<h2 id="conclusion">Conclusion</h2>
+<p>These were some of the basic functions and use cases of Docker. There is a lot more to Docker than what I have shown here. If you want to learn more about Docker, you can check out the <a href="https://docs.docker.com/">official documentation</a>. Enjoy hosting and deploying your apps!</p>
+</div>
+
+				<script src="/resources/libs/highlight/highlight.min.js"></script>
+				<script>
+					hljs.highlightAll();
+				</script>
+			</main>
+		</div>
+
+		<footer class="container-fluid w-100 p-0">
+			<div class="w-100 d-flex flex-column">
+				<div
+					class="align-self-center p-3 text-dark text-center special-link-wrapper"
+				>
+					<a
+						class="p-2 special-link"
+						href="/blog/markdown/building-and-using-docker-containers.md"
+						download=""
+					>
+						Download this page as Markdown
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script src="/scripts/dist/blog/DarkMode.js" type="module"></script>
+	</body>
+</html>

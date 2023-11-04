@@ -3,11 +3,12 @@
 /**************************/
 :root {
   /* Overwrite default font with Fira Sans */
-  --bs-font-sans-serif: "Fira Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Fira Sans", system-ui, -apple-system, "Segoe UI",
+  	Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+  	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* Colors */
   /*--clr-theme: #120A79;
-  --clr-action: #773466;*/
+   --clr-action: #773466;*/
   --clr-theme: hsl(244.3, 84.7%, 25.7%);
   --clr-action: hsl(315.2, 39.2%, 33.5%);
   --clr-theme-dark: hsl(244.3, 84.7%, 35.7%);
@@ -17,13 +18,19 @@
   /* Theme */
   --thm-neutral: #fdfdfd;
   --thm-neutral-dark: #1d1d1d;
-  --thm-gradient: linear-gradient(to right, var(--clr-theme), var(--clr-action));
+  --thm-gradient: linear-gradient(
+  	to right,
+  	var(--clr-theme),
+  	var(--clr-action)
+  );
   /* Other Properties */
-  --glow-white: 0px 0px 1.4px rgba(255, 255, 255, 0.05), 0px 0px 3.8px rgba(255, 255, 255, 0.1),
-    0px 0px 9px rgba(255, 255, 255, 0.2), 0px 0px 30px rgba(255, 255, 255, 0.3);
+  --glow-white: 0px 0px 1.4px rgba(255, 255, 255, 0.05),
+  	0px 0px 3.8px rgba(255, 255, 255, 0.1), 0px 0px 9px rgba(255, 255, 255, 0.2),
+  	0px 0px 30px rgba(255, 255, 255, 0.3);
   --shadow-action: 0 0 0 0.25rem rgb(193, 110, 112, 0.25);
-  --shadow-theme: 0px 0px 1.4px rgba(21, 30, 63, 0.05), 0px 0px 3.8px rgba(21, 30, 63, 0.1), 0px 0px 9px rgba(21, 30, 63, 0.2),
-    0px 0px 30px rgba(21, 30, 63, 0.3);
+  --shadow-theme: 0px 0px 1.4px rgba(21, 30, 63, 0.05),
+  	0px 0px 3.8px rgba(21, 30, 63, 0.1), 0px 0px 9px rgba(21, 30, 63, 0.2),
+  	0px 0px 30px rgba(21, 30, 63, 0.3);
   --border-radius: 1rem;
 }
 
@@ -46,7 +53,7 @@ html::-webkit-scrollbar-thumb {
   border-radius: var(--border-radius);
 }
 html::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, hsl(244.3deg, 84.7%, 45.7%), hsl(315.2deg, 39.2%, 55.5%));
+  background: linear-gradient(to bottom, hsl(244.3, 84.7%, 45.7%), hsl(315.2, 39.2%, 55.5%));
 }
 
 html:has(body:not(.light-mode))::-webkit-scrollbar-track {
@@ -57,7 +64,7 @@ html:has(body:not(.light-mode))::-webkit-scrollbar-thumb {
   border-radius: var(--border-radius);
 }
 html:has(body:not(.light-mode))::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, hsl(244.3deg, 84.7%, 45.7%), hsl(315.2deg, 39.2%, 55.5%));
+  background: linear-gradient(to bottom, hsl(244.3, 84.7%, 45.7%), hsl(315.2, 39.2%, 55.5%));
 }
 
 body {
@@ -144,12 +151,20 @@ div.container-fluid.for-mobile h3 {
   margin-bottom: 0.5em;
 }
 
+.for-mobile p {
+  text-align: justify;
+}
+
 pre {
   border-radius: var(--border-radius);
 }
 
 main div .hljs {
   background-color: #282828;
+}
+
+.hljs {
+  padding: 1rem !important;
 }
 
 .for-mobile {
@@ -173,6 +188,14 @@ main div .hljs {
 
 .page-header {
   padding: 1rem;
+}
+
+.scale-on-tap {
+  transition: 0.5s;
+}
+.scale-on-tap:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
 }
 
 @media only screen and (max-width: 768px) {

@@ -1,10 +1,10 @@
 ---
-title: Real Time Web Apps in .NET 
+title: Real Time Web Apps in .NET
 description: Using SignalR to create real time web apps in .NET
 cover: signalr-cover.png
 ---
 
-There are a few ways to make a web app real time. You could make a button that refreshes the page, or you could use AJAX to update the page. But what if you want to update the page without the user having to do anything? Well, you could automatically make a request to the server every few seconds using something like `setInterval` in JavaScript, but that's not very efficient and it's not very '*real time*'.
+There are a few ways to make a web app real time. You could make a button that refreshes the page, or you could use AJAX to update the page. But what if you want to update the page without the user having to do anything? Well, you could automatically make a request to the server every few seconds using something like `setInterval` in JavaScript, but that's not very efficient and it's not very '_real time_'.
 
 That's why a lot of people use WebSockets. WebSockets are a new technology that allows you to open a connection between the client and the server and keep it open. This allows the server to send data to the client without the client having to make a request.
 
@@ -85,35 +85,36 @@ const connection = new signalR.HubConnectionBuilder().withUrl("/chat").build();
 
 // Start the connection
 connection.start().catch(function (err) {
-    // If there is an error, log it to the console
-    return console.error(err.toString());
+	// If there is an error, log it to the console
+	return console.error(err.toString());
 });
 
 // Add a function to run when we receive a message from the hub
 connection.on("ReceiveMessage", function (user, message) {
-    // Create a message with the user and message
-    var msg = user + " says: " + message;
+	// Create a message with the user and message
+	var msg = user + " says: " + message;
 
-    // Create a new list item with the message and add it to the list of messages
-    var li = document.createElement("li");
-    li.textContent = msg;
-    document.getElementById("messagesList").appendChild(li);
+	// Create a new list item with the message and add it to the list of messages
+	var li = document.createElement("li");
+	li.textContent = msg;
+	document.getElementById("messagesList").appendChild(li);
 });
 
 // Add a function to send messages to the hub when the send button is clicked
-document.getElementById("sendButton").addEventListener("click", function (event) {
+document
+	.getElementById("sendButton")
+	.addEventListener("click", function (event) {
+		// Get the user and message from the input fields
+		var user = document.getElementById("userInput").value;
+		var message = document.getElementById("messageInput").value;
 
-    // Get the user and message from the input fields
-    var user = document.getElementById("userInput").value;
-    var message = document.getElementById("messageInput").value;
+		// Send the message to the hub
+		connection.invoke("SendMessage", user, message).catch(function (err) {
+			return console.error(err.toString());
+		});
 
-    // Send the message to the hub
-    connection.invoke("SendMessage", user, message).catch(function (err) {
-        return console.error(err.toString());
-    });
-
-    event.preventDefault();
-});
+		event.preventDefault();
+	});
 ```
 
 This code will connect to the hub and send messages to it. It will also add a function to receive messages from the hub and add them to the list of messages. Now add this script to the `_Layout.cshtml` file:
@@ -126,28 +127,38 @@ Now we can add the HTML to our `Index.cshtml` file to display the messages and s
 
 ```html
 <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h3>Chat</h3>
-            </div>
-            <div class="card-body">
-                <!-- Our messages will be shown here -->
-                <ul id="messagesList"></ul>
-            </div>
-            <div class="card-footer">
-                <div class="input-group">
-                    <!-- We will get our username and message from these fields -->
-                    <input type="text" id="userInput" class="form-control" placeholder="Username" />
-                    <input type="text" id="messageInput" class="form-control" placeholder="Message" />
-                    <div class="input-group-append">
-                        <!-- When this button is clicked, we will send a message to the server -->
-                        <button id="sendButton" class="btn btn-primary">Send</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<div class="col-md-12">
+		<div class="card">
+			<div class="card-header">
+				<h3>Chat</h3>
+			</div>
+			<div class="card-body">
+				<!-- Our messages will be shown here -->
+				<ul id="messagesList"></ul>
+			</div>
+			<div class="card-footer">
+				<div class="input-group">
+					<!-- We will get our username and message from these fields -->
+					<input
+						type="text"
+						id="userInput"
+						class="form-control"
+						placeholder="Username"
+					/>
+					<input
+						type="text"
+						id="messageInput"
+						class="form-control"
+						placeholder="Message"
+					/>
+					<div class="input-group-append">
+						<!-- When this button is clicked, we will send a message to the server -->
+						<button id="sendButton" class="btn btn-primary">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 ```
 
