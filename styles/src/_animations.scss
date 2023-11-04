@@ -3,8 +3,15 @@
 		transform: translate3d(0, 0, 1px) rotate(360deg);
 	}
 }
-@keyframes move {
+
+@keyframes GradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
 	100% {
-		transform: translate3d(0, 0, 1px) rotate(360deg);
+		background-position: 0% 50%;
 	}
 }
