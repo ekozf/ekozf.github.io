@@ -283,6 +283,14 @@
     background-position: 0% 50%;
   }
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 body {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -439,6 +447,37 @@ aside article:nth-child(2) {
   div article {
     margin-top: 2rem;
   }
+}
+@keyframes move {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+@keyframes GradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+body > h1,
+header,
+main,
+aside,
+div#cards-mobile {
+  animation: fadeIn 0.333s ease-in-out;
 }
 
 /*# sourceMappingURL=index.css.map */

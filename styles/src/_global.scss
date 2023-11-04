@@ -1,0 +1,9 @@
+@import "_animations.scss";
+
+body > h1,
+header,
+main,
+aside,
+div#cards-mobile {
+	animation: fadeIn 0.333s ease-in-out;
+}

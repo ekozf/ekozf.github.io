@@ -1,8 +1,9 @@
 @import "_background.scss";
 @import "_utility.scss";
+@import "_global.scss";
 
 article {
-	width: 60ch;
+	width: 45ch;
 	background-color: rgb(43, 48, 53, 0.333);
 	border: 3px solid rgb(50, 55, 60, 0.75);
 	transition: 0.5s;
