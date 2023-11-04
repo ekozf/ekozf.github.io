@@ -11,9 +11,11 @@ function CalculateAge() {
 		age--;
 	}
 
-	const ageContainer = document.getElementById("age-container");
+	const ageContainer = document.querySelectorAll(".age-container");
 
-	ageContainer.textContent = age.toString();
+	for (let i = 0; i < ageContainer.length; i++) {
+		ageContainer[i].textContent = age.toString();
+	}
 }
 
 CalculateAge();
