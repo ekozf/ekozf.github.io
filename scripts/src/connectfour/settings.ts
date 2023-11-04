@@ -1,3 +1,4 @@
+import { BACKEND_URL } from "./config.js";
 import CreateToastMsg from "./toastHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -90,6 +91,13 @@ function LoadFromStorage() {
 	}
 
 	const backendUrl = localStorage.getItem("backendUrl");
+
+	if (!backendUrl) {
+		(document.getElementById("backendUrl") as HTMLInputElement).value =
+			BACKEND_URL;
+
+		return;
+	}
 
 	(document.getElementById("backendUrl") as HTMLInputElement).value =
 		backendUrl;

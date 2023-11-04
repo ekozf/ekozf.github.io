@@ -3,10 +3,10 @@ import CreateToastMsg from "./toastHandler.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	// Get the input for the check password
-	const checkPass = document.getElementById("check-pass");
-	const checkPassword = document.getElementById("password");
-	const checkEmail = document.getElementById("email");
-	const username = document.getElementById("username");
+	const checkPass = document.getElementById("form-verify-password");
+	const checkPassword = document.getElementById("form-password");
+	const checkEmail = document.getElementById("form-email");
+	const username = document.getElementById("form-username");
 
 	checkPassword.addEventListener("keyup", ValidatePassword);
 	checkPass.addEventListener("keyup", ValidateVerifyPassword);
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
  * @returns {boolean}
  */
 function ValidateEmail() {
-	const target = document.getElementById("email") as HTMLInputElement;
+	const target = document.getElementById("form-email") as HTMLInputElement;
 
 	if (target.value === "" || !target.value.match(/.+@.+\..+/g)) {
 		target.setCustomValidity("Email is invalid!");
@@ -48,8 +48,10 @@ function ValidateEmail() {
  * @returns {boolean}
  */
 function ValidatePassword() {
-	const target = document.getElementById("password") as HTMLInputElement;
-	const verify = document.getElementById("check-pass") as HTMLInputElement;
+	const target = document.getElementById("form-password") as HTMLInputElement;
+	const verify = document.getElementById(
+		"form-verify-password"
+	) as HTMLInputElement;
 
 	if (target.value.length < 6) {
 		target.setCustomValidity("Password is too short (min 6)");
@@ -75,8 +77,10 @@ function ValidatePassword() {
  * @returns {boolean}
  */
 function ValidateVerifyPassword() {
-	const target = document.getElementById("password") as HTMLInputElement;
-	const verify = document.getElementById("check-pass") as HTMLInputElement;
+	const target = document.getElementById("form-password") as HTMLInputElement;
+	const verify = document.getElementById(
+		"form-verify-password"
+	) as HTMLInputElement;
 
 	if (verify.value !== target.value) {
 		verify.setCustomValidity("Passwords don't match");
@@ -94,7 +98,7 @@ function ValidateVerifyPassword() {
  * @returns {boolean}
  */
 function ValidateUsername() {
-	const target = document.getElementById("username") as HTMLInputElement;
+	const target = document.getElementById("form-username") as HTMLInputElement;
 
 	if (target.value === "") {
 		target.setCustomValidity("Username is invalid!");
@@ -136,10 +140,13 @@ async function DoRegisterUser() {
 	const url = BACKEND_URL + "Authentication/register";
 
 	// Get the values from the inputs
-	const name = (document.getElementById("username") as HTMLInputElement).value;
-	const email = (document.getElementById("email") as HTMLInputElement).value;
-	const password = (document.getElementById("password") as HTMLInputElement)
+	const name = (document.getElementById("form-username") as HTMLInputElement)
 		.value;
+	const email = (document.getElementById("form-email") as HTMLInputElement)
+		.value;
+	const password = (
+		document.getElementById("form-password") as HTMLInputElement
+	).value;
 
 	// Check the UserModel in the backend for the required fields
 	const person: RegisterModel = {
