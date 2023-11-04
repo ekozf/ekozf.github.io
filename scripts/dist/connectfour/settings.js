@@ -1,3 +1,4 @@
+import { BACKEND_URL } from "./config.js";
 import CreateToastMsg from "./toastHandler.js";
 document.addEventListener("DOMContentLoaded", () => {
     const colorButton = document.getElementById("btnSubmitSettings");
@@ -60,6 +61,11 @@ function LoadFromStorage() {
             animationDuration;
     }
     const backendUrl = localStorage.getItem("backendUrl");
+    if (!backendUrl) {
+        document.getElementById("backendUrl").value =
+            BACKEND_URL;
+        return;
+    }
     document.getElementById("backendUrl").value =
         backendUrl;
 }
