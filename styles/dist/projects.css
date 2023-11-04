@@ -225,6 +225,11 @@
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 .text-justify {
   text-align: justify;
 }
@@ -243,6 +248,22 @@
 
 .justify-self-center {
   justify-self: center;
+}
+
+.offsite-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+.offsite-link {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.5s;
+}
+
+.offsite-link:hover {
+  scale: 1.1;
+  transition: 0.5s;
 }
 
 article {

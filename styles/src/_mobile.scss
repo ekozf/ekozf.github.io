@@ -1,6 +1,13 @@
 /** Make articles flow under each other on mobile **/
 
 @media only screen and (max-width: 1400px) {
+	html body main#main-mobile {
+		height: fit-content !important;
+		margin-top: 3rem !important;
+		padding-top: 0 !important;
+		display: initial;
+	}
+
 	#cards-desktop,
 	#main-desktop {
 		display: none;
@@ -11,21 +18,17 @@
 		flex-direction: column;
 	}
 
-	div {
-		margin-top: 25vh;
+	div article section {
+		margin: 2rem 0rem;
 
-		article section {
-			margin: 2rem 0rem;
+		background-color: rgb(43, 48, 53, 0.333);
+		border: 3px solid rgb(50, 55, 60, 0.75);
+		transition: 0.5s;
 
-			background-color: rgb(43, 48, 53, 0.333);
-			border: 3px solid rgb(50, 55, 60, 0.75);
+		&:hover {
+			opacity: 0.75;
+			filter: brightness(1.5);
 			transition: 0.5s;
-
-			&:hover {
-				opacity: 0.75;
-				filter: brightness(1.5);
-				transition: 0.5s;
-			}
 		}
 	}
 
@@ -39,14 +42,16 @@
 			margin: none;
 		}
 	}
+
+	#contact-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 }
 
 @media only screen and (max-width: 768px) {
-	div {
-		margin-top: 25vh;
-
-		article {
-			margin-top: 2rem;
-		}
+	div article {
+		margin-top: 2rem;
 	}
 }
