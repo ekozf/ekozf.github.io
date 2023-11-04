@@ -368,7 +368,7 @@ aside article:nth-child(2) {
   margin-right: 2rem;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1366px) {
   #cards-desktop {
     display: block;
   }
@@ -394,7 +394,7 @@ aside article:nth-child(2) {
 }
 
 /** Make articles flow under each other on mobile **/
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1366px) {
   html body main#main-mobile {
     height: fit-content !important;
     margin-top: 3rem !important;
