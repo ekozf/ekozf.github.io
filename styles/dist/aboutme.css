@@ -313,5 +313,26 @@ main {
     background-position: 0% 50%;
   }
 }
+@media only screen and (max-width: 1024px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+  .h-75 {
+    height: fit-content !important;
+  }
+  article.ms-5 {
+    margin-left: 0 !important;
+  }
+  #about-me {
+    order: 1;
+  }
+  #my-skills {
+    order: 2;
+  }
+  #connect-with-me {
+    order: 3;
+  }
+}
 
 /*# sourceMappingURL=aboutme.css.map */
