@@ -145,15 +145,9 @@ This will show us a list of all the running containers. You should see something
 
 As you can see, I have 3 containers running. But that is not important right now, we will start by going over the columns.
 
-The first column is the container ID. We will need this to interact with the container. We will look at how to do this in a bit.
+The first column is the container ID. We will need this to interact with the container. We will look at how to do this in a bit. The second column is the image name. This is the name of the image that the container was created from. The third column is the command that was used to start the container. In this case it is `dotnet EKO.ConnectFour.Api.dll`. This is the command that is run when the container is started.
 
-The second column is the image name. This is the name of the image that the container was created from.
-
-The third column is the command that was used to start the container. In this case it is `dotnet EKO.ConnectFour.Api.dll`. This is the command that is run when the container is started.
-
-After this we have the creation date of the container and its current status.
-
-Next we have the exposed ports and at the end we can see the names of the containers themselves.
+After this we have the creation date of the container and its current status. Next we have the exposed ports and at the end we can see the names of the containers themselves.
 
 What we want to do next is run a few commands from within the container, to do this we will start a bash session inside of the container. To do this, run the following command:
 
