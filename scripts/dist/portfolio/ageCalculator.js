@@ -7,8 +7,10 @@ function CalculateAge() {
     if (month < 0 || (month === 0 && now.getDate() < born.getDate())) {
         age--;
     }
-    const ageContainer = document.getElementById("age-container");
-    ageContainer.textContent = age.toString();
+    const ageContainer = document.querySelectorAll(".age-container");
+    for (let i = 0; i < ageContainer.length; i++) {
+        ageContainer[i].textContent = age.toString();
+    }
 }
 CalculateAge();
 //# sourceMappingURL=ageCalculator.js.map
