@@ -4,7 +4,7 @@ description: A quick introduction to Docker and how to use it
 cover: docker-blue.png
 ---
 
-Have you ever wanted to deploy something you have made, but the destination server did not have the correct configuration and dependancies to run the app? If so, then you might want to look into running your app inside of something called a Docker Container. In this tutorial we will go over what Docker is, how to create a Docker container and how to deploy it to a server.
+Have you ever wanted to deploy something you have made, but the destination server did not have the correct configuration and dependencies to run the app? If so, then you might want to look into running your app inside of something called a Docker Container. In this tutorial we will go over what Docker is, how to create a Docker container and how to deploy it to a server.
 
 <br>
 
@@ -100,13 +100,13 @@ docker push ekozf/eko-raspberry-api
 
 ### Loading & Running the Image
 
-Now our Image is on Docker Hub, we can load it on any machine that has Docker installed. To do this you should first install docker on the host machine, then run the following command:
+Now our Image is on Docker Hub, we can load it on any machine that has Docker installed. To do this you should first install Docker on the host machine, then run the following command:
 
 ```bash
 docker pull ekozf/eko-raspberry-api:latest
 ```
 
-You might have to run this using sudo if you didn't add your user to the docker group. You might also get an error saying that the Image is not found. This is because the Image is not public. To make it public, go to the Docker Hub page of the Image and click on the `Change visibility` button. Then select `Public` and click on `Change visibility`. But you can also login to docker on the host machine using `docker login` Now you should be able to pull the Image.
+You might have to run this using `sudo` if you didn't add your user to the Docker group. You might also get an error saying that the Image is not found. This is because the Image is not public. To make it public, go to the Docker Hub page of the Image and click on the `Change visibility` button. Then select `Public` and click on `Change visibility`. But you can also login to Docker on the host machine using `docker login` Now you should be able to pull the Image.
 
 You can run the image using the following command:
 
