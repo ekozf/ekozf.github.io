@@ -388,3 +388,9 @@ input[type="checkbox"] {
 /**************************/
 /* Styling for Blog Pages */
 /**************************/
+
+@media only screen and (min-width: 1400px) {
+	.md-container img.w-100 {
+		width: 66% !important;
+	}
+}
