@@ -1,6 +1,6 @@
 ---
 title: Building, deploying and using Docker containers
-description: A quick introduction to Docker and how to use it
+description: How to build, deploy and use Docker containers
 cover: docker-blue.png
 ---
 
