@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Emir Kaan Ozver - Introduction to Docker</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="A quick introduction to Docker and how to use it" />
+		<meta name="og:description" content="A quick introduction to Docker and how to use it" />
+		<meta property="og:title" content="Introduction to Docker" />
+		<meta property="og:site_name" content="Emir Kaan Blog" />
+		<meta property="og:description" content="A quick introduction to Docker and how to use it" />
+		<meta property="og:type" content="website" />
+		<meta
+			property="og:image"
+			content="https://blog.emirkaan.be/resources/images/docker-blue.png"
+		/>
+		<script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script
+			src="/scripts/dist/blog/MermaidThemeSwitcher.js"
+			type="module"
+			id="light-mermaid"
+			defer
+		></script>
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-light.min.css"
+			id="light-code"
+			disabled
+		/>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-dark.min.css"
+			id="dark-code"
+		/>
+		<link rel="stylesheet" href="/blog/styles/dist/style.css" />
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-light">
+				<div class="container-fluid for-mobile">
+					<div class="svg-container">
+						<a
+							class="navbar-brand text-light me-5 pe-2 user-select-none"
+							href="/"
+						>
+							<img src="/resources/EKO_Logo.svg" alt="Logo of the website" />
+						</a>
+					</div>
+					<button
+						class="navbar-toggler border-0"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target=".navbar-collapse"
+					>
+						<span class="navbar-toggler-icon text-light"></span>
+					</button>
+					<div
+						class="navbar-collapse collapse d-sm-inline-flex justify-content-between align-items-end"
+					>
+						<ul
+							class="navbar-nav flex-grow-1 gap-3 fw-bold justify-content-end"
+						>
+							<li class="nav-item">
+								<a class="nav-link" href="/blog/">Home</a>
+							</li>
+							<li class="nav-item nav-active">
+								<a class="nav-link" href="/blog/pages/1/">Blog</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/">About</a>
+							</li>
+							<li class="nav-item">
+								<div class="nav-link form-check">
+									<input
+										class="form-check-input"
+										type="checkbox"
+										value=""
+										id="dark-toggle"
+									/>
+									<label class="form-check-label" for="dark-toggle">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="moon"
+										>
+											<path
+												d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+											/>
+										</svg>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											width="16"
+											height="16"
+											fill="currentColor"
+											viewBox="0 0 16 16"
+											id="sun"
+										>
+											<path
+												d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+											/>
+										</svg>
+									</label>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container-fluid w-100 p-0">
+			<main role="main" class="w-100 d-flex flex-column">
+				<div class="align-self-center p-3 text-center">
+					<h1 class="display-4 fw-bolder p-3">Introduction to Docker</h1>
+				</div>
+
+				<div class="mt-5 mb-5 container-fluid for-mobile"><p>Software developers often struggle with deploying their apps, this is because the development environment is often different from the production environment. This can cause issues when deploying the app. To solve this issue, you can use something called Docker containers. In this tutorial we will go over what Docker is and how to use it.</p>
+<br>
+<h2 id="what-is-a-container">What is a Container?</h2>
+<p>A container is a portable environment that contains everything required to run your app. This includes the OS, dependencies, configuration, and your app. Using a container you can deploy an app on any machine that can run these containers, which allows you to be very flexible when it comes to deploying your app.</p>
+<p>You cannot have a container without first having an image. An image is a template that is used to create containers. You can think of an image as a blueprint for a container. You can create multiple containers from the same image. This allows you to run multiple instances of your app on the same machine at the same time.</p>
+<p>To make a new image, you will have to create a <code>Dockerfile</code> (without extension), which is a file that contains all the instructions required to create the image. You can then build the image using the <code>docker build</code> command. You can find more information about Dockerfiles <a href="https://docs.docker.com/engine/reference/builder/">here</a>. We will not be making any Docker images in this tutorial, but we will use some images that are already available on <a href="https://hub.docker.com/">Docker Hub</a>, which is the official repository for Docker images.</p>
+<br>
+<h2 id="about-docker">About Docker</h2>
+<p><a href="https://www.docker.com/">Docker</a> is a platform that allows you to create, deploy, and run containers. It is the most popular container platform and is used by many companies. Docker is also open source, which means that you can use it for free. Docker is very easy to use, which makes it a great choice for beginners while having all functionality required to run complex systems.</p>
+<br>
+<h2 id="why-do-we-need-containers">Why do we need Containers?</h2>
+<p>There are multiple reasons why you would want to use containers, here are some of them:</p>
+<ol>
+<li>Portability
+<ul>
+<li>You never have to worry about your app not running on a machine because of missing dependencies or configuration</li>
+<li>All required dependencies are included in the container</li>
+<li>It is its own sandboxed environment, which means that it is isolated from the host machine</li>
+</ul>
+</li>
+<li>Agility
+<ul>
+<li>You can easily deploy your app on any machine that can run containers</li>
+<li>No configuration is required on the host machine</li>
+<li>Makes the lives of DevOps engineers easier</li>
+</ul>
+</li>
+<li>Scalability
+<ul>
+<li>You can easily scale your app horizontally by running multiple instances of the same container</li>
+<li>You can also scale vertically by increasing the resources available to the container</li>
+<li>Makes it easier to design and implement a microservice architecture</li>
+</ul>
+</li>
+</ol>
+<br>
+<h2 id="setting-up-docker">Setting up Docker</h2>
+<p>First, you have to install the <a href="https://docs.docker.com/engine/install/">Docker engine</a> itself, after you have installed the Docker engine, we can start using it to create containers. You can check if Docker is installed correctly by running the following command:</p>
+<pre><code class="language-bash">docker --version
+</code></pre>
+<p>If you get an output similar to this, then Docker is installed correctly:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_version_pic.png" />
+</div>
+<h2 id="using-docker-for-the-first-time">Using Docker for the first time</h2>
+<p>Now that you have downloaded and set up Docker, we can start experimenting and using it to run some containers. Be sure to run the Docker Engine before following the rest of this tutorial.</p>
+<h3 id="hello-world">Hello-World</h3>
+<p>We will start off by just running a very simple container that only prints something to the console. To do this, run the following command:</p>
+<pre><code class="language-bash">docker run hello-world
+</code></pre>
+<p>After running that command, your output should look something like this:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_helloworld_output.png" />
+</div>
+<p>Let's go over what each line means:</p>
+<ol>
+<li><code>Unable to find image 'hello-world:latest' locally</code> means that Docker was unable to find the image on your machine, so it downloaded it from Docker Hub</li>
+<li><code>latest: Pulling from library/hello-world</code> means that Docker is pulling the image from Docker Hub, it is using the latest available version by default, you can specify the version by doing <code>hello-world:version.number</code></li>
+</ol>
+<p>After these 2 messages, Docker just loads the image from Docker Hub and then creates a container from the image. Then this container is started and prints out our &quot;Hello from Docker!&quot; message. After this, the container exits.</p>
+<p>Congratulations on running your first container! Now let's move on to something a bit more complex.</p>
+<br>
+<h3 id="wheres-my-container">Where's my Container?</h3>
+<p>Now that you have ran your first container, let's see if we can do more stuff with Docker. Let's start off by looking at our current running containers. You can do it by doing the following command:</p>
+<pre><code class="language-bash">docker container ls
+# or
+docker ps
+</code></pre>
+<p>This will show you the currently running containers, in our case this list should be empty. But wait, we just ran the &quot;hello-world&quot; container, so why is it not showing up here? Well, that is because that container has already exited, and Docker does not show exited containers by default, if you want to see all containers, you can run the following command:</p>
+<pre><code class="language-bash">docker container ls -a
+# or
+docker ps -a
+</code></pre>
+<p>Now you will see that there is a container, namely the &quot;hello-world&quot; container. Its status is &quot;exited&quot; which means it has stopped executing and is no longer running.</p>
+<p>Let's remove this container, to do this, run the following command:</p>
+<pre><code class="language-bash">docker container rm &lt;container-id&gt;
+</code></pre>
+<p>You do not have to type the full id of the container, since they are unique, you can just type the first few characters.</p>
+<h3 id="images-the-blueprints-of-containers">Images, the blueprints of Containers</h3>
+<p>Now we have removed the container, but remember how containers are actually created from images? Well, this means that we can find the &quot;hello-world&quot; image somewhere in Docker. We can look for it by running:</p>
+<pre><code class="language-bash">docker image ls
+# or
+docker images
+</code></pre>
+<p>This will show us a list of all the images that we have on our machine. You should see something like this:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_images_output.png" />
+</div>
+<p>On my own machine I have a lot of different images, but on yours you might only see the &quot;hello-world&quot; image. Now let's re-run the &quot;hello-world&quot; container, but this time we will do it twice, to do this, run the following command:</p>
+<pre><code class="language-bash">docker run hello-world &amp;&amp; docker run hello-world
+</code></pre>
+<p>Now you will see that it did not mention downloading or pulling from Docker Hub, this is because the image (the blueprint), is already locally available. If you view the containers now using <code>docker ps -a</code> you will see that there are 2 containers. As you can see in the column called &quot;IMAGES&quot;, both of these containers use the same image, but they have different container IDs. This is because each container is its own instance of the image and can be run seperately in isolation.</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_after_run.png" />
+</div>
+<p>Now let's delete these 2 containers by using <code>docker container rm &lt;container-id&gt;</code> again. Another tip, if you want containers to be auto-deleted once they exit, you can run them like this using the <code>--rm</code> flag: <code>docker run --rm hello-world</code>, this will delete the container when it exits. Now let's also remove the &quot;hello-world&quot; image. To do this, run the following command:</p>
+<pre><code class="language-bash">docker image rm hello-world
+</code></pre>
+<p>After running the command above, the &quot;hello-world&quot; image should be removed from your machine. Now let's move on to something a bit more complex.</p>
+<br>
+<h2 id="running-an-entire-os-within-a-container">Running an entire OS within a Container</h2>
+<p>Now that we have played around with Docker, let's do something more fun, like running an entire OS within a container. To do this, we will use a very small and lightweight Linux OS called 'Alpine'.<br />
+Let's first download the image from Docker Hub by running the following command:</p>
+<pre><code class="language-bash">docker pull alpine
+</code></pre>
+<p>This will download the Alpine image to your machine. Now let's run the container by running the following command:</p>
+<pre><code class="language-bash">docker run -it alpine
+</code></pre>
+<p>The <code>-it</code> flag is used to run the container in interactive mode, which means that you can interact with the container. Now you should see something like this:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_alpine.png" />
+</div>
+<p>This is the interactive shell that you can use for anything you like, it supports most Linux commands, so let's make it print something out. Run the following command:</p>
+<pre><code class="language-bash">echo &quot;Hello from Alpine!&quot;
+</code></pre>
+<p>By running that you should see &quot;Hello from Alpine!&quot; in the terminal, next let's do <code>ls</code> to view the files in the current directory. You should see something like this:</p>
+<div class="md-container">
+    <img class="w-100 scale-on-tap" src="/resources/images/docker_alpine_ls.png" />
+</div>
+<p>This is the filesystem of the Alpine container itself, not from your host or anywhere else. It is completely seperate from anything you have on your host machine, which means that you can do anything you want in here without worrying about messing up your host machine. Now let's exit the container by running <code>exit</code>.</p>
+<p>Now let's run the container again, but this time we will run it in detached mode, which means that it will run in the background and not prompt us. To do this, run the following command:</p>
+<pre><code class="language-bash">docker run -dit alpine
+</code></pre>
+<p>Now alpine is running in the background, but we are not in the container, so how do we interact with it? Well, we can use the <code>docker exec</code> command to execute commands inside the container. To do this, run the following command:</p>
+<pre><code class="language-bash"># first get out container id
+docker ps
+
+# then run the following command
+docker exec -it &lt;container-id-for-alpine&gt; sh
+</code></pre>
+<p>After running that command, we should be inside of our container just like we were before, using <code>docker exec</code> allows you to run commands inside of a container without having to be inside of it. Now let's exit the container again by running <code>exit</code>.</p>
+<p>Since the container is running in the background because of our <code>-d</code> flag, we have to stop it manually. To do this, run the following command:</p>
+<pre><code class="language-bash">docker container stop &lt;container-id-for-alpine&gt;
+</code></pre>
+<h3 id="need-some-help">Need some Help?</h3>
+<p>Sometimes people forget things, but do not worry, Docker has your back here, you can always go to the <a href="https://docs.docker.com/">documentation</a> or use the <code>--help</code> flag at the end of your command to see the different available options. You can also use the <code>docker help</code> command to see a list of all the available commands.</p>
+<br>
+<h2 id="conclusion">Conclusion</h2>
+<p>This was a small introduction and guide to Docker, there is a lot more that you can do with Docker, but with these basic commands you can already do a lot. I hope you enjoyed this tutorial and learned something new. If you want to learn more about Docker make sure to check out their <a href="https://docs.docker.com/">docs</a>!</p>
+</div>
+
+				<script src="/resources/libs/highlight/highlight.min.js"></script>
+				<script>
+					hljs.highlightAll();
+				</script>
+			</main>
+		</div>
+
+		<footer class="container-fluid w-100 p-0">
+			<div class="w-100 d-flex flex-column">
+				<div
+					class="align-self-center p-3 text-dark text-center special-link-wrapper"
+				>
+					<a
+						class="p-2 special-link"
+						href="/blog/markdown/introduction-to-docker.md"
+						download=""
+					>
+						Download this page as Markdown
+					</a>
+				</div>
+			</div>
+		</footer>
+		<script src="/scripts/dist/blog/DarkMode.js" type="module"></script>
+	</body>
+</html>
