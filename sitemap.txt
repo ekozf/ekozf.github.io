@@ -2,6 +2,7 @@ https://emirkaan.be/
 https://emirkaan.be/blog/
 https://emirkaan.be/projects/
 https://emirkaan.be/pages/about-me/
+https://emirkaan.be/pages/curriculum-vitae/
 https://emirkaan.be/blog/articles/building-and-using-docker-containers/
 https://emirkaan.be/blog/articles/introduction-to-docker/
 https://emirkaan.be/blog/articles/real-time-web-communication-signalr/
