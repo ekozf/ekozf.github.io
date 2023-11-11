@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="h-100">
+	<head lang="en">
+		<title>Shopping - Add Item | EKO</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Shopping List Web App" />
+		<meta name="og:description" content="Shopping List Web App" />
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="icon" href="/resources/favicon.ico" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="/resources/fonts/mplusrounded.css" />
+		<script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+		
+
+<link
+	rel="stylesheet"
+	href="/projects/shopping-list/styles/dist/shopping.css"
+/>
+<script
+	type="module"
+	src="/scripts/dist/shoppinglist/CreateShoppingItem.js"
+	defer
+></script>
+
+	</head>
+	<body data-bs-theme="dark" class="h-100 d-flex justify-content-center">
+		
+
+<div class="w-100">
+	<header class="p-3 mx-4 w-50 px-5 mt-3 rounded-5 shadow text-center">
+		<a
+			href="/projects/shopping-list/pages/items-list/"
+			class="go-back d-flex gap-4"
+		>
+			<span class="align-middle">&lArr;</span>
+			<span>Go Back</span>
+		</a>
+	</header>
+	<main class="mt-5 mx-3 d-flex flex-column">
+		<h1 class="text-center mb-5">Add Item</h1>
+
+		<div class="mb-5">
+			<label for="item-name" class="ms-2 mb-3"> Name </label>
+			<input
+				type="text"
+				id="item-name"
+				maxlength="100"
+				required
+				placeholder="Item Name"
+				class="form-control p-3 shadow"
+			/>
+		</div>
+		<div class="mb-5">
+			<label for="item-description" class="ms-2 mb-3"> Description </label>
+			<input
+				type="text"
+				id="item-description"
+				maxlength="100"
+				placeholder="Description"
+				class="form-control p-3 shadow"
+			/>
+		</div>
+		<div class="mb-5">
+			<label for="item-quantity" class="ms-2 mb-3"> Quantity </label>
+			<input
+				type="number"
+				id="item-quantity"
+				maxlength="100"
+				required
+				placeholder="Quantity"
+				class="form-control p-3 shadow"
+				min="1"
+			/>
+		</div>
+
+		<div class="mb-5">
+			<label for="select-unit" class="ms-2 mb-3"> Unit </label>
+			<select id="select-unit" class="form-select p-3 shadow" required>
+				<option value="0">Unkown</option>
+				<option value="1">Kilogram</option>
+				<option value="2">Gram</option>
+				<option value="3">Liter</option>
+				<option value="4">Milliliter</option>
+				<option value="5">Piece</option>
+				<option value="6">Package</option>
+				<option value="7">Bottle</option>
+				<option value="8">Can</option>
+				<option value="9">Box</option>
+				<option value="10">Bag</option>
+				<option value="99">Other</option>
+			</select>
+		</div>
+
+		<div class="mb-5">
+			<label for="select-store" class="ms-2 mb-3"> Store </label>
+			<select id="select-store" class="form-select p-3 shadow" required>
+				<option value="0">Unkown</option>
+				<option value="1">Aldi</option>
+				<option value="2">Lidl</option>
+				<option value="3">Carrefour</option>
+				<option value="4">Albert Heijn</option>
+				<option value="5">Jumbo</option>
+				<option value="6">Erpa</option>
+				<option value="7">Depoza</option>
+				<option value="99">Other</option>
+			</select>
+		</div>
+
+		<div class="mb-5">
+			<label for="select-category" class="ms-2 mb-3"> Category </label>
+			<select id="select-category" class="form-select p-3 shadow" required>
+				<option value="0">Unkown</option>
+				<option value="1">Food</option>
+				<option value="2">Drink</option>
+				<option value="3">Cleaning</option>
+				<option value="4">Hygiene</option>
+				<option value="5">Clothing</option>
+				<option value="6">Electronics</option>
+				<option value="7">Furniture</option>
+				<option value="8">Medicine</option>
+				<option value="9">Toy</option>
+				<option value="10">School</option>
+				<option value="11">Tool</option>
+				<option value="12">Decoration</option>
+				<option value="99">Other</option>
+			</select>
+		</div>
+
+		<div class="mb-5">
+			<label for="item-image" class="ms-2 mb-3"> Image </label>
+			<input
+				type="text"
+				id="item-image"
+				maxlength="100"
+				placeholder="Image"
+				class="form-control p-3 shadow"
+			/>
+		</div>
+		<div class="mb-5">
+			<label for="item-price" class="ms-2 mb-3"> Price </label>
+			<input
+				type="number"
+				id="item-price"
+				maxlength="100"
+				placeholder="Price"
+				class="form-control p-3 shadow"
+			/>
+		</div>
+
+		<button
+			type="button"
+			id="addItem"
+			class="btn btn-primary p-3 my-4 mx-5 shadow"
+		>
+			Add Item
+		</button>
+	</main>
+</div>
+
+
+	</body>
+</html>

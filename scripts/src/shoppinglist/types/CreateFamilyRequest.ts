@@ -1,0 +1,3 @@
+type CreateFamilyRequest = {
+	familyCode: string;
+};

@@ -1,0 +1,1 @@
+{"version":3,"file":"ViewItemDetails.js","sourceRoot":"","sources":["../../src/shoppinglist/ViewItemDetails.ts"],"names":[],"mappings":";AAAA,QAAQ,CAAC,gBAAgB,CAAC,kBAAkB,EAAE,GAAG,EAAE;IAClD,MAAM,IAAI,GAAG,QAAQ,CAAC,aAAa,CAAC,OAAO,CAAC,CAAC;IAE7C,IAAI,CAAC,WAAW,GAAG,YAAY,CAAC,OAAO,CAAC,+BAA+B,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC"}

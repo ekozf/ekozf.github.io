@@ -8,6 +8,6 @@
 	},
 	"scripts": {
 		"ts": "tsc -w",
-		"sass": "sass --watch styles/src/:styles/dist blog/styles/src/:blog/styles/dist projects/connect-four/styles/src:projects/connect-four/styles/dist"
+		"sass": "sass --watch styles/src/:styles/dist blog/styles/src/:blog/styles/dist projects/connect-four/styles/src:projects/connect-four/styles/dist projects/shopping-list/styles/src:projects/shopping-list/styles/dist"
 	}
 }

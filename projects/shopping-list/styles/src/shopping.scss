@@ -1,0 +1,97 @@
+@import "./global.scss";
+
+@mixin default_anchor {
+	color: white;
+	text-decoration: none;
+}
+
+header,
+footer {
+	background-color: var(--secondary-clr);
+}
+
+footer a {
+	@include default_anchor;
+
+	&:not(.active) {
+		opacity: 0.5;
+	}
+}
+
+.nav-icon {
+	width: 32px;
+	height: 32px;
+}
+
+.fs-7 {
+	font-size: 0.85rem;
+}
+
+.add-icon {
+	bottom: 7.5rem;
+	margin-right: 1rem;
+	background-color: var(--accent-primary);
+}
+
+.go-back {
+	@include default_anchor;
+}
+
+main.scrollable {
+	overflow-y: scroll;
+	height: 75%;
+
+	div.item-card {
+		background-color: var(--tertiary-clr);
+
+		img {
+			width: 1.25rem;
+		}
+
+		input[type="checkbox"] {
+			border: none;
+			background-color: var(--main-clr);
+
+			&:focus {
+				border-color: var(--accent-secondary);
+				box-shadow: 0 0 0 0.25rem var(--accent-primary);
+				background-color: var(--secondary-clr);
+			}
+		}
+	}
+
+	.accordion-button {
+		&:focus {
+			box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+				var(--secondary-clr);
+		}
+
+		&:not(.collapsed) {
+			color: white;
+			background-color: var(--main-clr);
+			box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+				var(--secondary-clr);
+
+			&:focus {
+				border-color: var(--secondary-clr);
+			}
+		}
+
+		&::after {
+			display: none;
+		}
+	}
+}
+
+select.form-select,
+input.form-control {
+	background-color: var(--tertiary-clr);
+	color: white;
+	border: none;
+
+	&:focus {
+		border-color: var(--accent-secondary);
+		box-shadow: 0 0 0 0.25rem var(--accent-primary);
+		background-color: var(--secondary-clr);
+	}
+}

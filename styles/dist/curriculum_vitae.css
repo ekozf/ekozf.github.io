@@ -1,0 +1,347 @@
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: #212529;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.background span {
+  width: 40vmin;
+  height: 40vmin;
+  border-radius: 40vmin;
+  backface-visibility: hidden;
+  position: absolute;
+  animation: move;
+  animation-duration: 5;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.background span:nth-child(0) {
+  color: #35394b;
+  top: 29%;
+  left: 25%;
+  animation-duration: 391s;
+  animation-delay: -343s;
+  transform-origin: 19vw -17vh;
+  box-shadow: 80vmin 0 10.3575781081vmin currentColor;
+}
+
+.background span:nth-child(1) {
+  color: #35394b;
+  top: 42%;
+  left: 92%;
+  animation-duration: 268s;
+  animation-delay: -330s;
+  transform-origin: -1vw 0vh;
+  box-shadow: -80vmin 0 10.9518030855vmin currentColor;
+}
+
+.background span:nth-child(2) {
+  color: #1e1e28;
+  top: 9%;
+  left: 73%;
+  animation-duration: 307s;
+  animation-delay: -116s;
+  transform-origin: 22vw -23vh;
+  box-shadow: 80vmin 0 10.0821791831vmin currentColor;
+}
+
+.background span:nth-child(3) {
+  color: #1e1e28;
+  top: 54%;
+  left: 23%;
+  animation-duration: 131s;
+  animation-delay: -164s;
+  transform-origin: 25vw -14vh;
+  box-shadow: 80vmin 0 10.9648047973vmin currentColor;
+}
+
+.background span:nth-child(4) {
+  color: #323250;
+  top: 18%;
+  left: 68%;
+  animation-duration: 356s;
+  animation-delay: -95s;
+  transform-origin: -13vw -11vh;
+  box-shadow: 80vmin 0 10.8722303684vmin currentColor;
+}
+
+.background span:nth-child(5) {
+  color: #323250;
+  top: 11%;
+  left: 90%;
+  animation-duration: 298s;
+  animation-delay: -343s;
+  transform-origin: 6vw -5vh;
+  box-shadow: -80vmin 0 10.2854338543vmin currentColor;
+}
+
+.background span:nth-child(6) {
+  color: #323250;
+  top: 35%;
+  left: 60%;
+  animation-duration: 316s;
+  animation-delay: -52s;
+  transform-origin: 8vw -24vh;
+  box-shadow: 80vmin 0 10.6784216216vmin currentColor;
+}
+
+.background span:nth-child(7) {
+  color: #35394b;
+  top: 58%;
+  left: 71%;
+  animation-duration: 131s;
+  animation-delay: -231s;
+  transform-origin: -14vw -20vh;
+  box-shadow: 80vmin 0 10.9013129208vmin currentColor;
+}
+
+.background span:nth-child(8) {
+  color: #35394b;
+  top: 59%;
+  left: 27%;
+  animation-duration: 165s;
+  animation-delay: -169s;
+  transform-origin: 15vw 13vh;
+  box-shadow: 80vmin 0 10.9387179039vmin currentColor;
+}
+
+.background span:nth-child(9) {
+  color: #1e1e28;
+  top: 20%;
+  left: 16%;
+  animation-duration: 343s;
+  animation-delay: -27s;
+  transform-origin: 14vw 7vh;
+  box-shadow: -80vmin 0 10.8919281372vmin currentColor;
+}
+
+.background span:nth-child(10) {
+  color: #1e1e28;
+  top: 29%;
+  left: 8%;
+  animation-duration: 397s;
+  animation-delay: -59s;
+  transform-origin: 9vw -2vh;
+  box-shadow: -80vmin 0 10.7107416877vmin currentColor;
+}
+
+.background span:nth-child(11) {
+  color: #35394b;
+  top: 62%;
+  left: 79%;
+  animation-duration: 421s;
+  animation-delay: -46s;
+  transform-origin: -6vw 13vh;
+  box-shadow: -80vmin 0 10.3114617684vmin currentColor;
+}
+
+.background span:nth-child(12) {
+  color: #323250;
+  top: 61%;
+  left: 61%;
+  animation-duration: 448s;
+  animation-delay: -17s;
+  transform-origin: 6vw 25vh;
+  box-shadow: -80vmin 0 10.4768210773vmin currentColor;
+}
+
+.background span:nth-child(13) {
+  color: #35394b;
+  top: 82%;
+  left: 61%;
+  animation-duration: 15s;
+  animation-delay: -367s;
+  transform-origin: 4vw -7vh;
+  box-shadow: -80vmin 0 10.6867030137vmin currentColor;
+}
+
+.background span:nth-child(14) {
+  color: #323250;
+  top: 44%;
+  left: 26%;
+  animation-duration: 228s;
+  animation-delay: -56s;
+  transform-origin: -9vw -17vh;
+  box-shadow: 80vmin 0 10.1668391585vmin currentColor;
+}
+
+.background span:nth-child(15) {
+  color: #1e1e28;
+  top: 44%;
+  left: 21%;
+  animation-duration: 200s;
+  animation-delay: -130s;
+  transform-origin: -5vw -21vh;
+  box-shadow: 80vmin 0 10.7882671033vmin currentColor;
+}
+
+.background span:nth-child(16) {
+  color: #323250;
+  top: 71%;
+  left: 43%;
+  animation-duration: 223s;
+  animation-delay: -264s;
+  transform-origin: 1vw -1vh;
+  box-shadow: -80vmin 0 10.7699473129vmin currentColor;
+}
+
+.background span:nth-child(17) {
+  color: #35394b;
+  top: 65%;
+  left: 7%;
+  animation-duration: 106s;
+  animation-delay: -443s;
+  transform-origin: -3vw -8vh;
+  box-shadow: -80vmin 0 10.6047397414vmin currentColor;
+}
+
+.background span:nth-child(18) {
+  color: #323250;
+  top: 48%;
+  left: 3%;
+  animation-duration: 223s;
+  animation-delay: -108s;
+  transform-origin: -14vw 1vh;
+  box-shadow: 80vmin 0 10.2680500731vmin currentColor;
+}
+
+.background span:nth-child(19) {
+  color: #35394b;
+  top: 45%;
+  left: 81%;
+  animation-duration: 36s;
+  animation-delay: -387s;
+  transform-origin: 3vw -5vh;
+  box-shadow: 80vmin 0 10.7536995634vmin currentColor;
+}
+
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  --clr-theme: hsl(244.3, 84.7%, 20%);
+  --clr-action: hsl(315.2, 39.2%, 30%);
+  --clr-complimentary: #030027;
+  --thm-neutral: #fdfdfd;
+  --thm-neutral-dark: #1d1d1d;
+  --glow-white: 0px 0px 1.4px rgba(255, 255, 255, 0.05),
+  	0px 0px 3.8px rgba(255, 255, 255, 0.1), 0px 0px 9px rgba(255, 255, 255, 0.2),
+  	0px 0px 30px rgba(255, 255, 255, 0.3);
+  --shadow-action: 0 0 0 0.25rem rgb(193, 110, 112, 0.25);
+  --shadow-theme: 0px 0px 1.4px rgba(234, 231, 225, 0.2),
+  	0px 0px 3.8px rgba(234, 231, 225, 0.3), 0px 0px 9px rgba(234, 231, 225, 0.4),
+  	0px 0px 30px rgba(234, 231, 225, 0.5);
+  --shadow-theme-dark: 0px 0px 1.4px rgba(170, 161, 136, 0.2),
+  	0px 0px 3.8px rgba(170, 161, 136, 0.3), 0px 0px 9px rgba(170, 161, 136, 0.4),
+  	0px 0px 30px rgba(170, 161, 136, 0.5);
+  --border-radius: 1rem;
+  --bg-main: hsl(43, 17%, 72%);
+  --bg-main-dark: hsl(43, 17%, 60%);
+  --bg-main-darkest: hsl(43, 17%, 40%);
+  --bg-main-light: hsl(43, 17%, 90%);
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 13fr 1fr;
+  color: white;
+  background-color: var(--bg-main);
+  -webkit-print-color-adjust: exact;
+}
+
+header {
+  grid-row: 1;
+  background-color: var(--thm-neutral-dark);
+  height: 18.5vh;
+  z-index: 99;
+}
+header img.rounded-circle {
+  position: absolute;
+  top: 4rem;
+  right: 1.25rem;
+  grid-column: 3;
+  width: 35vw;
+  aspect-ratio: 1x1;
+  border: 2rem solid var(--thm-neutral-dark);
+}
+header .titles {
+  grid-column: 1;
+  grid-row: 1;
+  width: 30vw;
+  border-right: 1px solid hsl(43, 17%, 72%);
+  margin-right: 2rem;
+}
+header .contact {
+  width: 20vw;
+}
+header .contact img {
+  width: 1.25rem;
+}
+header .contact span {
+  font-size: 0.9rem;
+}
+
+main {
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+main section {
+  width: 50vw;
+}
+main section .progress {
+  box-shadow: var(--shadow-theme);
+}
+main section .bg-theme-light {
+  background-color: var(--bg-main-light);
+}
+main section .bg-theme-dark {
+  background-color: var(--bg-main-dark);
+}
+main section .badge {
+  font-size: 1.05rem;
+  box-shadow: var(--shadow-theme-dark);
+}
+main section input[type=checkbox] {
+  background-color: var(--thm-neutral-dark) !important;
+  box-shadow: var(--shadow-theme-dark) !important;
+  opacity: 0.85 !important;
+  border: 2px solid var(--bg-main-darkest) !important;
+  padding: 0.5rem;
+}
+main section .list-group-item {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+main section label {
+  opacity: 1 !important;
+  font-weight: bold;
+  vertical-align: middle;
+}
+main section .text-justify {
+  text-align: justify;
+}
+
+.btn-theme {
+  background-color: var(--bg-main-dark);
+  color: white;
+  box-shadow: var(--shadow-theme);
+}
+
+.skip-image {
+  margin-top: 10vh !important;
+}
+
+footer {
+  grid-row: 3;
+}
+
+/*# sourceMappingURL=curriculum_vitae.css.map */
