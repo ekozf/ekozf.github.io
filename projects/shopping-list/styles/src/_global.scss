@@ -11,3 +11,16 @@ html,
 body {
 	background-color: var(--main-clr);
 }
+
+button.btn.btn-primary {
+	background-color: var(--accent-primary);
+	border: 0;
+
+	&:hover {
+		background-color: var(--accent-secondary);
+	}
+
+	&:active {
+		background-color: var(--accent-primary);
+	}
+}

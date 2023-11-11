@@ -16,7 +16,9 @@ https://emirkaan.be/projects/connect-four/pages/register/
 https://emirkaan.be/projects/connect-four/pages/settings/
 https://emirkaan.be/projects/connect-four/pages/team/
 https://emirkaan.be/projects/connect-four/pages/waitingroom/
+https://emirkaan.be/projects/shopping-list/pages/add-item/
 https://emirkaan.be/projects/shopping-list/pages/create-family/
+https://emirkaan.be/projects/shopping-list/pages/item-details/
 https://emirkaan.be/projects/shopping-list/pages/items-list/
 https://emirkaan.be/projects/shopping-list/pages/join-family/
 https://emirkaan.be/projects/shopping-list/pages/register/

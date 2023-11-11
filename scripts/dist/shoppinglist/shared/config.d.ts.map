@@ -1,1 +1,1 @@
-{"version":3,"file":"config.d.ts","sourceRoot":"","sources":["../../../src/shoppinglist/shared/config.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,WAAW,4BAA4B,CAAC;AAE9C,OAAO,EAAE,WAAW,EAAE,CAAC"}
+{"version":3,"file":"config.d.ts","sourceRoot":"","sources":["../../../src/shoppinglist/shared/config.ts"],"names":[],"mappings":"AAAA,QAAA,MAAM,WAAW,4BAA4B,CAAC;AAC9C,QAAA,MAAM,SAAS,SAAS,CAAC;AAEzB,OAAO,EAAE,WAAW,EAAE,SAAS,EAAE,CAAC"}

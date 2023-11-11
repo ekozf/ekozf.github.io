@@ -1,10 +1,12 @@
-import { BACKEND_URL } from "../shoppinglist/shared/config.js";
+import { BACKEND_URL, NO_FAMILY } from "../shoppinglist/shared/config.js";
 document.addEventListener("DOMContentLoaded", () => {
     const user = JSON.parse(localStorage.getItem("shoppinglist-user"));
     if (user === null) {
         window.location.href = "/projects/shopping-list/pages/login";
     }
-    if (user.familyCode !== null && user.familyCode !== undefined) {
+    if (user.familyCode !== null &&
+        user.familyCode !== undefined &&
+        user.familyCode !== NO_FAMILY) {
         window.location.href = "/projects/shopping-list/pages/items-list";
     }
     const joinFamilyButton = document.querySelector("#join");

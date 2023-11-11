@@ -28,6 +28,7 @@
 <script
 	type="module"
 	src="/scripts/dist/shoppinglist/GetFamilyShoppingList.js"
+	defer
 ></script>
 
 	</head>
@@ -39,20 +40,22 @@
 		<h3 class="m-0">Shopping List</h3>
 	</header>
 
-	<main class="mt-5" data-page-id="1">
-		<h1>Hello, World!</h1>
-	</main>
+	<main class="mt-4 scrollable" data-page-id="1" id="all-items-list"></main>
 
-	<main class="mt-5 d-none" id="list-category" data-page-id="2">
-		<h1>Hello, Category!</h1>
-	</main>
+	<main
+		class="mt-4 scrollable accordion d-none"
+		id="list-category"
+		data-page-id="2"
+	></main>
 
 	<aside class="position-absolute end-0 add-icon rounded-circle p-4 shadow">
-		<img
-			src="/projects/shopping-list/assets/plus-icon.svg"
-			alt="Add New Shopping Item"
-			class="nav-icon"
-		/>
+		<a href="/projects/shopping-list/pages/add-item/">
+			<img
+				src="/projects/shopping-list/assets/plus-icon.svg"
+				alt="Add New Shopping Item"
+				class="nav-icon"
+			/>
+		</a>
 	</aside>
 
 	<footer
