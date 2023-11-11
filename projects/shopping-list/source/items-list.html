@@ -1,0 +1,55 @@
+# List
+
+<div class="w-100" id="main-container">
+	<header class="p-3 px-5 mt-3 rounded-5 shadow mx-5 text-center">
+		<h3 class="m-0">Shopping List</h3>
+	</header>
+
+	<main class="mt-5" data-page-id="1">
+		<h1>Hello, World!</h1>
+	</main>
+
+	<main class="mt-5 d-none" id="list-category" data-page-id="2">
+		<h1>Hello, Category!</h1>
+	</main>
+
+	<aside class="position-absolute end-0 add-icon rounded-circle p-4 shadow">
+		<img
+			src="/projects/shopping-list/assets/plus-icon.svg"
+			alt="Add New Shopping Item"
+			class="nav-icon"
+		/>
+	</aside>
+
+	<footer
+		class="position-absolute bottom-0 p-3 w-100 d-flex justify-content-around shadow"
+	>
+		<a class="d-flex flex-column align-items-center active" data-show-page="1">
+			<img
+				src="/projects/shopping-list/assets/list-icon.svg"
+				class="nav-icon"
+				alt="List View Icon"
+			/>
+			<span class="fs-7 mt-1">Shopping</span>
+		</a>
+		<a class="d-flex flex-column align-items-center" data-show-page="2">
+			<img
+				src="/projects/shopping-list/assets/category-icon.svg"
+				class="nav-icon"
+				alt="Category View Icon"
+			/>
+			<span class="fs-7 mt-1">Category</span>
+		</a>
+	</footer>
+</div>
+
+# Imports
+
+<link
+	rel="stylesheet"
+	href="/projects/shopping-list/styles/dist/shopping.css"
+/>
+<script
+	type="module"
+	src="/scripts/dist/shoppinglist/GetFamilyShoppingList.js"
+></script>

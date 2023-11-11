@@ -1,0 +1,43 @@
+* {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  --main-clr: hsl(206, 24%, 20%);
+  --secondary-clr: hsl(186, 26%, 28%);
+  --tertiary-clr: hsl(190, 24%, 35%);
+  --accent-primary: hsl(151, 28%, 58%);
+  --accent-secondary: hsl(122, 33%, 75%);
+}
+
+html,
+body {
+  background-color: var(--main-clr);
+}
+
+header,
+footer {
+  background-color: var(--secondary-clr);
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:not(.active) {
+  opacity: 0.5;
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.fs-7 {
+  font-size: 0.85rem;
+}
+
+.add-icon {
+  bottom: 7.5rem;
+  margin-right: 1rem;
+  background-color: var(--accent-primary);
+}
+
+/*# sourceMappingURL=shopping.css.map */

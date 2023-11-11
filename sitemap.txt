@@ -9,9 +9,14 @@ https://emirkaan.be/blog/articles/real-time-web-communication-signalr/
 https://emirkaan.be/blog/articles/windows-essentials-vms/
 https://emirkaan.be/blog/pages/1/
 https://emirkaan.be/projects/connect-four/pages/
+https://emirkaan.be/projects/shopping-list/pages/
 https://emirkaan.be/projects/connect-four/pages/game/
 https://emirkaan.be/projects/connect-four/pages/leaderboard/
 https://emirkaan.be/projects/connect-four/pages/register/
 https://emirkaan.be/projects/connect-four/pages/settings/
 https://emirkaan.be/projects/connect-four/pages/team/
 https://emirkaan.be/projects/connect-four/pages/waitingroom/
+https://emirkaan.be/projects/shopping-list/pages/create-family/
+https://emirkaan.be/projects/shopping-list/pages/items-list/
+https://emirkaan.be/projects/shopping-list/pages/join-family/
+https://emirkaan.be/projects/shopping-list/pages/register/
