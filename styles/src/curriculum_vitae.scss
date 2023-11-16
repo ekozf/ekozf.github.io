@@ -35,7 +35,7 @@ body {
 	grid-template-columns: 1fr;
 	grid-template-rows: 1fr 13fr 1fr;
 	color: white;
-	background-color: var(--bg-main);
+	background-color: var(--bg-main-dark);
 	-webkit-print-color-adjust: exact;
 }
 
@@ -96,7 +96,8 @@ main {
 		}
 
 		.bg-theme-dark {
-			background-color: var(--bg-main-dark);
+			background-color: var(--bg-main-darkest);
+			box-shadow: var(--shadow-theme);
 		}
 
 		.badge {
