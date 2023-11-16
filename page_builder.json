@@ -24,10 +24,5 @@
 		"OutputPath": "./projects/connect-four/pages/",
 		"TemplatePath": "./projects/connect-four/templates/MAIN_TEMPLATE.html",
 		"ImagesDirectoryPath": "../../resources/images/"
-	},
-	"ShoppingList": {
-		"InputPath": "./projects/shopping-list/source",
-		"OutputPath": "./projects/shopping-list/pages/",
-		"TemplatePath": "./projects/shopping-list/templates/MAIN_TEMPLATE.html"
 	}
 }
