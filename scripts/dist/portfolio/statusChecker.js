@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const urls = {
         "connectfour-api": "https://connectfour.emirkaan-web.eu/status",
         "raspberrypi-api": "https://api.emirkaan-web.eu/status",
+        "todoapp-api": "https://todoapp.emirkaan-web.eu/status",
     };
     for (const [key, url] of Object.entries(urls)) {
         const wrapper = document.querySelector(`[data-service='${key}']`);
@@ -10,9 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 async function CheckProject(wrapper, url) {
-    const response = await fetch(url);
     let failed = false;
     try {
+        const response = await fetch(url);
         await response.json();
     }
     catch {
