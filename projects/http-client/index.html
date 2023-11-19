@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+	<head>
+		<title>HTTP Client | EKO</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Very simple and easy to use HTTP client for testing APIs"
+		/>
+		<meta
+			name="og:description"
+			content="Very simple and easy to use HTTP client for testing APIs"
+		/>
+		<meta property="og:title" content="HTTP Client Emir Kaan Özver" />
+		<meta property="og:site_name" content="Emir Kaan Özver HTTP Client" />
+		<meta property="og:type" content="website" />
+		<meta property="og:image" content="/resources/EKO_Logo.png" />
+		<link
+			rel="shortcut icon"
+			href="/resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<script
+			src="/resources/libs/bootstrap/js/bootstrap.bundle.min.js"
+			async
+		></script>
+		<script src="/resources/libs/highlight/highlight.min.js" async></script>
+		<link
+			rel="stylesheet"
+			href="/resources/libs/bootstrap/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="/projects/http-client/styles/dist/style.css" />
+		<link
+			rel="stylesheet"
+			href="/resources/libs/highlight/styles/atom-one-dark.min.css"
+		/>
+		<script type="module" src="/scripts/dist/http-client/app.js" defer></script>
+		<script
+			type="module"
+			src="/scripts/dist/http-client/sender.js"
+			defer
+		></script>
+	</head>
+	<body data-bs-theme="dark" class="p-4 h-100">
+		<nav class="mb-5 mx-3 mt-3">
+			<span> &larr; </span>
+			<a href="/" class="text-white">Go Back</a>
+		</nav>
+		<header class="rounded-3 bg-body-tertiary shadow mb-5">
+			<select class="form-select" id="requestMethod">
+				<option value="GET">GET</option>
+				<option value="POST">POST</option>
+				<option value="DELETE">DELETE</option>
+				<option value="PUT">PUT</option>
+			</select>
+			<input
+				type="text"
+				class="form-control"
+				id="requestUrl"
+				placeholder="https://api.somesite.com/v1/values"
+			/>
+			<button class="btn btn-primary" id="sendRequest">Send</button>
+		</header>
+		<main
+			class="rounded-3 bg-body-tertiary shadow p-4 mb-5 d-none"
+			id="requestBody"
+		>
+			<h6 class="p-2">JSON Body</h6>
+			<pre class="w-100 m-0 p-0">
+                <code class="language-json w-100 bg-body-secondary border-0 rounded-3 p-3 shadow" contenteditable id="editor"></code>
+            </pre>
+			<button class="btn btn-primary w-25" id="formatContent">Format</button>
+		</main>
+		<footer class="rounded-3 bg-body-tertiary shadow p-4" id="httpResponse">
+			<h6 class="p-2">Response</h6>
+			<pre class="w-100 m-0 p-0">
+                <code class="language-json w-100 bg-body-secondary border-0 rounded-3 p-3 shadow" id="serverResponse"></code>
+            </pre>
+		</footer>
+		<br />
+		<div
+			class="toast-container position-fixed bottom-0 end-0 mb-4 me-4"
+			id="toastContainer"
+		></div>
+	</body>
+</html>
