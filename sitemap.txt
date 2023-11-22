@@ -4,6 +4,7 @@ https://emirkaan.be/projects/
 https://emirkaan.be/pages/about-me/
 https://emirkaan.be/pages/cv/
 https://emirkaan.be/pages/status/
+https://emirkaan.be/projects/http-client/
 https://emirkaan.be/blog/articles/building-and-using-docker-containers/
 https://emirkaan.be/blog/articles/introduction-to-docker/
 https://emirkaan.be/blog/articles/real-time-web-communication-signalr/
