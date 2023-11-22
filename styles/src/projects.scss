@@ -20,3 +20,35 @@ article {
 		height: fit-content !important;
 	}
 }
+
+dialog {
+	border: none;
+	background-color: rgb(23, 28, 33, 1);
+	animation: fadeIn 0.5s ease-in-out;
+
+	*:focus-visible {
+		outline: none;
+	}
+
+	&:focus-visible {
+		outline: none;
+	}
+}
+
+::backdrop {
+	background-color: rgb(43, 48, 53, 0.75);
+	animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+dt {
+	margin-top: 1.5rem;
+}
