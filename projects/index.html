@@ -19,7 +19,11 @@
 		<meta property="og:site_name" content="Emir Kaan Özver Portfolio" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="/resources/EKO_Logo.png" />
-		<script src="/resources/libs/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/resources/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script
+			type="module"
+			src="/scripts/dist/portfolio/modalHandler.js"
+		></script>
 		<link
 			rel="shortcut icon"
 			href="/resources/favicon.ico"
@@ -71,7 +75,7 @@
 				class="d-flex mt-5 gap-5 mx-3 flex-wrap flex-basis justify-content-center pb-5"
 			>
 				<article
-					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between"
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between position-relative"
 				>
 					<img src="/resources/icons/pingping.png" class="w-50" />
 					<span class="text-justify mt-4 fs-7">
@@ -80,13 +84,14 @@
 					</span>
 					<a
 						href="https://github.com/ekozf/EKO.PingPing"
-						class="special-link mt-5 fs-5"
+						class="special-link mt-5 fs-5 z-3"
 					>
 						Take a look!
 					</a>
+					<a href="#" class="stretched-link" data-target="pingping"></a>
 				</article>
 				<article
-					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between"
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between position-relative"
 				>
 					<img src="/projects/connect-four/assets/Logo.png" class="w-50" />
 					<span class="text-justify mt-4 fs-7">
@@ -95,13 +100,14 @@
 					</span>
 					<a
 						href="/projects/connect-four/pages/"
-						class="special-link mt-5 fs-5"
+						class="special-link mt-5 fs-5 z-3"
 					>
 						Let's Play!
 					</a>
+					<a href="#" class="stretched-link" data-target="connect-four"></a>
 				</article>
 				<article
-					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between"
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between position-relative"
 				>
 					<img
 						src="/resources/EKO_Logo.svg"
@@ -111,7 +117,10 @@
 						My personal blog where I just put whatever handy developer related
 						content that I want.
 					</span>
-					<a href="/blog/" class="special-link mt-5 fs-5"> Check it out! </a>
+					<a href="/blog/" class="special-link mt-5 fs-5 z-3">
+						Check it out!
+					</a>
+					<a href="#" class="stretched-link" data-target="blog"></a>
 				</article>
 				<article
 					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between"
@@ -145,7 +154,7 @@
 					</a>
 				</article>
 				<article
-					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between"
+					class="rounded-4 shadow p-5 d-flex flex-column align-items-center justify-content-between position-relative"
 				>
 					<img src="/resources/icons/github-mark-white.svg" class="w-50" />
 					<span class="text-justify mt-4 fs-7">
@@ -154,8 +163,420 @@
 					<a href="/projects/http-client/" class="special-link mt-5 fs-5">
 						Try it out!
 					</a>
+					<a href="#" class="stretched-link" data-target="httpClient"></a>
 				</article>
 			</div>
 		</main>
+
+		<!-- Start Connect Four Dialog -->
+
+		<dialog
+			id="connect-four"
+			class="rounded-4 shadow p-sm-2 p-lg-5 flex-column align-items-center justify-content-between w-100"
+		>
+			<div class="d-flex flex-direction-dialog pt-5">
+				<div class="w-100">
+					<br />
+					<h1 class="ms-3 mb-5">Connect Four Game</h1>
+					<div
+						id="connectFourCarousel"
+						class="carousel slide width-dialog rounded-4"
+						data-bs-ride="carousel"
+					>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="/resources/images/example/connect-four-1.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/connect-four-2.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/connect-four-3.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/connect-four-4.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/connect-four-5.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/connect-four-6.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#connectFourCarousel"
+							data-bs-slide="prev"
+						>
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#connectFourCarousel"
+							data-bs-slide="next"
+						>
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="width-extra margin-dialog">
+					<h2 class="mb-4">Project Information</h2>
+					<dl class="mb-5">
+						<dt>Category:</dt>
+						<dd>Web Development, APIs</dd>
+						<dt>Used Technologies:</dt>
+						<dd>HTML, CSS, JavaScript, .NET (C#)</dd>
+						<dt>Features:</dt>
+						<dd>Live Chat, Leaderboard, Game</dd>
+						<dt>Link:</dt>
+						<dd>
+							<a href="/projects/connect-four/pages/" class="special-link"
+								>Let's Play</a
+							>
+						</dd>
+					</dl>
+					<h2>Description</h2>
+					<p>
+						This is a simple game of connect four that was made for a school
+						project. You press on the column you want and put a piece in that
+						column. The project also includes a chat system and a leaderboard.
+					</p>
+					<p>
+						It uses a custom API that was made with .NET. The API is hosted on a
+						Docker container on a Raspberry Pi. The game is made with HTML, CSS
+						and JavaScript. The game is also responsive, so it works on mobile
+						devices as well.
+					</p>
+				</div>
+
+				<button
+					class="close-dialog btn btn-danger position-absolute top-0 end-0 me-3 mt-3"
+				>
+					<img src="/resources/icons/cross-icon.svg" width="32" />
+				</button>
+			</div>
+		</dialog>
+
+		<!-- End Connect Four Dialog -->
+
+		<!-- Start Blog Dialog -->
+
+		<dialog
+			id="blog"
+			class="rounded-4 shadow p-5 flex-column align-items-center justify-content-between w-100"
+		>
+			<div class="d-flex flex-direction-dialog pt-5">
+				<div class="width-dialog">
+					<br />
+					<h1 class="ms-3 mb-5">Personal Blog</h1>
+					<div
+						id="blogCarousel"
+						class="carousel slide width-dialog rounded-4"
+						data-bs-ride="carousel"
+					>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="/resources/images/example/blog-1.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/blog-2.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/blog-3.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/blog-4.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#blogCarousel"
+							data-bs-slide="prev"
+						>
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#blogCarousel"
+							data-bs-slide="next"
+						>
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="width-extra margin-dialog">
+					<h2 class="mb-4">Project Information</h2>
+					<dl class="mb-5">
+						<dt>Category:</dt>
+						<dd>Web Development</dd>
+						<dt>Used Technologies:</dt>
+						<dd>HTML, (S)CSS, JavaScript, TypeScript</dd>
+						<dt>Features:</dt>
+						<dd>Dark Mode, Articles, Code Examples</dd>
+						<dt>Link:</dt>
+						<dd>
+							<a href="/projects/connect-four/pages/" class="special-link"
+								>Check it out!</a
+							>
+						</dd>
+					</dl>
+					<h2>Description</h2>
+					<p>
+						My personal blog where I write about things that I've learned and
+						done. It's generated with my own custom site builder.
+					</p>
+				</div>
+
+				<button
+					class="close-dialog btn btn-danger position-absolute top-0 end-0 me-3 mt-3"
+				>
+					<img src="/resources/icons/cross-icon.svg" width="32" />
+				</button>
+			</div>
+		</dialog>
+
+		<!-- End Blog Dialog -->
+
+		<!-- Start PingPingDing Dialog -->
+
+		<dialog
+			id="pingping"
+			class="rounded-4 shadow p-5 flex-column align-items-center justify-content-between w-100"
+		>
+			<div class="d-flex flex-direction-dialog pt-5">
+				<div class="width-dialog">
+					<br />
+					<h1 class="ms-3 mb-5">PingPing.Ding</h1>
+					<div
+						id="pingpingCarousel"
+						class="carousel slide width-mobile rounded-4"
+						data-bs-ride="carousel"
+					>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="/resources/images/example/pingping-1.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/pingping-2.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/pingping-3.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/pingping-4.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#pingpingCarousel"
+							data-bs-slide="prev"
+						>
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#pingpingCarousel"
+							data-bs-slide="next"
+						>
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="width-extra margin-dialog">
+					<h2 class="mb-4">Project Information</h2>
+					<dl class="mb-5">
+						<dt>Category:</dt>
+						<dd>Web Development</dd>
+						<dt>Used Technologies:</dt>
+						<dd>HTML, (S)CSS, JavaScript, TypeScript</dd>
+						<dt>Features:</dt>
+						<dd>Dark Mode, Articles, Code Examples</dd>
+						<dt>Link:</dt>
+						<dd>
+							<a href="/projects/connect-four/pages/" class="special-link"
+								>Check it out!</a
+							>
+						</dd>
+					</dl>
+					<h2>Description</h2>
+					<p>
+						My personal blog where I write about things that I've learned and
+						done. It's generated with my own custom site builder.
+					</p>
+				</div>
+
+				<button
+					class="close-dialog btn btn-danger position-absolute top-0 end-0 me-3 mt-3"
+				>
+					<img src="/resources/icons/cross-icon.svg" width="32" />
+				</button>
+			</div>
+		</dialog>
+
+		<!-- End PingPingDing Dialog -->
+
+		<!-- Start HTTP Client Dialog -->
+
+		<dialog
+			id="httpClient"
+			class="rounded-4 shadow p-5 flex-column align-items-center justify-content-between w-100"
+		>
+			<div class="d-flex flex-direction-dialog pt-5">
+				<div class="width-dialog">
+					<br />
+					<h1 class="ms-3 mb-5">HTTP Client</h1>
+					<div
+						id="httpClientCarousel"
+						class="carousel slide width-dialog rounded-4"
+						data-bs-ride="carousel"
+					>
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="/resources/images/example/http-client-1.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="/resources/images/example/http-client-2.png"
+									class="d-block w-100 rounded-4"
+								/>
+							</div>
+						</div>
+						<button
+							class="carousel-control-prev"
+							type="button"
+							data-bs-target="#httpClientCarousel"
+							data-bs-slide="prev"
+						>
+							<span
+								class="carousel-control-prev-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button
+							class="carousel-control-next"
+							type="button"
+							data-bs-target="#httpClientCarousel"
+							data-bs-slide="next"
+						>
+							<span
+								class="carousel-control-next-icon"
+								aria-hidden="true"
+							></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+
+				<div class="width-extra margin-dialog">
+					<h2 class="mb-4">Project Information</h2>
+					<dl class="mb-5">
+						<dt>Category:</dt>
+						<dd>Web Development</dd>
+						<dt>Used Technologies:</dt>
+						<dd>HTML, (S)CSS, JavaScript, TypeScript</dd>
+						<dt>Features:</dt>
+						<dd>Dark Mode, Articles, Code Examples</dd>
+						<dt>Link:</dt>
+						<dd>
+							<a href="/projects/http-client/" class="special-link"
+								>Check it out!</a
+							>
+						</dd>
+					</dl>
+					<h2>Description</h2>
+					<p>
+						My personal blog where I write about things that I've learned and
+						done. It's generated with my own custom site builder.
+					</p>
+				</div>
+
+				<button
+					class="close-dialog btn btn-danger position-absolute top-0 end-0 me-3 mt-3"
+				>
+					<img src="/resources/icons/cross-icon.svg" width="32" />
+				</button>
+			</div>
+		</dialog>
+
+		<!-- End HTTP Client Dialog -->
 	</body>
 </html>

@@ -315,5 +315,67 @@ article:hover {
     height: fit-content !important;
   }
 }
+dialog {
+  border: none;
+  background-color: rgb(23, 28, 33);
+  animation: fadeIn 0.5s ease-in-out;
+}
+dialog *:focus-visible {
+  outline: none;
+}
+dialog:focus-visible {
+  outline: none;
+}
+
+::backdrop {
+  background-color: rgba(43, 48, 53, 0.75);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+dt {
+  margin-top: 1.5rem;
+}
+
+.flex-direction-dialog {
+  flex-direction: row;
+}
+
+.width-dialog {
+  width: 75%;
+}
+
+.width-extra {
+  width: 25%;
+}
+
+.width-mobile {
+  width: 25%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .flex-direction-dialog {
+    flex-direction: column;
+  }
+  .width-dialog {
+    width: 100%;
+  }
+  .width-extra {
+    width: 100%;
+  }
+  .margin-dialog {
+    margin-top: 2.5rem;
+  }
+  .width-mobile {
+    width: 100%;
+  }
+}
 
 /*# sourceMappingURL=projects.css.map */
