@@ -344,4 +344,38 @@ dt {
   margin-top: 1.5rem;
 }
 
+.flex-direction-dialog {
+  flex-direction: row;
+}
+
+.width-dialog {
+  width: 75%;
+}
+
+.width-extra {
+  width: 25%;
+}
+
+.width-mobile {
+  width: 25%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .flex-direction-dialog {
+    flex-direction: column;
+  }
+  .width-dialog {
+    width: 100%;
+  }
+  .width-extra {
+    width: 100%;
+  }
+  .margin-dialog {
+    margin-top: 2.5rem;
+  }
+  .width-mobile {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=projects.css.map */
