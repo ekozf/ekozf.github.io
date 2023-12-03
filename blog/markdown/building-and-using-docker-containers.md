@@ -10,7 +10,7 @@ Have you ever wanted to deploy something you have made, but the destination serv
 
 ## What is Docker?
 
-Docker is a very handy tool that allows you to recreate your environment on any machine. It does this by using Images and Containers. An Image is a file that contains everything needed to run your app, including the OS, libraries and your app. A Container is an instance of an Image. You can run multiple Containers from the same Image. This allows you to run multiple instances of your app on the same machine. You can also run multiple Images on the same machine, allowing you to run multiple different apps on the same machine.
+[Docker](/blog/articles/introduction-to-docker/) is a very handy tool that allows you to recreate your environment on any machine. It does this by using Images and Containers. An Image is a file that contains everything needed to run your app, including the OS, libraries and your app. A Container is an instance of an Image. You can run multiple Containers from the same Image. This allows you to run multiple instances of your app on the same machine. You can also run multiple Images on the same machine, allowing you to run multiple different apps on the same machine.
 
 Now, Docker does not magically work on any machine. You will firstly need to [install Docker](https://docs.docker.com/engine/install/) on the machine you want to run your app on. After that you can start creating your Images and Containers.
 
