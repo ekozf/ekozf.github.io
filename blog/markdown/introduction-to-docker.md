@@ -219,4 +219,4 @@ Sometimes people forget things, but do not worry, Docker has your back here, you
 
 ## Conclusion
 
-This was a small introduction and guide to Docker, there is a lot more that you can do with Docker, but with these basic commands you can already do a lot. I hope you enjoyed this tutorial and learned something new. If you want to learn more about Docker make sure to check out their [docs](https://docs.docker.com/)!
+This was a small introduction and guide to Docker, there is a lot more that you can do with Docker, but with these basic commands you can already do a lot. I hope you enjoyed this tutorial and learned something new. If you want to learn more about Docker make sure to check out their [docs](https://docs.docker.com/) or [continue reading](/blog/articles/building-and-using-docker-containers/)!
