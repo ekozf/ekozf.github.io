@@ -8,6 +8,7 @@ https://emirkaan.be/projects/http-client/
 https://emirkaan.be/blog/articles/building-and-using-docker-containers/
 https://emirkaan.be/blog/articles/introduction-to-docker/
 https://emirkaan.be/blog/articles/real-time-web-communication-signalr/
+https://emirkaan.be/blog/articles/running-nextcloud-on-raspberry-pi-4b/
 https://emirkaan.be/blog/articles/windows-essentials-vms/
 https://emirkaan.be/blog/pages/1/
 https://emirkaan.be/projects/connect-four/pages/

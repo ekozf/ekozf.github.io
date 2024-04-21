@@ -332,5 +332,10 @@ input[type=checkbox] {
     width: 66% !important;
   }
 }
+@media only screen and (max-width: 1400px) {
+  .md-container img.w-mobile-100 {
+    width: 100% !important;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
