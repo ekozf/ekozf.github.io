@@ -176,7 +176,7 @@
 <h2 id="setting-up-nextcloud-account">Setting up NextCloud account</h2>
 <p>Now that you have a running NextCloud instance, we can start by creating a NextCloud account. You can access your NextCloud instance by going to <code>http://your-raspberry-pi-ip:8080</code> in your browser. You should see the NextCloud setup page.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/nextcloud-create-account.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/nextcloud-create-account.png" />
 </div>
 <p>Here you will need to create an Admin account for NextCloud. You can set the username and password to whatever you want. Then select storage &amp; database, you will need to enter the PostgreSQL database details here. The user should be the default <code>postgres</code> with the password that you chose. The default database name is also <code>postgres</code> and the database host should be the name of the PostgreSQL container you created earlier. In our case it is <code>eko-postgres-db</code>, followed by the port number 5432.</p>
 <p>Make sure your postgres container is always running before you start the NextCloud container!</p>
@@ -187,26 +187,26 @@
 <p>First thing you will have to do is create a new tunnel and run the connector on your Raspberry Pi. Here I will be using a tunnel in a Docker container. You can follow the steps below to create a new tunnel for your NextCloud instance:</p>
 <p>First go to Cloudflare and enter the zero trust tab.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/zero-trust-cloudflare.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/zero-trust-cloudflare.png" />
 </div>
 <p>Then press the tunnel tab and create a new tunnel.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/create-tunnel.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/create-tunnel.png" />
 </div>
 <p>Choose the &quot;Cloudflared&quot; tunnel connector and press next, give your tunnel a name and press next again.</p>
 <p>Then on the configure page, you will need to press &quot;Docker&quot; and copy the docker command to run the connector.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/add-connector.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/add-connector.png" />
 </div>
 <p>Next you will have to run this command on your Raspberry Pi. This will start the Cloudflare tunnel connector in a Docker container.</p>
 <p>After you have the connector running, you have to go back to the Cloudflare tunnel dashboard and choose to configure your tunnel.<br />
 Then you will have to go to the public hostnames and add a new hostname for your NextCloud instance.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/add-public-hostname.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/add-public-hostname.png" />
 </div>
 <p>Choose a new hostname and pick your domain name. Then you will have to put the IP address of your Raspberry Pi and the port of your NextCloud instance.</p>
 <div class="md-container">
-    <img class="w-100 scale-on-tap" src="/resources/images/tunnel-routing-cloudflare.png" />
+    <img class="w-mobile-100 scale-on-tap" src="/resources/images/tunnel-routing-cloudflare.png" />
 </div>
 <p>After you have done this, you can press save and your NextCloud instance should be accessible from the internet using the hostname you chose.</p>
 <p>But wait there is still an issue, you can't access your NextCloud instance using the new hostname because it is not trusted by NextCloud. To fix this we will have to make some changes to the NextCloud config.</p>
