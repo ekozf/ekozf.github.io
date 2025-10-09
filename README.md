@@ -1,10 +1,10 @@
 # Hello
 
-Welcome to my personal portfolio! In this repository you can find all of my web pages for the personal site, portfolio, blog, and other project.
+Welcome to my personal portfolio! In this repository you can find all of my web pages for the personal site, portfolio, blog, and other projects.
 
 ## Structure
 
-`/blog`: My blog, this is where I post all kinds of development related stuff that interests me.
+`/blog`: My blog, this is where I post all kinds of development related stuff that interest me.
 
 `/projects`: Projects that I have made / worked on.
 
