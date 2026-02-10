@@ -1,3 +1,0 @@
-type CreateFamilyRequest = {
-	familyCode: string;
-};
