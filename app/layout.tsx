@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Emir Kaan Özver - Software Developer",
 		description:
-			"Software developer across web and mobile. Turning 'what if?' into 'done.'",
+			"Software developer across web and mobile. Turning 'what if?' into 'done.', need a developer and architect for your project? Let's talk.",
 		url: "https://emirkaan.be",
 		siteName: "Emir Kaan Özver Portfolio",
 		images: [
 			{
-				url: "https://emirkaan.be/og-image.webp",
+				url: "https://emirkaan.be/emir.webp",
 				width: 1200,
 				height: 630,
 				alt: "Emir Kaan Özver Portfolio",
